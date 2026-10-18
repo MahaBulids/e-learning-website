@@ -1,17 +1,18 @@
-# e-learning-website
-E-learning website with interactive quizzes and learning roadmaps for 10 programming languages, built with HTML, CSS, and JavaScript
-
-# E-Learning Website
+# Study Core: E-Learning Website
 
 **Live demo:** https://mahabulids.github.io/e-learning-website/
 
-A beginner-friendly e-learning website where learners can choose a programming language, follow a learning roadmap, and test their knowledge with interactive quizzes.
+A beginner-friendly e-learning website where learners can pick a programming language, follow lessons, take interactive quizzes, and use a roadmap that suggests which language to learn next.
+
+## Languages Covered
+Python, JavaScript, Java, C, C++, C#, HTML & CSS, SQL, PHP, and Go
 
 ## Features
-- Learning content for 10 programming languages, including Python, Java, JavaScript, SQL, PHP, Go, C#, and HTML/CSS
+- Lesson pages for 10 programming languages, each with a sidebar for easy navigation
 - Interactive quizzes to practice and check understanding
-- A roadmap that suggests which language to learn next
-- Simple, clean layout that works in any web browser
+- A suggested learning roadmap: HTML & CSS, Python, JavaScript, SQL, Java, C/C++, then C#/Go/PHP
+- Dark mode toggle
+- Responsive design with a mobile menu, so it works on phones and laptops
 
 ## Tech Stack
 - HTML
@@ -19,9 +20,9 @@ A beginner-friendly e-learning website where learners can choose a programming l
 - JavaScript
 
 ## Project Structure
-- `index.html`: home page of the website
-- `languages/`: a folder for each programming language
-- `assets/`: images, styles, and other resources
+- `index.html`: home page with the language cards and roadmap
+- `languages/`: lesson pages, with one folder for each language
+- `assets/`: shared stylesheet (`styles.css`) and script (`app.js`)
 
 ## How to Run
 1. Open the live demo link above, or
