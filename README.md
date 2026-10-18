@@ -3,12 +3,14 @@ E-learning website with interactive quizzes and learning roadmaps for 10 program
 
 # E-Learning Website
 
-A beginner-friendly e-learning website where learners can pick a programming language, follow a learning roadmap, and test their knowledge with interactive quizzes.
+**Live demo:** https://mahabulids.github.io/e-learning-website/
+
+A beginner-friendly e-learning website where learners can choose a programming language, follow a learning roadmap, and test their knowledge with interactive quizzes.
 
 ## Features
-- Learning content for 10 programming languages
+- Learning content for 10 programming languages, including Python, Java, JavaScript, SQL, PHP, Go, C#, and HTML/CSS
 - Interactive quizzes to practice and check understanding
-- A roadmap that guides learners on which language to learn next
+- A roadmap that suggests which language to learn next
 - Simple, clean layout that works in any web browser
 
 ## Tech Stack
@@ -18,14 +20,14 @@ A beginner-friendly e-learning website where learners can pick a programming lan
 
 ## Project Structure
 - `index.html`: home page of the website
-- `languages/`: pages for each programming language
+- `languages/`: a folder for each programming language
 - `assets/`: images, styles, and other resources
 
 ## How to Run
-1. Download or clone this repository.
-2. Open `index.html` in any web browser.
+1. Open the live demo link above, or
+2. Download or clone this repository and open `index.html` in any web browser.
 
 No installation is needed.
 
 ## About
-This is a basic project I built to practice web development with HTML, CSS, and JavaScript, and to create something useful for people starting to learn programming.
+A basic project I built to practice web development with HTML, CSS, and JavaScript, and to create something useful for people who are starting to learn programming.
