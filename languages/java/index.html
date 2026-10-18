@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="index.html"class="active">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+    <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>JAVA</h2>
+      <ul>
+      <li><a href="index.html" class="active">Overview</a></li> 
+      <li><a href="intro.html">Introduction</a> </li>
+      <li><a href="oop.html">OOP</a></li> 
+      <li><a href="exceptions.html">Exceptions</a></li> 
+      <li><a href="collections.html">Collections</a></li>
+     </ul>
+   </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+        <h2>What is Java?</h2>
+        <p>
+          Java is a high-level, object-oriented, class-based programming language created by James Gosling in 1995 at Sun Microsystems.
+          It follows the principle <b>"Write Once, Run Anywhere"</b>, meaning Java programs can run on any platform with the Java Virtual Machine (JVM).
+        </p>
+      </section>
+
+      <section>
+        <h2>Features of Java</h2>
+        <ul>
+          <li>Simple and easy to learn.</li>
+          <li>Object-Oriented (everything revolves around classes and objects).</li>
+          <li>Platform Independent (code runs on JVM, not OS specific).</li>
+          <li>Secure and robust for applications.</li>
+          <li>Supports multithreading for parallel tasks.</li>
+          <li>Large standard library and community support.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Where is Java Used?</h2>
+        <ul>
+          <li>Web Development (Spring, JSP).</li>
+          <li>Mobile Applications (Android development).</li>
+          <li>Desktop Applications (Swing, JavaFX).</li>
+          <li>Enterprise Applications (banking, finance systems).</li>
+          <li>Big Data & Cloud Computing (Hadoop, Spark).</li>
+          <li>Game Development (e.g., Minecraft).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Java Example</h2>
+        <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+        </pre>
+        <p>
+          Explanation:
+        </p>
+        <ul>
+          <li><code>class HelloWorld</code> → Every Java program is inside a class.</li>
+          <li><code>public static void main(String[] args)</code> → Entry point of the program.</li>
+          <li><code>System.out.println()</code> → Prints output to the console.</li>
+        </ul>
+      </section>
+      <div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>1. Who created Java and in which year?</p>
+  <div class="quiz-option" data-correct="true">James Gosling, 1995</div>
+  <div class="quiz-option" data-correct="false">Guido van Rossum, 1991</div>
+  <div class="quiz-option" data-correct="false">Dennis Ritchie, 1972</div>
+  <div class="quiz-option" data-correct="false">Bjarne Stroustrup, 1985</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>2. What does "Write Once, Run Anywhere" mean in Java?</p>
+  
+  <div class="quiz-option" data-correct="false">Java code only runs on Windows</div>
+  <div class="quiz-option" data-correct="false">Java must be rewritten for each OS</div>
+  <div class="quiz-option" data-correct="false">Java is used only for mobile apps</div>
+  <div class="quiz-option" data-correct="true">Java programs can run on any platform with JVM</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>3. Which of the following is NOT a feature of Java?</p>
+  
+  <div class="quiz-option" data-correct="false">Object-Oriented</div>
+  <div class="quiz-option" data-correct="true">Low-level memory management</div>
+  <div class="quiz-option" data-correct="false">Platform Independent</div>
+  <div class="quiz-option" data-correct="false">Supports Multithreading</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>4. In which area is Java commonly used?</p>
+  <div class="quiz-option" data-correct="true">All of the above</div>
+  <div class="quiz-option" data-correct="false">Web Development</div>
+  <div class="quiz-option" data-correct="false">Mobile Applications</div>
+  <div class="quiz-option" data-correct="false">Enterprise Applications</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>5. What does System.out.println() do in Java?</p>
+  
+  <div class="quiz-option" data-correct="false">Reads input from user</div>
+  <div class="quiz-option" data-correct="false">Creates a new class</div>
+  <div class="quiz-option" data-correct="true">Prints output to the console</div>
+  <div class="quiz-option" data-correct="false">Runs the JVM</div>
+</div>
+</div>
+  </main>
+    </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

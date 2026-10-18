@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go Overview</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html"class="active">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Go Lessons</h2>
+      <ul>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="goroutines.html">Goroutines</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="webservers.html">Web Servers</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to Go</h2>
+    <p>
+      <b>Go</b> (also called <b>Golang</b>) is an open-source, statically typed, compiled 
+      programming language designed by Google. It focuses on simplicity, efficiency, and 
+      concurrency.
+    </p>
+    <ul>
+      <li>Developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson in 2007.</li>
+      <li>Officially released in 2009.</li>
+      <li>Designed for simplicity, reliability, and performance.</li>
+      <li>Strong support for concurrency using <b>goroutines</b> and channels.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Why Use Go?</h2>
+    <ul>
+      <li>Fast compilation and execution due to static typing and compilation.</li>
+      <li>Built-in concurrency for efficient multi-threaded programs.</li>
+      <li>Simple and clean syntax, easy to learn for beginners.</li>
+      <li>Automatic memory management with garbage collection.</li>
+      <li>Great for building web servers, APIs, cloud services, and networking tools.</li>
+      <li>Strong standard library for networking, I/O, and cryptography.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Features of Go</h2>
+    <ul>
+      <li>Compiled, statically typed language</li>
+      <li>Garbage collected</li>
+      <li>Concurrency built-in with goroutines and channels</li>
+      <li>Rich standard library</li>
+      <li>Cross-platform</li>
+      <li>Strong support for modular programming with packages</li>
+      <li>Simplicity and readability over complexity</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Applications of Go</h2>
+    <ul>
+      <li>Web servers and web frameworks (e.g., Gin, Echo)</li>
+      <li>Cloud services and microservices (e.g., Docker, Kubernetes)</li>
+      <li>Networking tools and command-line applications</li>
+      <li>Data pipelines and concurrent systems</li>
+      <li>API development and backend services</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Go is a simple, fast, and concurrent programming language.</li>
+      <li>Designed for scalability and efficiency in modern software development.</li>
+      <li>Strongly typed, compiled, and with garbage collection.</li>
+      <li>Ideal for web servers, cloud services, networking, and tools requiring concurrency.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+
+
+<div class="quiz-container">
+  <h3>Quick Quiz: Introduction to Go</h3>
+  <p>1. Who are the main designers of the Go programming language?</p>
+  <div class="quiz-option" data-correct="true">Robert Griesemer, Rob Pike, Ken Thompson</div>
+  <div class="quiz-option" data-correct="false">Bjarne Stroustrup, James Gosling, Guido van Rossum</div>
+  <div class="quiz-option" data-correct="false">Dennis Ritchie, Ken Thompson, Brian Kernighan</div>
+  <div class="quiz-option" data-correct="false">Larry Wall, Yukihiro Matsumoto, Anders Hejlsberg</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. In which year was Go officially released?</p>
+  <div class="quiz-option" data-correct="true">2009</div>
+  <div class="quiz-option" data-correct="false">2007</div>
+  <div class="quiz-option" data-correct="false">2010</div>
+  <div class="quiz-option" data-correct="false">2005</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which feature is Go particularly known for?</p>
+  <div class="quiz-option" data-correct="true">Built-in concurrency with goroutines and channels</div>
+  <div class="quiz-option" data-correct="false">Automatic type inference like Python</div>
+  <div class="quiz-option" data-correct="false">Dynamic typing like JavaScript</div>
+  <div class="quiz-option" data-correct="false">Manual memory management</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What type of language is Go?</p>
+  <div class="quiz-option" data-correct="true">Compiled, statically typed</div>
+  <div class="quiz-option" data-correct="false">Interpreted, dynamically typed</div>
+  <div class="quiz-option" data-correct="false">Scripting language</div>
+  <div class="quiz-option" data-correct="false">Markup language</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which of the following is NOT a common application of Go?</p>
+  <div class="quiz-option" data-correct="true">Mobile app front-end design</div>
+  <div class="quiz-option" data-correct="false">Web servers and web frameworks</div>
+  <div class="quiz-option" data-correct="false">Cloud services and microservices</div>
+  <div class="quiz-option" data-correct="false">Networking tools and command-line applications</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What does Go provide for automatic memory management?</p>
+  <div class="quiz-option" data-correct="true">Garbage collection</div>
+  <div class="quiz-option" data-correct="false">Manual deallocation with free()</div>
+  <div class="quiz-option" data-correct="false">Reference counting only</div>
+  <div class="quiz-option" data-correct="false">No memory management</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which of the following best describes the philosophy of Go?</p>
+  <div class="quiz-option" data-correct="true">Simplicity and readability over complexity</div>
+  <div class="quiz-option" data-correct="false">Feature-heavy and highly complex</div>
+  <div class="quiz-option" data-correct="false">Focus on low-level manual memory control</div>
+  <div class="quiz-option" data-correct="false">Primarily for front-end development</div>
+</div>
+
+    </div>
+    </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!-- Placeholder for html-css - html-basics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Basics</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="index.html" class="active">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li> 
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>HTML & CSS Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="html-basics.html" class="active">HTML Basics</a></li>
+        <li><a href="css-basics.html">CSS Basics</a></li>
+        <li><a href="flexbox.html">Flexbox</a></li>
+        <li><a href="grid.html">CSS Grid</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Creating Your First Web Page with HTML</h2>
+    <p>
+      To create your first web page, you only need a <b>text editor</b> (like Notepad or VS Code) 
+      and a <b>web browser</b> (like Chrome, Firefox, or Edge).  
+      Follow these simple steps:
+    </p>
+  </section>
+
+  <section>
+    <h3>Step 1: Create a New File</h3>
+    <p>
+      Open your text editor and create a new file. Save it with the extension <code>.html</code>, 
+      for example: <b>firstpage.html</b>.
+    </p>
+  </section>
+
+  <section>
+    <h3>Step 2: Write the Basic HTML Structure</h3>
+    <p>Type the following code in your file:</p>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my very first HTML web page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Step 3: Open the File in a Browser</h3>
+    <p>
+      Locate your file (<b>firstpage.html</b>) and double-click it.  
+      It will automatically open in your default web browser and display your webpage.
+    </p>
+  </section>
+
+  <section>
+    <h3>What You Will See</h3>
+    <p>
+      The browser will display the content defined inside the <code>&lt;body&gt;</code> tag:
+    </p>
+    <pre><code>
+Hello, World!
+This is my very first HTML web page.
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Explanation of the Code</h3>
+    <ul>
+      <li><code>&lt;!DOCTYPE html&gt;</code> → Tells the browser this is an HTML5 document.</li>
+      <li><code>&lt;html&gt; ... &lt;/html&gt;</code> → Wraps all HTML content.</li>
+      <li><code>&lt;head&gt; ... &lt;/head&gt;</code> → Contains information about the page (title, metadata).</li>
+      <li><code>&lt;title&gt;</code> → Sets the name of the webpage shown in the browser tab.</li>
+      <li><code>&lt;body&gt; ... &lt;/body&gt;</code> → Holds the visible content of the page.</li>
+      <li><code>&lt;h1&gt;</code> → A heading tag (largest heading).</li>
+      <li><code>&lt;p&gt;</code> → A paragraph of text.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Commonly Used Basic HTML Tags</h3>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Tag</th>
+        <th>Purpose</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>&lt;h1&gt; to &lt;h6&gt;</td>
+        <td>Headings (largest to smallest)</td>
+        <td>&lt;h2&gt;Welcome&lt;/h2&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;p&gt;</td>
+        <td>Paragraph text</td>
+        <td>&lt;p&gt;This is a paragraph.&lt;/p&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;a&gt;</td>
+        <td>Link to another page</td>
+        <td>&lt;a href="https://example.com"&gt;Click Me&lt;/a&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;img&gt;</td>
+        <td>Display an image</td>
+        <td>&lt;img src="photo.jpg" alt="Sample"&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;ul&gt; &lt;li&gt;</td>
+        <td>Unordered (bulleted) list</td>
+        <td>
+          &lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ul&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>&lt;ol&gt; &lt;li&gt;</td>
+        <td>Ordered (numbered) list</td>
+        <td>
+          &lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;/ol&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>&lt;br&gt;</td>
+        <td>Line break</td>
+        <td>Hello&lt;br&gt;World</td>
+      </tr>
+      <tr>
+        <td>&lt;hr&gt;</td>
+        <td>Horizontal line (divider)</td>
+        <td>&lt;hr&gt;</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <p>
+      You just created your first HTML web page 🎉 and also learned the most common tags.  
+      With these building blocks, you can start making simple webpages with text, images, links, and lists.
+    </p>
+  </section>
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <p>1. What file extension should you use to save an HTML file?</p>
+  <div class="quiz-option" data-correct="true">.html</div>
+  <div class="quiz-option" data-correct="false">.ht</div>
+  <div class="quiz-option" data-correct="false">.txt</div>
+  <div class="quiz-option" data-correct="false">.doc</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which tag tells the browser this is an HTML5 document?</p>
+  <div class="quiz-option" data-correct="true">&lt;!DOCTYPE html&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;html&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;head&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;body&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which section contains information like the page title and metadata?</p>
+  <div class="quiz-option" data-correct="true">&lt;head&gt; ... &lt;/head&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;body&gt; ... &lt;/body&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;title&gt; ... &lt;/title&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;h1&gt; ... &lt;/h1&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which tag is used for the largest heading?</p>
+  <div class="quiz-option" data-correct="true">&lt;h1&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;h6&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;p&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;title&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which tag is used to create a hyperlink to another webpage?</p>
+  <div class="quiz-option" data-correct="true">&lt;a&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;link&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;p&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;ul&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What is the purpose of the &lt;body&gt; tag?</p>
+  <div class="quiz-option" data-correct="true">It holds all the visible content of the page</div>
+  <div class="quiz-option" data-correct="false">It defines the title of the page</div>
+  <div class="quiz-option" data-correct="false">It sets metadata about the page</div>
+  <div class="quiz-option" data-correct="false">It specifies the document type</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which of these tags creates a bulleted list?</p>
+  <div class="quiz-option" data-correct="true">&lt;ul&gt; ... &lt;/ul&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;ol&gt; ... &lt;/ol&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;p&gt; ... &lt;/p&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;br&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. What will &lt;br&gt; do when used inside HTML?</p>
+  <div class="quiz-option" data-correct="true">Insert a line break</div>
+  <div class="quiz-option" data-correct="false">Create a horizontal line</div>
+  <div class="quiz-option" data-correct="false">Make text bold</div>
+  <div class="quiz-option" data-correct="false">Create a paragraph</div>
+</div>
+</div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

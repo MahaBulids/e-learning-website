@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="index.html"class="active">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li> 
+       <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+    
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+   <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>JavaScript Lessons</h2>
+      <ul>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="history.html">History</a>  </li>
+        <li> <a href="basics.html">Basics</a> </li>
+        <li><a href="keywords.html">Keywords</a></li>
+        <li><a href="advanced.html">Advanced</a></li>
+      </ul>
+    </aside>
+  
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+  <h2>What is JavaScript?</h2>
+  <p>
+    JavaScript (JS) is a <b>high-level, interpreted, and dynamic programming language</b> 
+    mainly used for <b>web development</b> to make websites interactive and dynamic.
+  </p>
+  <ul>
+    <li>Runs in <b>web browsers</b> and on servers via Node.js.</li>
+    <li>Can manipulate <b>HTML, CSS, and browser events</b>.</li>
+    <li>Supports <b>object-oriented, functional, and procedural programming</b> styles.</li>
+  </ul>
+</section>
+
+    <section>
+      <h2>Why Learn JavaScript?</h2>
+      <ul>
+        <li>It runs directly in browsers — no installation required.</li>
+        <li>Supports both <b>frontend</b> (React, Angular, Vue) and <b>backend</b> (Node.js).</li>
+        <li>Enables dynamic interactivity on web pages.</li>
+        <li>Has vast community support and libraries.</li>
+      </ul>
+    </section>
+
+    
+
+<section>
+  <h2>Key Features of JavaScript</h2>
+  <ul>
+    <li><b>Interpreted Language</b> – Code runs directly without compilation.</li>
+    <li><b>Lightweight and Flexible</b> – Suitable for small scripts or large apps.</li>
+    <li><b>Event-driven</b> – Responds to user actions like clicks or form inputs.</li>
+    <li><b>Cross-platform</b> – Works on almost all devices with a browser.</li>
+    <li><b>DOM Manipulation</b> – Dynamically changes content, style, and structure of web pages.</li>
+    <li><b>Client-side & Server-side</b> – Initially for browser, now also for server with Node.js.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Uses of JavaScript</h2>
+  <ul>
+    <li>Interactive web pages – Forms validation, animations, pop-ups.</li>
+    <li>Web applications – Gmail, Facebook, dynamic apps.</li>
+    <li>Server-side development – APIs and backend services using Node.js.</li>
+    <li>Game development – Browser-based games.</li>
+    <li>Mobile app development – Using frameworks like React Native.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>JavaScript Example</h2>
+  <pre>
+// Displaying a message in console
+console.log("Hello, JavaScript!");
+
+// Variables and basic arithmetic
+let a = 5;
+let b = 10;
+console.log("Sum:", a + b);
+
+// Function
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Alice");
+  </pre>
+</section>
+
+<section>
+  <h2>Advantages of Learning JavaScript</h2>
+  <ul>
+    <li>Essential for front-end web development.</li>
+    <li>Large community support and libraries/frameworks (React, Angular, Vue).</li>
+    <li>Can be used for full-stack development with Node.js.</li>
+    <li>Improves web interactivity and user experience.</li>
+  </ul>
+</section>
+<div id="quiz-wrapper">
+    <div class="quiz-container">
+  <p>1. What is JavaScript mainly used for?</p>
+  <div class="quiz-option" data-correct="false">Database management</div>
+  <div class="quiz-option" data-correct="true">Making websites interactive</div>
+  <div class="quiz-option" data-correct="false">Designing logos</div>
+  <div class="quiz-option" data-correct="false">Operating system development</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Where can JavaScript run?</p>
+  <div class="quiz-option" data-correct="true">Browser and Node.js</div>
+  <div class="quiz-option" data-correct="false">Only in browsers</div>
+  <div class="quiz-option" data-correct="false">Only on servers</div>
+  <div class="quiz-option" data-correct="false">In desktop applications only</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which of the following is a feature of JavaScript?</p>
+  <div class="quiz-option" data-correct="false">Requires compilation before running</div>
+  <div class="quiz-option" data-correct="true">Interpreted language</div>
+  <div class="quiz-option" data-correct="false">Can only do procedural programming</div>
+  <div class="quiz-option" data-correct="false">Cannot manipulate HTML</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which of these is an advantage of learning JavaScript?</p>
+  <div class="quiz-option" data-correct="true">Can be used for full-stack development</div>
+  <div class="quiz-option" data-correct="false">Only useful for mobile apps</div>
+  <div class="quiz-option" data-correct="false">No community support</div>
+  <div class="quiz-option" data-correct="false">Cannot improve web interactivity</div>
+</div>
+<div class="quiz-container">
+  <p>5. Which of these is a correct way to display a message in the console?</p>
+  <div class="quiz-option" data-correct="true">console.log("Hello, JavaScript!");</div>
+  <div class="quiz-option" data-correct="false">print("Hello, JavaScript!");</div>
+  <div class="quiz-option" data-correct="false">echo "Hello, JavaScript!";</div>
+  <div class="quiz-option" data-correct="false">System.out.println("Hello, JavaScript!");</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which of the following programming styles does JavaScript support?</p>
+  <div class="quiz-option" data-correct="true">Object-oriented, functional, and procedural</div>
+  <div class="quiz-option" data-correct="false">Only object-oriented</div>
+  <div class="quiz-option" data-correct="false">Only functional</div>
+  <div class="quiz-option" data-correct="false">Only procedural</div>
+</div>
+</div>
+  </main>
+   </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML & CSS - Overview</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="index.html" class="active">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>HTML & CSS Lessons</h2>
+      <ul>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="html-basics.html">HTML Basics</a></li>
+        <li><a href="css-basics.html">CSS Basics</a></li>
+        <li><a href="flexbox.html">Flexbox</a></li>
+        <li><a href="grid.html">CSS Grid</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Overview of HTML and CSS</h2>
+    <p>
+      <b>HTML</b> (HyperText Markup Language) and <b>CSS</b> (Cascading Style Sheets) are the 
+      core building blocks of web development.  
+      Together, they are used to create and style modern websites.
+    </p>
+  </section>
+
+  <section>
+    <h3>What is HTML?</h3>
+    <p>
+      HTML is a <b>markup language</b> used to define the structure and content of a webpage.  
+      It tells the browser what to display, such as headings, paragraphs, links, images, lists, and more.
+    </p>
+    <ul>
+      <li>Provides the <b>skeleton</b> of the website.</li>
+      <li>Uses <b>tags</b> like &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;.</li>
+      <li>Latest version: <b>HTML5</b> (supports audio, video, canvas, semantic tags).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Basic HTML Example</h3>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page using HTML.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>What is CSS?</h3>
+    <p>
+      CSS is a <b>style sheet language</b> used to control how HTML elements are displayed.  
+      It defines colors, fonts, layouts, spacing, and even animations.
+    </p>
+    <ul>
+      <li>Makes the webpage <b>visually attractive</b>.</li>
+      <li>Uses <b>selectors</b> and <b>properties</b> to style elements.</li>
+      <li>Latest version: <b>CSS3</b> (supports animations, flexbox, grid, transitions).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Basic CSS Example</h3>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body { background-color: lightyellow; }
+    h1 { color: darkblue; text-align: center; }
+    p { font-size: 18px; color: darkgreen; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Styled Web Page&lt;/h1&gt;
+  &lt;p&gt;This text is styled using CSS.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Key Differences</h3>
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Aspect</th>
+        <th>HTML</th>
+        <th>CSS</th>
+      </tr>
+      <tr>
+        <td>Purpose</td>
+        <td>Defines structure & content</td>
+        <td>Defines look & style</td>
+      </tr>
+      <tr>
+        <td>Example</td>
+        <td>&lt;p&gt;Hello&lt;/p&gt;</td>
+        <td>p { color: red; }</td>
+      </tr>
+      <tr>
+        <td>Role</td>
+        <td>Skeleton of a webpage</td>
+        <td>Skin/Design of a webpage</td>
+      </tr>
+    </table>
+  </section>
+  <div id="quiz-wrapper">
+<div class="quiz-container">
+  <p>1. What is the main purpose of HTML?</p>
+  <div class="quiz-option" data-correct="true">To define the structure and content of a webpage</div>
+  <div class="quiz-option" data-correct="false">To control the style and layout of a webpage</div>
+  <div class="quiz-option" data-correct="false">To add interactivity to a webpage</div>
+  <div class="quiz-option" data-correct="false">To store website data</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which of the following is an example of an HTML tag?</p>
+  <div class="quiz-option" data-correct="true">&lt;p&gt;</div>
+  <div class="quiz-option" data-correct="false">color: red;</div>
+  <div class="quiz-option" data-correct="false">background-color</div>
+  <div class="quiz-option" data-correct="false">display: flex;</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What is the latest version of HTML?</p>
+  <div class="quiz-option" data-correct="true">HTML5</div>
+  <div class="quiz-option" data-correct="false">HTML4</div>
+  <div class="quiz-option" data-correct="false">XHTML</div>
+  <div class="quiz-option" data-correct="false">DHTML</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What is the role of CSS in web development?</p>
+  <div class="quiz-option" data-correct="true">To define the style, layout, and design of a webpage</div>
+  <div class="quiz-option" data-correct="false">To store multimedia files</div>
+  <div class="quiz-option" data-correct="false">To structure website content</div>
+  <div class="quiz-option" data-correct="false">To create databases</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which of the following is an example of CSS code?</p>
+  <div class="quiz-option" data-correct="true">p { color: red; }</div>
+  <div class="quiz-option" data-correct="false">&lt;h1&gt;Hello&lt;/h1&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;img src="image.jpg"&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;a href="link.html"&gt;Link&lt;/a&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What is the latest version of CSS?</p>
+  <div class="quiz-option" data-correct="true">CSS3</div>
+  <div class="quiz-option" data-correct="false">CSS2</div>
+  <div class="quiz-option" data-correct="false">CSS5</div>
+  <div class="quiz-option" data-correct="false">CSS 2000</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which statement best describes the difference between HTML and CSS?</p>
+  <div class="quiz-option" data-correct="true">HTML defines structure, CSS defines style</div>
+  <div class="quiz-option" data-correct="false">HTML defines style, CSS defines structure</div>
+  <div class="quiz-option" data-correct="false">Both HTML and CSS define structure</div>
+  <div class="quiz-option" data-correct="false">Both HTML and CSS define style</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. In the analogy of a human body, what is HTML and CSS?</p>
+  <div class="quiz-option" data-correct="true">HTML is the skeleton, CSS is the skin/design</div>
+  <div class="quiz-option" data-correct="false">HTML is the brain, CSS is the heart</div>
+  <div class="quiz-option" data-correct="false">HTML is the muscles, CSS is the bones</div>
+  <div class="quiz-option" data-correct="false">HTML is the skin, CSS is the skeleton</div>
+</div>
+</div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

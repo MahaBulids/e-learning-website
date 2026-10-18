@@ -1,0 +1,276 @@
+<!-- Placeholder for java - exceptions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Exceptions - Study Core</title>
+   <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="index.html"class="active">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+     
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>JAVA</h2>
+      <ul>
+      <li><a href="index.html">Overview</a></li> 
+      <li><a href="intro.html">Introduction</a> </li>
+      <li><a href="oop.html">OOP</a></li> 
+      <li><a href="exceptions.html" class="active">Exceptions</a></li> 
+      <li><a href="collections.html">Collections</a></li>
+     </ul>
+   </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+  <h2>What are Exceptions in Java?</h2>
+  <p>
+    An <b>exception</b> in Java is an unwanted event that disrupts the normal flow of a program.  
+    It usually occurs during runtime (like dividing by zero, invalid input, file not found).  
+    Java uses a robust <b>Exception Handling mechanism</b> to deal with such situations without crashing the program.  
+  </p>
+  <p>
+    Java provides <code>try</code>, <code>catch</code>, <code>finally</code>, <code>throw</code>, and <code>throws</code> keywords 
+    to handle exceptions.
+  </p>
+</section>
+
+<section>
+  <h2>Why Exception Handling?</h2>
+  <ul>
+    <li>Avoids abnormal termination of the program.</li>
+    <li>Makes debugging easier.</li>
+    <li>Improves program reliability and maintainability.</li>
+    <li>Helps separate <b>error-handling code</b> from <b>normal business logic</b>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Types of Exceptions in Java</h2>
+  <p>Java exceptions are categorized mainly into three groups:</p>
+  <ul>
+    <li><b>1. Checked Exceptions</b> (compile-time)</li>
+    <li><b>2. Unchecked Exceptions</b> (runtime)</li>
+    <li><b>3. Errors</b> (serious problems, not usually handled)</li>
+  </ul>
+</section>
+
+<section>
+  <h3>1. Checked Exceptions</h3>
+  <p>
+    These are exceptions that the compiler checks at compile-time.  
+    If not handled, your code will not compile.  
+    They usually occur due to <b>external factors</b> (like file handling, database connection).
+  </p>
+  <pre>
+// Example: Checked Exception
+import java.io.*;
+
+class Example {
+    public static void main(String[] args) {
+        try {
+            FileReader file = new FileReader("missing.txt"); // file may not exist
+            System.out.println("File opened successfully");
+        } catch (IOException e) {
+            System.out.println("File not found: " + e);
+        }
+    }
+}
+  </pre>
+  <p><b>Examples:</b> IOException, SQLException, FileNotFoundException</p>
+</section>
+
+<section>
+  <h3>2. Unchecked Exceptions</h3>
+  <p>
+    These are not checked by the compiler.  
+    They occur at runtime due to <b>logic errors</b> or invalid operations (like dividing by zero or null reference).  
+  </p>
+  <pre>
+// Example: Unchecked Exception
+class Example {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0; // division by zero
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+  </pre>
+  <p><b>Examples:</b> ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException</p>
+</section>
+
+<section>
+  <h3>3. Errors</h3>
+  <p>
+    Errors are serious issues that cannot be recovered by the program.  
+    They usually occur in the JVM (Java Virtual Machine) and are beyond programmer’s control.  
+    Example: memory leaks, system crashes.  
+  </p>
+  <pre>
+// Example: Error (StackOverflowError)
+class Example {
+    public static void recursive() {
+        recursive(); // infinite recursion
+    }
+    public static void main(String[] args) {
+        recursive(); // will throw StackOverflowError
+    }
+}
+  </pre>
+  <p><b>Examples:</b> OutOfMemoryError, StackOverflowError, VirtualMachineError</p>
+</section>
+
+<section>
+  <h2>Java Exception Hierarchy</h2>
+  <p>
+    At the top is <b>Throwable</b>, which has two main branches:
+  </p>
+  <ul>
+    <li><b>Exception</b> → includes Checked & Unchecked Exceptions (can be handled).</li>
+    <li><b>Error</b> → serious issues (not usually handled).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Exception Handling Syntax</h2>
+  <pre>
+try {
+    // risky code
+} catch(ExceptionType e) {
+    // handling code
+} finally {
+    // optional block, always executes (cleanup code)
+}
+  </pre>
+</section>
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>1. Which class is at the top of the Java Exception hierarchy?</p>
+  <div class="quiz-option" data-correct="false">Exception</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+  <div class="quiz-option" data-correct="true">Throwable</div>
+  <div class="quiz-option" data-correct="false">RuntimeException</div>
+</div>
+
+<div class="quiz-container">
+
+  <p>2. Which of the following is a Checked Exception?</p>
+  <div class="quiz-option" data-correct="false">NullPointerException</div>
+  <div class="quiz-option" data-correct="true">IOException</div>
+  <div class="quiz-option" data-correct="false">ArithmeticException</div>
+  <div class="quiz-option" data-correct="false">ArrayIndexOutOfBoundsException</div>
+</div>
+
+<div class="quiz-container">
+
+  <p>3. What will happen if a Checked Exception is not handled in code?</p>
+  <div class="quiz-option" data-correct="false">Runtime error occurs</div>
+  <div class="quiz-option" data-correct="true">Compiler error occurs</div>
+  <div class="quiz-option" data-correct="false">JVM ignores it</div>
+  <div class="quiz-option" data-correct="false">Program runs normally</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>4. Which keyword is used to declare an exception in a method signature?</p>
+  <div class="quiz-option" data-correct="false">throw</div>
+  <div class="quiz-option" data-correct="true">throws</div>
+  <div class="quiz-option" data-correct="false">try</div>
+  <div class="quiz-option" data-correct="false">catch</div>
+</div>
+
+<div class="quiz-container">
+
+  <p>5. Which block is always executed, whether exception occurs or not?</p>
+  <div class="quiz-option" data-correct="false">try</div>
+  <div class="quiz-option" data-correct="false">catch</div>
+  <div class="quiz-option" data-correct="true">finally</div>
+  <div class="quiz-option" data-correct="false">throw</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>6. Which of the following is an Unchecked Exception?</p>
+  <div class="quiz-option" data-correct="false">SQLException</div>
+  <div class="quiz-option" data-correct="false">IOException</div>
+  <div class="quiz-option" data-correct="false">ClassNotFoundException</div>
+  <div class="quiz-option" data-correct="true">ArithmeticException</div>
+</div>
+
+<div class="quiz-container">
+ 
+  <p>7. What will this code output?</p>
+  <pre>
+try {
+    int a = 5 / 0;
+} catch (Exception e) {
+    System.out.println("Error caught");
+}
+  </pre>
+  <div class="quiz-option" data-correct="false">No output</div>
+  <div class="quiz-option" data-correct="false">Program crashes</div>
+  <div class="quiz-option" data-correct="true">Error caught</div>
+  <div class="quiz-option" data-correct="false">Compiler error</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>8. Which of these cannot be recovered from in Java?</p>
+  <div class="quiz-option" data-correct="false">IOException</div>
+  <div class="quiz-option" data-correct="false">ArithmeticException</div>
+  <div class="quiz-option" data-correct="true">OutOfMemoryError</div>
+  <div class="quiz-option" data-correct="false">NullPointerException</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>9. Which keyword is used to manually throw an exception?</p>
+  <div class="quiz-option" data-correct="true">throw</div>
+  <div class="quiz-option" data-correct="false">throws</div>
+  <div class="quiz-option" data-correct="false">catch</div>
+  <div class="quiz-option" data-correct="false">error</div>
+</div>
+
+<div class="quiz-container">
+ 
+  <p>10. Which of the following is true about Java Exceptions?</p>
+  <div class="quiz-option" data-correct="false">All exceptions are checked</div>
+  <div class="quiz-option" data-correct="false">Errors can always be handled</div>
+  <div class="quiz-option" data-correct="true">Runtime exceptions are unchecked</div>
+  <div class="quiz-option" data-correct="false">Finally block executes only when exception occurs</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

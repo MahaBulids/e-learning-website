@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python - Introduction</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+     <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  
+<div class="lesson-wrapper">
+       
+
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+         <li> <a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li> <a href="syntax.html">Syntax</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="functions.html">Functions</a></li>
+      </ul>
+    </aside>
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+      <h2>What is Python?</h2>
+      <p>
+        Python is a high-level, interpreted programming language created by Guido van Rossum in 1991. 
+        It emphasizes readability, simplicity, and productivity, making it one of the most popular programming languages in the world.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why Learn Python?</h2>
+      <ul>
+        <li>Easy to learn and understand due to simple syntax.</li>
+        <li>Supports multiple programming paradigms (procedural, object-oriented, functional).</li>
+        <li>Large standard library with built-in modules.</li>
+        <li>Widely used in fields like web development, data science, AI, machine learning, and automation.</li>
+        <li>Massive community support and resources.</li>
+      </ul>
+    </section>
+        <section>
+      <h2>Printing Output</h2>
+      <p>
+        In Python, we use the <code>print()</code> function to display output on the screen.
+      </p>
+      <pre>
+# Printing text
+print("Hello, World!")
+
+# Printing numbers
+print(42)
+
+# Printing multiple items
+print("The answer is", 42)
+      </pre>
+    </section>
+
+    <section>
+      <h2>Comments</h2>
+      <p>
+        Comments are notes in your code that Python ignores. They help make the code easier to read.
+        In Python, comments start with a <code>#</code>.
+      </p>
+      <pre>
+# This is a single-line comment
+print("This line will run")
+
+# print("This line is ignored because it is commented out")
+      </pre>
+    </section>
+
+    <section>
+      <h2>Variables</h2>
+      <p>
+        Variables are used to store data. You can assign values to variables using the <code>=</code> operator.
+      </p>
+      <pre>
+# Assigning values to variables
+name = "Alice"
+age = 20
+height = 5.4
+
+# Printing variables
+print(name)
+print("Age:", age)
+print("Height:", height)
+      </pre>
+    </section>
+
+
+    <section>
+      <h2>Python Example</h2>
+      <pre>
+# Hello World in Python
+print("Hello, World!")
+
+# Simple addition
+a = 5
+b = 10
+print("Sum:", a + b)
+      </pre>
+    </section>
+    <div id="quiz-wrapper">
+   <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+
+  <p>Q1. Which function is used in Python to display output on the screen?</p>
+  <div class="quiz-option" data-correct="true">print()</div>
+  <div class="quiz-option" data-correct="false">output()</div>
+  <div class="quiz-option" data-correct="false">display()</div>
+  <div class="quiz-option" data-correct="false">echo()</div>
+</div>
+
+<div class="quiz-container">
+ 
+
+  <p>Q2. How do you print multiple items in Python with a single print()?</p>
+  <div class="quiz-option" data-correct="true">print("The answer is", 42)</div>
+  <div class="quiz-option" data-correct="false">print("Hello" + "World")</div>
+  <div class="quiz-option" data-correct="false">print("The answer is" + 42)</div>
+  <div class="quiz-option" data-correct="false">echo("The answer is", 42)</div>
+</div>
+
+<div class="quiz-container">
+
+
+  <p>Q3. What symbol is used to start a comment in Python?</p>
+  <div class="quiz-option" data-correct="true">#</div>
+  <div class="quiz-option" data-correct="false">//</div>
+  <div class="quiz-option" data-correct="false">&lt;!-- --&gt;</div>
+  <div class="quiz-option" data-correct="false">/* */</div>
+</div>
+
+<div class="quiz-container">
+
+
+  <p>Q4. What happens to code that is written after a # in Python?</p>
+  <div class="quiz-option" data-correct="true">It is ignored by Python</div>
+  <div class="quiz-option" data-correct="false">It is executed as normal code</div>
+  <div class="quiz-option" data-correct="false">It is stored in a variable</div>
+  <div class="quiz-option" data-correct="false">It is printed automatically</div>
+</div>
+
+<div class="quiz-container">
+
+
+  <p>Q5. Which operator is used to assign values to variables in Python?</p>
+  <div class="quiz-option" data-correct="true">=</div>
+  <div class="quiz-option" data-correct="false">==</div>
+  <div class="quiz-option" data-correct="false">:=</div>
+  <div class="quiz-option" data-correct="false">-&gt;</div>
+</div>
+
+<div class="quiz-container">
+<p>Q6. What will be printed?</p>
+  <pre>
+name = "Alice"
+age = 20
+print("Age:", age)
+  </pre>
+  <div class="quiz-option" data-correct="true">Age: 20</div>
+  <div class="quiz-option" data-correct="false">Age: name</div>
+  <div class="quiz-option" data-correct="false">Alice: 20</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+</div>
+
+<div class="quiz-container">
+
+  <p>Q7. What will be the output?</p>
+  <pre>
+a = 5
+b = 10
+print("Sum:", a + b)
+  </pre>
+  <div class="quiz-option" data-correct="true">Sum: 15</div>
+  <div class="quiz-option" data-correct="false">Sum: 5</div>
+  <div class="quiz-option" data-correct="false">Sum: 10</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+  </div>
+</div>
+</div>
+</main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

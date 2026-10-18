@@ -1,0 +1,231 @@
+<!-- Placeholder for go - modules.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go - Modules</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="index.html" class="active">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Go Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="goroutines.html">Goroutines</a></li>
+        <li><a href="modules.html" class="active">Modules</a></li>
+        <li><a href="webservers.html">Web Servers</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to Go Modules</h2>
+    <p>
+      <b>Go Modules</b> are the official dependency management system in Go, introduced in Go 1.11. 
+      They help you manage project dependencies, versions, and packages in a reproducible way.
+    </p>
+    <ul>
+      <li>Replaces the older <b>GOPATH</b> approach for dependency management.</li>
+      <li>Allows versioning of dependencies.</li>
+      <li>Makes Go projects easier to share and maintain.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Creating a Go Module</h2>
+    <p>Steps to initialize a new Go module:</p>
+    <pre>
+# Navigate to your project folder
+cd myproject
+
+# Initialize a new module
+go mod init github.com/username/myproject
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>go mod init</code> creates a <b>go.mod</b> file which stores module path and dependencies.<br>
+      - <code>github.com/username/myproject</code> is the module path (can be any name or repository path).
+    </p>
+  </section>
+
+  <section>
+    <h2>go.mod File Example</h2>
+    <pre>
+module github.com/username/myproject
+
+go 1.20
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>module</code> specifies the module path.<br>
+      - <code>go 1.20</code> specifies the Go version used for this module.
+    </p>
+  </section>
+
+  <section>
+    <h2>Adding Dependencies</h2>
+    <p>You can add external packages to your project using <code>go get</code>:</p>
+    <pre>
+go get github.com/fatih/color
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - Downloads the package and adds it to <b>go.mod</b> and <b>go.sum</b>.<br>
+      - <b>go.mod</b> tracks the dependency version.<br>
+      - <b>go.sum</b> ensures reproducibility by recording checksums of dependencies.
+    </p>
+  </section>
+
+  <section>
+    <h2>Using the Dependency</h2>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "github.com/fatih/color"
+)
+
+func main() {
+    color.Cyan("Hello, Go Modules!")
+    fmt.Println("This is a simple Go program using an external package.")
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - Imported the external package <code>github.com/fatih/color</code>.<br>
+      - Used its function <code>color.Cyan()</code> to print colored text.<br>
+      - Shows how Go Modules make dependency management seamless.
+    </p>
+  </section>
+
+  <section>
+    <h2>Managing Dependencies</h2>
+    <ul>
+      <li><code>go get &lt;package&gt;</code> – Add or update a dependency.</li>
+      <li><code>go mod tidy</code> – Remove unused dependencies and update <code>go.mod</code> and <code>go.sum</code>.</li>
+      <li><code>go mod download</code> – Download all dependencies listed in <code>go.mod</code>.</li>
+      <li><code>go list -m all</code> – List all modules used in the project.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Where to Test Go Modules</h2>
+    <ul>
+      <li>Local machine with Go installed (<code>go run main.go</code>).</li>
+      <li>IDE like VS Code or GoLand with Go module support.</li>
+      <li>Online playgrounds do not fully support modules, so local testing is recommended.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Go Modules are the official dependency management system for Go projects.</li>
+      <li><code>go.mod</code> tracks module path and dependencies; <code>go.sum</code> ensures reproducibility.</li>
+      <li>Use <code>go get</code>, <code>go mod tidy</code>, and other commands to manage dependencies.</li>
+      <li>Modules make Go projects easier to share, maintain, and build consistently.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+    
+
+<div class="quiz-container">
+    <h3>Quiz: Go Modules</h3>
+  <p>1. What are Go Modules used for?</p>
+  <div class="quiz-option" data-correct="true">Managing dependencies and versions in Go projects</div>
+  <div class="quiz-option" data-correct="false">Compiling Go code only</div>
+  <div class="quiz-option" data-correct="false">Replacing the Go runtime</div>
+  <div class="quiz-option" data-correct="false">Debugging Go programs</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which command initializes a new Go module?</p>
+  <div class="quiz-option" data-correct="true">go mod init &lt;module_path&gt;</div>
+  <div class="quiz-option" data-correct="false">go build</div>
+  <div class="quiz-option" data-correct="false">go run main.go</div>
+  <div class="quiz-option" data-correct="false">go get &lt;package&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What does the <code>go.mod</code> file contain?</p>
+  <div class="quiz-option" data-correct="true">Module path, Go version, and dependency versions</div>
+  <div class="quiz-option" data-correct="false">Source code of the project</div>
+  <div class="quiz-option" data-correct="false">Compiled binaries</div>
+  <div class="quiz-option" data-correct="false">System environment variables</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which command is used to add or update a dependency in a Go module?</p>
+  <div class="quiz-option" data-correct="true">go get &lt;package&gt;</div>
+  <div class="quiz-option" data-correct="false">go mod tidy</div>
+  <div class="quiz-option" data-correct="false">go mod download</div>
+  <div class="quiz-option" data-correct="false">go build</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. What is the purpose of the <code>go.sum</code> file?</p>
+  <div class="quiz-option" data-correct="true">Ensures reproducibility by recording checksums of dependencies</div>
+  <div class="quiz-option" data-correct="false">Stores module path information</div>
+  <div class="quiz-option" data-correct="false">Tracks the main Go function</div>
+  <div class="quiz-option" data-correct="false">Contains compiled package binaries</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which command removes unused dependencies and updates <code>go.mod</code> and <code>go.sum</code>?</p>
+  <div class="quiz-option" data-correct="true">go mod tidy</div>
+  <div class="quiz-option" data-correct="false">go get</div>
+  <div class="quiz-option" data-correct="false">go build</div>
+  <div class="quiz-option" data-correct="false">go run</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Where is it recommended to test Go Modules?</p>
+  <div class="quiz-option" data-correct="true">On a local machine with Go installed</div>
+  <div class="quiz-option" data-correct="false">Online playgrounds fully support Go Modules</div>
+  <div class="quiz-option" data-correct="false">Only on VS Code without Go installed</div>
+  <div class="quiz-option" data-correct="false">In a web browser without Go runtime</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

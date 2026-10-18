@@ -1,0 +1,210 @@
+<!-- Placeholder for sql - queries.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL - Queries</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html"class="active">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li> <a href="index.html">SQL Index</a></li>
+        <li> <a href="intro.html">Introduction</a></li>
+        <li> <a href="queries.html" class="active">Queries</a></li>
+        <li><a href="joins.html">Joins</a></li>
+        <li> <a href="indexes.html">SQL Indexes</a></li>
+      </ul>
+    </aside>
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>What are SQL Queries?</h2>
+    <p>
+      A <b>query</b> in SQL is a request made to the database to perform an action like 
+      retrieving, inserting, updating, or deleting data.  
+      Queries are written using SQL commands and executed on tables inside a database.
+    </p>
+  </section>
+
+  <section>
+    <h2>Types of SQL Queries</h2>
+    <ul>
+      <li><b>Data Query Language (DQL):</b> Used to fetch data (<code>SELECT</code>).</li>
+      <li><b>Data Manipulation Language (DML):</b> Insert, update, and delete data.</li>
+      <li><b>Data Definition Language (DDL):</b> Define or change table structures.</li>
+      <li><b>Data Control Language (DCL):</b> Manage user permissions.</li>
+      <li><b>Transaction Control Language (TCL):</b> Handle database transactions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>1. Basic Select Query</h2>
+    <p>The most common query is <code>SELECT</code>, used to retrieve data.</p>
+    <pre>
+SELECT * FROM Students;
+    </pre>
+    <p>
+      ✔ Fetches all rows and columns from the <b>Students</b> table.  
+      <code>*</code> means "all columns".
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Filtering Data with WHERE</h2>
+    <p>The <code>WHERE</code> clause filters results based on a condition.</p>
+    <pre>
+SELECT Name, Age 
+FROM Students
+WHERE Age &gt; 18;
+    </pre>
+    <p>
+      ✔ Retrieves names and ages of students who are older than 18.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Sorting Data with ORDER BY</h2>
+    <p>The <code>ORDER BY</code> clause sorts results in ascending (ASC) or descending (DESC) order.</p>
+    <pre>
+SELECT * 
+FROM Students
+ORDER BY Age DESC;
+    </pre>
+    <p>
+      ✔ Displays all students sorted by age in <b>descending order</b>.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Limiting Results with LIMIT</h2>
+    <p>The <code>LIMIT</code> clause restricts the number of rows returned.</p>
+    <pre>
+SELECT * 
+FROM Students
+LIMIT 3;
+    </pre>
+    <p>
+      ✔ Returns only the first 3 rows from the <b>Students</b> table.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Using Aliases</h2>
+    <p>
+      Aliases give temporary names to columns or tables for better readability.
+    </p>
+    <pre>
+SELECT Name AS StudentName, Age AS StudentAge
+FROM Students;
+    </pre>
+    <p>
+      ✔ Displays results with renamed columns <b>StudentName</b> and <b>StudentAge</b>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li><code>SELECT</code> → Retrieve data</li>
+      <li><code>WHERE</code> → Filter data</li>
+      <li><code>ORDER BY</code> → Sort data</li>
+      <li><code>LIMIT</code> → Restrict rows</li>
+      <li><code>AS</code> → Create aliases</li>
+    </ul>
+    <p>
+      These are the most frequently used SQL queries and form the base for 
+      more advanced queries like <b>JOIN</b> and <b>GROUP BY</b>.
+    </p>
+  </section>
+
+    <div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What does a SQL query do?</p>
+  <div class="quiz-option" data-correct="true">Makes a request to the database (retrieve, insert, update, delete)</div>
+  <div class="quiz-option" data-correct="false">Compiles a program</div>
+  <div class="quiz-option" data-correct="false">Formats user input</div>
+  <div class="quiz-option" data-correct="false">Runs only mathematical calculations</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which SQL clause is used to filter rows based on a condition?</p>
+  <div class="quiz-option" data-correct="true">WHERE</div>
+  <div class="quiz-option" data-correct="false">ORDER BY</div>
+  <div class="quiz-option" data-correct="false">LIMIT</div>
+  <div class="quiz-option" data-correct="false">AS</div>
+</div>
+
+<div class="quiz-container">
+  <p>What will the following query return?<br><code>SELECT * FROM Students;</code></p>
+  <div class="quiz-option" data-correct="true">All rows and all columns from Students</div>
+  <div class="quiz-option" data-correct="false">Only student names</div>
+  <div class="quiz-option" data-correct="false">Only the first row</div>
+  <div class="quiz-option" data-correct="false">Only the last column</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which clause is used to sort the results in SQL?</p>
+  <div class="quiz-option" data-correct="true">ORDER BY</div>
+  <div class="quiz-option" data-correct="false">SORT</div>
+  <div class="quiz-option" data-correct="false">WHERE</div>
+  <div class="quiz-option" data-correct="false">FILTER BY</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does this query do?<br><code>SELECT * FROM Students LIMIT 3;</code></p>
+  <div class="quiz-option" data-correct="true">Shows only the first 3 rows</div>
+  <div class="quiz-option" data-correct="false">Deletes 3 rows</div>
+  <div class="quiz-option" data-correct="false">Shows only 3 columns</div>
+  <div class="quiz-option" data-correct="false">Sorts rows by ID</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which keyword is used to rename a column or table in the query result?</p>
+  <div class="quiz-option" data-correct="true">AS</div>
+  <div class="quiz-option" data-correct="false">ALIAS</div>
+  <div class="quiz-option" data-correct="false">RENAME</div>
+  <div class="quiz-option" data-correct="false">NEW</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which query will display student names and ages where Age is greater than 18?</p>
+  <div class="quiz-option" data-correct="true">SELECT Name, Age FROM Students WHERE Age > 18;</div>
+  <div class="quiz-option" data-correct="false">SELECT * FROM Students;</div>
+  <div class="quiz-option" data-correct="false">SELECT Name, Age FROM Students;</div>
+  <div class="quiz-option" data-correct="false">DELETE FROM Students WHERE Age > 18;</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

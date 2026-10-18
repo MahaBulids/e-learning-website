@@ -1,0 +1,636 @@
+/* ===================================
+   GLOBAL COLORS & THEMES
+=================================== */
+:root {
+  --primary-color: #9b5de5;
+  --secondary-color: #b97af7;
+  --accent-color: #f15bb5;
+
+  --bg-color: #ffffff;
+  --secondary-bg: #f9f6fc;
+  --text-color: #222;
+  --border-color: #ddd;
+  --hover-bg: #f0f0f0;
+}
+
+body.dark-mode {
+  --bg-color: #0e0e0e;
+  --secondary-bg: #1a1a1a;
+  --text-color: #e0e0e0;
+  --border-color: #444;
+  --hover-bg: #222;
+
+  --primary-color: #9b5de5;
+  --secondary-color: #7a3ecf;
+  --accent-color: #c77dff;
+}
+
+/* ===================================
+   BASE STYLES
+=================================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto','Inter',Arial,sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 1.5em 0 0.5em 0;
+  color: var(--text-color);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+p, li { font-size: 1.1rem; line-height: 1.7; }
+
+a { color: var(--primary-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: 'Source Code Pro', monospace;
+  background: var(--secondary-bg);
+  padding: 0.3em 0.5em;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1em;
+  margin: 1em 0;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+.navbar, .home-navbar, .lesson-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar .logo, .home-navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar .nav-links, .home-navbar .nav-links, .lesson-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a, .home-navbar .nav-links li a, .lesson-navbar .nav-links a {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.navbar .nav-links a:hover, .home-navbar .nav-links li a:hover, .lesson-navbar .nav-links a:hover,
+.navbar .nav-links a.active, .home-navbar .nav-links li a.active, .lesson-navbar .nav-links a.active {
+  background: rgba(255,255,255,0.15);
+}
+
+
+
+/* === LESSON NAVBAR HAMBURGER (top nav bar) === */
+.lesson-navbar .hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  z-index: 1100;
+}
+
+/* === GENERAL NAVBAR HAMBURGERS (shared) === */
+.navbar .hamburger, .home-navbar .hamburger, .lesson-navbar .hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f9f6fc, #ece4ff, #f6e1ff);
+}
+
+.home-hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+.home-hero .slogan { color: var(--primary-color); font-weight: bold; }
+
+.home-hero .btn, .hero-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.home-hero .btn:hover, .hero-btn:hover { background: var(--secondary-color); }
+
+.hero-illustration {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 300px;
+  margin-left: 2rem;
+}
+.hero-illustration svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+.hero-illustration svg rect,
+.hero-illustration svg .code-line { fill: var(--primary-color); }
+.hero-illustration svg .code-line { animation: blink 1s infinite alternate; }
+
+@keyframes blink {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* Dark mode for hero */
+body.dark-mode .home-hero {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+body.dark-mode .home-hero h1, body.dark-mode .home-hero p {
+  color: #ffffff;
+}
+body.dark-mode .hero-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+body.dark-mode .hero-illustration svg * {
+  stroke: var(--primary-color) !important;
+}
+
+/* ===================================
+   CARDS / FEATURES
+=================================== */
+.features { padding: 4rem 2rem; text-align: center; }
+.section-title { font-size: 1.8rem; margin-bottom: 2rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(155,93,229,0.4);
+  text-decoration: none;
+  display: block;
+}
+.card h3, .card p { color: #ffffff; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(155,93,229,0.6); }
+
+/* ===================================
+   FOOTER
+=================================== */
+.footer, .lesson-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* ===================================
+   LESSON PAGE
+=================================== */
+.lesson-wrapper {
+  display: flex;
+  min-height: 80vh;
+}
+
+.lesson-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 1rem;
+  border-right: 1px solid var(--border-color);
+  transition: background 0.3s;
+  position: relative;
+  left: 0;
+  height: auto;
+}
+body.dark-mode .lesson-sidebar { background: #0e0e0e; }
+
+.lesson-sidebar ul { list-style: none; padding: 0; margin: 0; }
+.lesson-sidebar ul li { margin: 0.6rem 0; }
+.lesson-sidebar ul li a {
+  display: block;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+  border-left: 3px solid transparent;
+  transition: all 0.3s;
+}
+.lesson-sidebar ul li a:hover { background: var(--hover-bg); }
+.lesson-sidebar ul li a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+  border-left: 3px solid var(--primary-color);
+  background: rgba(155,93,229,0.08);
+}
+
+.lesson-content {
+  flex: 1;
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Quiz */
+#quiz-wrapper, .quiz-container, .quiz-result {
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  transition: background 0.3s;
+}
+/* === Quiz Responsiveness Fix === */
+.quiz-container, 
+.quiz-result {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.quiz-container * {
+  white-space: normal;  /* force wrapping for text */
+}
+@media (min-width: 769px) {
+  .quiz-container {
+    max-width: 600px;   /* nice readable width */
+    margin: 0 auto;     /* center horizontally */
+  }
+}
+
+
+/* Quiz Result Card Styling */
+.quiz-result {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--secondary-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 1.5rem;
+}
+
+.quiz-result h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.quiz-result .quiz-percentage {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--accent-color);
+}
+
+.quiz-result button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.quiz-result button:hover {
+  background: var(--secondary-color);
+}
+
+/* Dark mode adjustment */
+body.dark-mode .quiz-result {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+body.dark-mode #quiz-wrapper,
+body.dark-mode .quiz-container,
+body.dark-mode .quiz-result { background: #0e0e0e; }
+
+.quiz-option {
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin: 0.6rem 0;
+  cursor: pointer;
+}
+.quiz-option:hover { background: var(--hover-bg); }
+
+/* Toggle switch */
+.toggle-container {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-container input { display: none; }
+.toggle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: 0.3s;
+}
+.toggle-container input:checked + .toggle { transform: translateX(20px); }
+body.dark-mode .toggle-container { background: var(--primary-color); }
+
+/* === LESSON SIDEBAR HAMBURGER (inside lesson content) === */
+.lesson-hamburger {
+  display: none; /* hidden on desktop */
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* ===================================
+   RESPONSIVE / MOBILE
+=================================== */
+@media (max-width: 768px) {
+  /* === General navbar hamburgers === */
+  .navbar .hamburger, .home-navbar .hamburger, .lesson-navbar .hamburger {
+    display: block;
+  }
+
+  .navbar .nav-links, .home-navbar .nav-links, .lesson-navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 999;
+  }
+  .navbar .nav-links.active, .home-navbar .nav-links.active, .lesson-navbar .nav-links.active { display: flex; }
+
+  /* Hero & cards */
+  .home-hero { flex-direction: column; text-align: center; gap: 2rem; }
+  .hero-content { max-width: 100%; }
+  .hero-illustration { width: 100%; margin: 2rem auto 0; }
+  .hero-illustration svg { max-width: 250px; }
+  .cards { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Lesson page responsive */
+  .lesson-wrapper { flex-direction: column; }
+
+  /* Sidebar responsive */
+  .lesson-sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;       /* hidden by default */
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid var(--border-color);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  .lesson-sidebar.active { left: 0; }
+
+  .lesson-content {
+    flex: 1;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* === Sidebar hamburger visible only on mobile === */
+  .lesson-hamburger { display: block; }
+
+  /* === Lesson navbar links toggle on mobile === */
+  .lesson-navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1099;
+  }
+  .lesson-navbar .nav-links.active { display: flex; }
+}
+
+/* Images/SVGs responsive */
+.lesson-content img,
+.lesson-content svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay for lesson sidebar */
+.lesson-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  transition: 0.3s;
+}
+.lesson-overlay.active { display: block; }
+/* Remove underlines from all navbar links */
+.navbar .nav-links a,
+.navbar .nav-links a:hover,
+.home-navbar .nav-links a,
+.home-navbar .nav-links a:hover,
+.lesson-navbar .nav-links a,
+.lesson-navbar .nav-links a:hover {
+  text-decoration: none !important;
+}
+
+/* Remove underlines from lesson cards */
+.card,
+.card:hover {
+  text-decoration: none !important;
+}
+.roadmap-flow-section {
+  padding: 2rem;
+  background: var(--secondary-bg);
+  color: var(--text-color);
+}
+
+.roadmap-flow-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roadmap-flow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Connector line using pseudo-element */
+.roadmap-flow::before {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-color);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.roadmap-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.roadmap-step:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.roadmap-circle {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+.roadmap-step:hover .roadmap-circle {
+  background: var(--accent-color);
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+.roadmap-label {
+  max-width: 400px;
+}
+
+.roadmap-label h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.roadmap-label p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* Dark mode support */
+body.dark-mode .roadmap-flow-section {
+  background: var(--secondary-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode .roadmap-circle {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+body.dark-mode .roadmap-step:hover .roadmap-circle {
+  background: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .roadmap-flow::before { left: 20px; height: 100%; }
+  .roadmap-step, .roadmap-step:nth-child(even) {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
+}

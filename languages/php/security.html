@@ -1,0 +1,193 @@
+<!-- Placeholder for php - security.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Security - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="forms.html">Forms</a></li>
+        <li><a href="databases.html">Databases</a></li>
+        <li> <a href="security.html" class="active">Security</a></li>
+      </ul>
+    </aside>
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>PHP Security Overview</h2>
+    <p>
+      PHP is widely used for web applications, but it can be vulnerable if security 
+      best practices are not followed. Proper security measures help prevent attacks 
+      like SQL Injection, Cross-Site Scripting (XSS), and data breaches.
+    </p>
+  </section>
+
+  <section>
+    <h2>Common PHP Security Risks</h2>
+    <ul>
+      <li><b>SQL Injection:</b> Malicious SQL code injected through user inputs.</li>
+      <li><b>Cross-Site Scripting (XSS):</b> Attackers inject malicious scripts into web pages.</li>
+      <li><b>Cross-Site Request Forgery (CSRF):</b> Unauthorized actions performed on behalf of logged-in users.</li>
+      <li><b>File Inclusion Vulnerabilities:</b> Improperly handled <code>include</code> or <code>require</code> statements.</li>
+      <li><b>Session Hijacking:</b> Stealing session IDs to impersonate users.</li>
+      <li><b>Weak Password Storage:</b> Storing passwords in plain text instead of hashing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Best Practices for PHP Security</h2>
+    <ul>
+      <li><b>Validate and Sanitize User Input:</b> Use <code>filter_var()</code> or prepared statements to prevent SQL Injection.</li>
+      <li><b>Use Prepared Statements:</b> PDO or MySQLi prepared statements prevent SQL Injection.</li>
+      <li><b>Escape Output:</b> Use <code>htmlspecialchars()</code> or <code>htmlentities()</code> to prevent XSS.</li>
+      <li><b>Secure Session Management:</b> Regenerate session IDs, use <code>session_start()</code> securely, and set <code>httponly</code> cookies.</li>
+      <li><b>Store Passwords Safely:</b> Use <code>password_hash()</code> and <code>password_verify()</code> instead of plain text.</li>
+      <li><b>Limit File Uploads:</b> Validate file types and store outside web root.</li>
+      <li><b>Keep PHP Updated:</b> Apply security patches and updates regularly.</li>
+      <li><b>Disable Dangerous Functions:</b> Disable functions like <code>exec()</code>, <code>eval()</code>, and <code>system()</code> if not needed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example: Using Prepared Statements to Prevent SQL Injection</h2>
+    <pre>
+&lt;?php
+// Connect to database
+$conn = new mysqli("localhost", "root", "", "mydatabase");
+
+// User input
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// Using prepared statement
+$stmt = $conn-&gt;prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+$stmt-&gt;bind_param("ss", $username, $password);
+$stmt-&gt;execute();
+$result = $stmt-&gt;get_result();
+
+if($result-&gt;num_rows &gt; 0) {
+    echo "Login successful";
+} else {
+    echo "Invalid credentials";
+}
+
+$stmt-&gt;close();
+$conn-&gt;close();
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>prepare()</code> prevents SQL injection by separating code from data.<br>
+      - <code>bind_param()</code> binds user input securely.<br>
+      - User input is never directly inserted into the SQL query.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Always validate and sanitize all user inputs.</li>
+      <li>Use prepared statements for database queries.</li>
+      <li>Escape output to prevent XSS attacks.</li>
+      <li>Secure sessions and store passwords using hashes.</li>
+      <li>Regularly update PHP and disable unnecessary functions.</li>
+      <li>PHP security is essential to prevent attacks and protect user data.</li>
+    </ul>
+  </section>
+
+    <div id="quiz-wrapper">
+    <h3>Quick Quiz: PHP Security</h3>
+
+<div class="quiz-container">
+  <p>1. Which PHP security risk involves inserting malicious SQL code through user input?</p>
+  <div class="quiz-option" data-correct="true">SQL Injection</div>
+  <div class="quiz-option" data-correct="false">XSS</div>
+  <div class="quiz-option" data-correct="false">CSRF</div>
+  <div class="quiz-option" data-correct="false">Session Hijacking</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which function is used to prevent Cross-Site Scripting (XSS) in PHP?</p>
+  <div class="quiz-option" data-correct="true">htmlspecialchars()</div>
+  <div class="quiz-option" data-correct="false">password_hash()</div>
+  <div class="quiz-option" data-correct="false">filter_var()</div>
+  <div class="quiz-option" data-correct="false">bind_param()</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. How can you prevent SQL Injection when querying a database in PHP?</p>
+  <div class="quiz-option" data-correct="true">Use prepared statements</div>
+  <div class="quiz-option" data-correct="false">Directly concatenate user input into SQL</div>
+  <div class="quiz-option" data-correct="false">Use echo statements</div>
+  <div class="quiz-option" data-correct="false">Disable sessions</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which PHP function is recommended for securely storing passwords?</p>
+  <div class="quiz-option" data-correct="true">password_hash()</div>
+  <div class="quiz-option" data-correct="false">md5()</div>
+  <div class="quiz-option" data-correct="false">sha1()</div>
+  <div class="quiz-option" data-correct="false">crypt()</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. What is CSRF (Cross-Site Request Forgery)?</p>
+  <div class="quiz-option" data-correct="true">Unauthorized actions performed on behalf of logged-in users</div>
+  <div class="quiz-option" data-correct="false">Injecting SQL code into forms</div>
+  <div class="quiz-option" data-correct="false">Stealing passwords stored in plaintext</div>
+  <div class="quiz-option" data-correct="false">Injecting scripts into web pages</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which practice helps secure PHP sessions?</p>
+  <div class="quiz-option" data-correct="true">Regenerate session IDs and use httponly cookies</div>
+  <div class="quiz-option" data-correct="false">Storing passwords in plain text</div>
+  <div class="quiz-option" data-correct="false">Appending data to URLs</div>
+  <div class="quiz-option" data-correct="false">Using GET method for all forms</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Why should dangerous PHP functions like exec(), eval(), and system() be disabled if not needed?</p>
+  <div class="quiz-option" data-correct="true">They can be exploited to execute malicious code</div>
+  <div class="quiz-option" data-correct="false">They slow down the server</div>
+  <div class="quiz-option" data-correct="false">They consume too much memory</div>
+  <div class="quiz-option" data-correct="false">They prevent XSS attacks</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

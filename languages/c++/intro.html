@@ -1,0 +1,191 @@
+<!-- Placeholder for c++ - intro.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Introduction</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="index.html" class="active">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>C++ Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="stl.html">STL</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to C++</h2>
+    <p>
+      <b>C++</b> is a <b>general-purpose, object-oriented programming language</b> 
+      developed by Bjarne Stroustrup in 1983 as an extension of C.  
+      It is widely used for developing system software, applications, and high-performance programs.
+    </p>
+    <ul>
+      <li><b>Compiled Language</b> – C++ code is converted into machine code by a compiler before execution.</li>
+      <li><b>Portable</b> – The same program can run on different platforms with minimal changes.</li>
+      <li><b>Object-Oriented</b> – Supports concepts like classes, objects, and inheritance.</li>
+      <li><b>High Performance</b> – Used where speed and efficiency are critical.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Basic Structure of a C++ Program</h3>
+    <pre>
+#include &lt;iostream&gt;   // Header file for input and output
+using namespace std;  // Standard namespace
+
+int main() {
+    cout &lt;&lt; "Hello, World!";  // Output statement
+    return 0;                  // End of program
+}
+    </pre>
+    <p>
+      Explanation of code:
+      <ul>
+        <li><code>#include &lt;iostream&gt;</code> – Includes the Input/Output stream library for using <code>cout</code> and <code>cin</code>.</li>
+        <li><code>using namespace std;</code> – Allows direct use of standard library names without <code>std::</code> prefix.</li>
+        <li><code>int main()</code> – Entry point of every C++ program.</li>
+        <li><code>cout</code> – Used for displaying output on the screen.</li>
+        <li><code>return 0;</code> – Ends the program successfully.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Basic Input and Output Example</h3>
+    <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age;
+    cout &lt;&lt; "Enter your age: ";
+    cin &gt;&gt; age;   // Taking input
+    cout &lt;&lt; "You are " &lt;&lt; age &lt;&lt; " years old.";
+    return 0;
+}
+    </pre>
+    <p>
+      Explanation:
+      <ul>
+        <li><code>cin</code> – Used to take input from the user.</li>
+        <li><code>cout</code> – Used to display output.</li>
+        <li>Variables like <code>int age</code> store data entered by the user.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Key Points to Remember</h3>
+    <ul>
+      <li>Every C++ program must have a <b>main()</b> function.</li>
+      <li>Statements end with a <b>semicolon (;)</b>.</li>
+      <li><b>Comments</b> are written using <code>//</code> for single-line or <code>/* */</code> for multi-line.</li>
+      <li>C++ is <b>case-sensitive</b> (e.g., <code>Age</code> and <code>age</code> are different).</li>
+    </ul>
+  </section>
+
+
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>Who developed C++ and in which year?</p>
+  <div class="quiz-option" data-correct="false">Dennis Ritchie in 1972</div>
+  <div class="quiz-option" data-correct="true">Bjarne Stroustrup in 1983</div>
+  <div class="quiz-option" data-correct="false">James Gosling in 1991</div>
+  <div class="quiz-option" data-correct="false">Guido van Rossum in 1990</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is the purpose of <code>#include &lt;iostream&gt;</code> in a C++ program?</p>
+  <div class="quiz-option" data-correct="true">To include the Input/Output stream library</div>
+  <div class="quiz-option" data-correct="false">To define the main() function</div>
+  <div class="quiz-option" data-correct="false">To declare variables</div>
+  <div class="quiz-option" data-correct="false">To end the program</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which line in C++ allows using library names without <code>std::</code> prefix?</p>
+  <div class="quiz-option" data-correct="false">#include &lt;iostream&gt;</div>
+  <div class="quiz-option" data-correct="true">using namespace std;</div>
+  <div class="quiz-option" data-correct="false">int main()</div>
+  <div class="quiz-option" data-correct="false">return 0;</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does the <code>main()</code> function represent in a C++ program?</p>
+  <div class="quiz-option" data-correct="true">The entry point of the program</div>
+  <div class="quiz-option" data-correct="false">The exit point of the program</div>
+  <div class="quiz-option" data-correct="false">A function for input and output</div>
+  <div class="quiz-option" data-correct="false">A library inclusion method</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which object is used to take input from the user in C++?</p>
+  <div class="quiz-option" data-correct="false">cout</div>
+  <div class="quiz-option" data-correct="true">cin</div>
+  <div class="quiz-option" data-correct="false">printf</div>
+  <div class="quiz-option" data-correct="false">scanf</div>
+</div>
+
+<div class="quiz-container">
+  <p>What symbol is used to end every C++ statement?</p>
+  <div class="quiz-option" data-correct="false">:</div>
+  <div class="quiz-option" data-correct="false">.</div>
+  <div class="quiz-option" data-correct="true">;</div>
+  <div class="quiz-option" data-correct="false">,</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is <b>true</b> about C++?</p>
+  <div class="quiz-option" data-correct="false">C++ is not case-sensitive</div>
+  <div class="quiz-option" data-correct="true">C++ is case-sensitive</div>
+  <div class="quiz-option" data-correct="false">C++ does not need a main() function</div>
+  <div class="quiz-option" data-correct="false">Statements in C++ don’t need semicolons</div>
+</div>
+</div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Overview</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>  <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="memory.html">Memory</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="arrays.html">Arrays</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Overview of C Programming</h2>
+    <p>
+      <b>C</b> is a <b>general-purpose, procedural programming language</b> that was developed in <b>1972 by Dennis Ritchie</b> at Bell Labs. 
+      It is widely used for system programming, developing operating systems, embedded systems, and application software.
+    </p>
+    <ul>
+      <li>C is <b>fast, efficient, and portable</b>, making it suitable for low-level programming.</li>
+      <li>It provides <b>structured programming</b> techniques, allowing programs to be divided into functions and modules.</li>
+      <li>C forms the foundation for many modern languages, including C++, Java, and C#.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Features of C</h3>
+    <ul>
+      <li><b>Procedural Language:</b> Focuses on functions and procedures rather than objects.</li>
+      <li><b>Low-level Access:</b> Can directly manipulate memory using pointers.</li>
+      <li><b>Rich Library:</b> Provides built-in functions for I/O, string handling, mathematics, and more.</li>
+      <li><b>Portability:</b> C programs can run on different machines with minimal changes.</li>
+      <li><b>Efficient:</b> Produces optimized machine code for fast execution.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Basic Structure of a C Program</h3>
+    <p>
+      A simple C program has the following structure:
+    </p>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+    </pre>
+    <ul>
+      <li><b>#include &lt;stdio.h&gt;:</b> Includes the standard input/output library.</li>
+      <li><b>int main():</b> Main function where program execution begins.</li>
+      <li><b>printf():</b> Prints output to the screen.</li>
+      <li><b>return 0;</b> Indicates that the program executed successfully.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Applications of C Programming</h3>
+    <ul>
+      <li>System software like operating systems (e.g., Unix, Linux)</li>
+      <li>Embedded systems and microcontrollers</li>
+      <li>Game development and graphics programming</li>
+      <li>Compilers and interpreters for other languages</li>
+      <li>Networking and database applications</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Advantages of C</h3>
+    <ul>
+      <li>Simple and easy to learn</li>
+      <li>High performance and efficient memory usage</li>
+      <li>Structured programming makes debugging and maintenance easier</li>
+      <li>Portable across platforms</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Concepts to Learn in C</h3>
+    <ul>
+      <li>Variables and Data Types</li>
+      <li>Operators and Expressions</li>
+      <li>Control Structures (if, switch, loops)</li>
+      <li>Functions and Recursion</li>
+      <li>Arrays, Strings, and Pointers</li>
+      <li>Structures, Unions, and Enums</li>
+      <li>File Handling</li>
+    </ul>
+  </section>
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <p>1. Who developed the C programming language and in what year?</p>
+  <div class="quiz-option" data-correct="true">Dennis Ritchie in 1972</div>
+  <div class="quiz-option" data-correct="false">Bjarne Stroustrup in 1983</div>
+  <div class="quiz-option" data-correct="false">James Gosling in 1995</div>
+  <div class="quiz-option" data-correct="false">Ken Thompson in 1970</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which of the following is NOT a key feature of C?</p>
+  <div class="quiz-option" data-correct="true">Object-oriented programming</div>
+  <div class="quiz-option" data-correct="false">Procedural language</div>
+  <div class="quiz-option" data-correct="false">Portability</div>
+  <div class="quiz-option" data-correct="false">Efficient memory usage</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What does <code>#include &lt;stdio.h&gt;</code> do in a C program?</p>
+  <div class="quiz-option" data-correct="true">Includes the standard input/output library</div>
+  <div class="quiz-option" data-correct="false">Defines the main function</div>
+  <div class="quiz-option" data-correct="false">Prints output to the screen</div>
+  <div class="quiz-option" data-correct="false">Terminates the program</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What is the purpose of <code>return 0;</code> in the main function?</p>
+  <div class="quiz-option" data-correct="true">Indicates that the program executed successfully</div>
+  <div class="quiz-option" data-correct="false">Ends the program with an error</div>
+  <div class="quiz-option" data-correct="false">Prints a message to the console</div>
+  <div class="quiz-option" data-correct="false">Declares a variable</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which of these is a common application of C programming?</p>
+  <div class="quiz-option" data-correct="true">Developing operating systems</div>
+  <div class="quiz-option" data-correct="false">Mobile app design in React Native</div>
+  <div class="quiz-option" data-correct="false">Web page styling with CSS</div>
+  <div class="quiz-option" data-correct="false">Database design in MongoDB</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which concept in C allows directly manipulating memory?</p>
+  <div class="quiz-option" data-correct="true">Pointers</div>
+  <div class="quiz-option" data-correct="false">Arrays</div>
+  <div class="quiz-option" data-correct="false">Strings</div>
+  <div class="quiz-option" data-correct="false">Functions</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which of the following is a control structure in C?</p>
+  <div class="quiz-option" data-correct="true">if statement</div>
+  <div class="quiz-option" data-correct="false">Class</div>
+  <div class="quiz-option" data-correct="false">Interface</div>
+  <div class="quiz-option" data-correct="false">Module</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. What makes C portable across platforms?</p>
+  <div class="quiz-option" data-correct="true">Programs can run on different machines with minimal changes</div>
+  <div class="quiz-option" data-correct="false">It runs only on Unix/Linux</div>
+  <div class="quiz-option" data-correct="false">It automatically converts to Java code</div>
+  <div class="quiz-option" data-correct="false">It is interpreted at runtime</div>
+</div>
+</div>
+
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

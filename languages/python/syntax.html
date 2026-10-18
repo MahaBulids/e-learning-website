@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python - Syntax</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+
+  <!-- Lesson Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+
+    <!-- Navbar Hamburger -->
+     <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="index.html" class="active">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+
+    <!-- Dark mode toggle -->
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+
+    <!-- Sidebar Hamburger -->
+    <button class="lesson-hamburger">☰ Lessons</button>
+
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="syntax.html" class="active">Syntax</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="functions.html">Functions</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+      <!-- Lesson Content -->
+      <section>
+        <h2>Python Syntax</h2>
+        <p>
+          Syntax in Python refers to the set of rules that defines how Python programs are written. 
+          If the syntax rules are not followed, Python will show a <b>SyntaxError</b>.
+        </p>
+        <pre>
+# Correct syntax
+if True:
+    print("Hello, World!")
+        </pre>
+      </section>
+
+      <section>
+        <h2>Common Syntax Errors</h2>
+        <h3>1. Missing Colon</h3>
+        <pre>
+# Wrong
+if True
+    print("Hello")
+
+# Correct
+if True:
+    print("Hello")
+        </pre>
+        <h3>2. Indentation Error</h3>
+        <pre>
+# Wrong
+if True:
+print("Hello")
+
+# Correct
+if True:
+    print("Hello")
+        </pre>
+        <h3>3. Unclosed Quotes or Parentheses</h3>
+        <pre>
+# Wrong
+print("Hello)
+
+# Correct
+print("Hello")
+        </pre>
+        <h3>4. Misspelled Keywords</h3>
+        <pre>
+# Wrong
+prnt("Hello")
+
+# Correct
+print("Hello")
+        </pre>
+      </section>
+
+      <section>
+        <h2>How to Fix Syntax Errors</h2>
+        <ul>
+          <li>Read the error message carefully – it tells the line number and the issue.</li>
+          <li>Check for missing colons (<code>:</code>) and proper indentation.</li>
+          <li>Always close quotes and parentheses.</li>
+          <li>Use an editor like VS Code, Thonny, or PyCharm to highlight mistakes.</li>
+          <li>Run your code step by step to find where the error appears.</li>
+        </ul>
+      </section>
+
+      <!-- Quiz -->
+      <div id="quiz-wrapper">
+        <div class="quiz-container">
+          <h2>Quick Quiz</h2>
+          <p>Q1. What does "syntax" in Python refer to?</p>
+          <div class="quiz-option" data-correct="true">The set of rules that defines how Python programs are written</div>
+          <div class="quiz-option" data-correct="false">The list of available libraries and modules</div>
+          <div class="quiz-option" data-correct="false">The version number of the Python interpreter</div>
+          <div class="quiz-option" data-correct="false">How fast the program runs</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q2. If Python syntax rules are not followed, which error will Python show?</p>
+          <div class="quiz-option" data-correct="true">SyntaxError</div>
+          <div class="quiz-option" data-correct="false">TypeError</div>
+          <div class="quiz-option" data-correct="false">NameError</div>
+          <div class="quiz-option" data-correct="false">RuntimeError</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q3. Fix the "Missing Colon" error — which change corrects the code?</p>
+          <div class="quiz-option" data-correct="true">Add a colon after the condition: <code>if True:</code></div>
+          <div class="quiz-option" data-correct="false">Add a semicolon at the end of the line</div>
+          <div class="quiz-option" data-correct="false">Remove all colons from the code</div>
+          <div class="quiz-option" data-correct="false">Use double quotes instead of a colon</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q4. Fix the "Indentation Error" — which change corrects the code?</p>
+          <div class="quiz-option" data-correct="true">Indent the <code>print</code> line under the <code>if</code> (e.g. 4 spaces)</div>
+          <div class="quiz-option" data-correct="false">Add a colon after the print statement</div>
+          <div class="quiz-option" data-correct="false">Remove all spaces at the beginning of each line</div>
+          <div class="quiz-option" data-correct="false">Replace print with echo</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q5. How do you fix the "Unclosed Quotes or Parentheses" error?</p>
+          <div class="quiz-option" data-correct="true">Add the missing closing quote/parenthesis: <code>print("Hello")</code></div>
+          <div class="quiz-option" data-correct="false">Use single quotes for everything</div>
+          <div class="quiz-option" data-correct="false">Remove all parentheses from your code</div>
+          <div class="quiz-option" data-correct="false">Add an extra print statement at the end</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q6. How do you fix the "Misspelled Keywords" error?</p>
+          <div class="quiz-option" data-correct="true">Correct the spelling to the proper keyword/function: <code>print("Hello")</code></div>
+          <div class="quiz-option" data-correct="false">Add quotes around the keyword</div>
+          <div class="quiz-option" data-correct="false">Capitalize all Python keywords</div>
+          <div class="quiz-option" data-correct="false">Delete the line completely</div>
+        </div>
+
+        <div class="quiz-container">
+          <p>Q7. Which is a recommended way to fix syntax errors?</p>
+          <div class="quiz-option" data-correct="true">Read the error message carefully — it tells the line number and the issue</div>
+          <div class="quiz-option" data-correct="false">Ignore the error and rerun the code</div>
+          <div class="quiz-option" data-correct="false">Reinstall Python to remove the error</div>
+          <div class="quiz-option" data-correct="false">Add random print statements for debugging</div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

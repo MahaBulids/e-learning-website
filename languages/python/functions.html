@@ -1,0 +1,222 @@
+<!-- Placeholder for python - functions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python - Functions</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="index.html"class="active">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <button class="lesson-hamburger">☰ Lessons</button> <!-- sidebar hamburger --> 
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+         <li> <a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li> <a href="syntax.html">Syntax</a></li>
+        <li><a href="loops.html">Loops</a></li>
+        <li><a href="functions.html" class="active">Functions</a></li>
+      </ul>
+    </aside>
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to Functions in Python</h2>
+    <p>
+      A <b>function</b> in Python is a block of reusable code that performs a specific task. 
+      Functions help in organizing code, avoiding repetition, and improving readability.
+    </p>
+    <ul>
+      <li>Functions are defined using the <code>def</code> keyword.</li>
+      <li>They can take <b>parameters</b> (inputs) and return <b>values</b> (outputs).</li>
+      <li>Python has <b>built-in functions</b> like <code>print()</code>, <code>len()</code>, etc., and you can create <b>user-defined functions</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic Function Example</h2>
+    <pre>
+def greet():
+    print("Hello, World!")
+
+greet()  # Calling the function
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>def greet():</code> defines a function named <b>greet</b>.<br>
+      - <code>print("Hello, World!")</code> is the task performed by the function.<br>
+      - <code>greet()</code> calls the function to execute its code.
+    </p>
+  </section>
+
+  <section>
+    <h2>Function with Parameters</h2>
+    <pre>
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Output: Hello, Alice!
+greet("Bob")    # Output: Hello, Bob!
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>name</code> is a parameter that allows passing input to the function.<br>
+      - <code>f"Hello, {name}!"</code> formats the string using the parameter value.
+    </p>
+  </section>
+
+  <section>
+    <h2>Function with Return Value</h2>
+    <pre>
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>return</code> sends the result back to the caller.<br>
+      - <code>add(5, 3)</code> returns 8, which is stored in <code>result</code>.<br>
+      - <code>print(result)</code> prints the returned value.
+    </p>
+  </section>
+
+  <section>
+    <h2>Function with Default Parameters</h2>
+    <pre>
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet()        # Output: Hello, Guest!
+greet("Alice") # Output: Hello, Alice!
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - Default parameter value is used if no argument is passed.<br>
+      - Provides flexibility in function calls.
+    </p>
+  </section>
+
+  <section>
+    <h2>Function with Arbitrary Arguments</h2>
+    <pre>
+def sum_all(*numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+print(sum_all(1, 2, 3, 4))  # Output: 10
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>*numbers</code> allows passing any number of arguments.<br>
+      - The function sums all numbers and returns the total.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Functions in Python are reusable blocks of code that perform specific tasks.</li>
+      <li>Defined using the <code>def</code> keyword.</li>
+      <li>Functions can take parameters and return values.</li>
+      <li>Default and arbitrary arguments provide flexibility in usage.</li>
+      <li>Using functions makes your code cleaner, modular, and easier to maintain.</li>
+    </ul>
+  </section>
+
+    <div id="quiz-wrapper">
+   <h3>Quiz: Python Functions</h3>
+
+<div class="quiz-container">
+  <p>1. Which keyword is used to define a function in Python?</p>
+  <div class="quiz-option" data-correct="true">def</div>
+  <div class="quiz-option" data-correct="false">function</div>
+  <div class="quiz-option" data-correct="false">func</div>
+  <div class="quiz-option" data-correct="false">lambda</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. What does the following function return?<br>
+     <code>def add(a, b): return a + b</code></p>
+  <div class="quiz-option" data-correct="true">Sum of a and b</div>
+  <div class="quiz-option" data-correct="false">Difference of a and b</div>
+  <div class="quiz-option" data-correct="false">Product of a and b</div>
+  <div class="quiz-option" data-correct="false">None</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. How do you call a function named greet?</p>
+  <div class="quiz-option" data-correct="true">greet()</div>
+  <div class="quiz-option" data-correct="false">call greet</div>
+  <div class="quiz-option" data-correct="false">def greet()</div>
+  <div class="quiz-option" data-correct="false">run greet</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What is the output of:<br>
+     <code>def greet(name="Guest"): print(f"Hello, {name}!")<br>greet()</code></p>
+  <div class="quiz-option" data-correct="true">Hello, Guest!</div>
+  <div class="quiz-option" data-correct="false">Hello, name!</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+  <div class="quiz-option" data-correct="false">Hello, None!</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which parameter type allows passing any number of arguments to a function?</p>
+  <div class="quiz-option" data-correct="true">Arbitrary arguments (*args)</div>
+  <div class="quiz-option" data-correct="false">Default arguments</div>
+  <div class="quiz-option" data-correct="false">Keyword arguments</div>
+  <div class="quiz-option" data-correct="false">Positional arguments</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What does the return statement do in a function?</p>
+  <div class="quiz-option" data-correct="true">Sends a value back to the caller</div>
+  <div class="quiz-option" data-correct="false">Prints a value to the console</div>
+  <div class="quiz-option" data-correct="false">Defines a variable</div>
+  <div class="quiz-option" data-correct="false">Ends the program</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Why are functions useful in Python?</p>
+  <div class="quiz-option" data-correct="true">They make code modular, reusable, and easier to maintain</div>
+  <div class="quiz-option" data-correct="false">They make the code run faster automatically</div>
+  <div class="quiz-option" data-correct="false">They replace loops</div>
+  <div class="quiz-option" data-correct="false">They eliminate the need for variables</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

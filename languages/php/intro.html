@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to PHP - Study Core</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li><a href="forms.html">Forms</a></li>
+        <li><a href="databases.html">Databases</a></li>
+        <li> <a href="security.html">Security</a></li>
+      </ul>
+    </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to PHP</h2>
+    <p>
+      <b>PHP (Hypertext Preprocessor)</b> is a server-side scripting language designed 
+      for web development. PHP code is executed on the server, and the output (usually HTML) 
+      is sent to the browser.
+    </p>
+    <p>
+      PHP allows you to create <b>dynamic web pages</b>, interact with databases, handle 
+      forms, sessions, cookies, and much more.
+    </p>
+  </section>
+
+  <section>
+    <h2>Basic Syntax of PHP</h2>
+    <ul>
+      <li>PHP code starts with <code>&lt;?php</code> and ends with <code>?&gt;</code>.</li>
+      <li>Statements end with a semicolon <code>;</code>.</li>
+      <li>Comments can be written as <code>// single line</code> or <code>/* multi-line */</code>.</li>
+      <li>PHP is case-insensitive for keywords but case-sensitive for variables.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Simple PHP Example</h2>
+    <p>This example displays a greeting message using PHP:</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title>PHP Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+  // Display a greeting message
+  echo "Hello, welcome to PHP!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>&lt;?php ?&gt;</code> encloses PHP code.<br>
+      - <code>echo</code> outputs the text to the browser.<br>
+      - This code will display: <b>Hello, welcome to PHP!</b>
+    </p>
+  </section>
+
+  <section>
+    <h2>Variables in PHP</h2>
+    <p>Variables store data and start with the <code>$</code> symbol:</p>
+    <pre>
+&lt;?php
+  $name = "Alice";
+  $age = 25;
+  echo "Name: " . $name . ", Age: " . $age;
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>$name</code> and <code>$age</code> are variables.<br>
+      - <code>echo</code> displays text and variable values.<br>
+      - <code>.</code> is used to concatenate (join) strings.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>PHP is a server-side scripting language for dynamic web pages.</li>
+      <li>PHP code is enclosed in <code>&lt;?php ?&gt;</code> tags.</li>
+      <li><code>echo</code> is used to display output.</li>
+      <li>Variables start with <code>$</code> and store data.</li>
+      <li>Comments help explain code: <code>//</code> for single line, <code>/* */</code> for multi-line.</li>
+    </ul>
+  </section>
+
+    <div id="quiz-wrapper">
+      <h3>Quick Quiz: PHP Basics</h3>
+
+<div class="quiz-container">
+  <p>1. How does PHP code run?</p>
+  <div class="quiz-option" data-correct="true">On the server, generating output for the browser</div>
+  <div class="quiz-option" data-correct="false">Directly in the browser like JavaScript</div>
+  <div class="quiz-option" data-correct="false">On the database server only</div>
+  <div class="quiz-option" data-correct="false">It doesn’t run, only stored in HTML</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. How do you start and end PHP code?</p>
+  <div class="quiz-option" data-correct="true">&lt;?php ... ?&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;script&gt; ... &lt;/script&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;php&gt; ... &lt;/php&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;? ... ?&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which symbol is used for variables in PHP?</p>
+  <div class="quiz-option" data-correct="true">$</div>
+  <div class="quiz-option" data-correct="false">&amp;</div>
+  <div class="quiz-option" data-correct="false">#</div>
+  <div class="quiz-option" data-correct="false">%</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which function is used to display output in PHP?</p>
+  <div class="quiz-option" data-correct="true">echo</div>
+  <div class="quiz-option" data-correct="false">print()</div>
+  <div class="quiz-option" data-correct="false">console.log()</div>
+  <div class="quiz-option" data-correct="false">write()</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. How do you write a single-line comment in PHP?</p>
+  <div class="quiz-option" data-correct="true">// Comment</div>
+  <div class="quiz-option" data-correct="false">/* Comment */</div>
+  <div class="quiz-option" data-correct="false"># Comment</div>
+  <div class="quiz-option" data-correct="false">-- Comment</div>
+</div>
+
+    </div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

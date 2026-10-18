@@ -1,0 +1,279 @@
+<!-- Placeholder for php - databases.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Databases - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="forms.html">Forms</a></li>
+        <li><a href="databases.html" class="active">Databases</a></li>
+        <li> <a href="security.html">Security</a></li>
+      </ul>
+    </aside>
+
+ <main class="lesson-content">
+    <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>PHP and Databases</h2>
+    <p>
+      PHP can interact with databases to store, retrieve, and manipulate data. 
+      The most common database used with PHP is <b>MySQL</b>, but PHP supports 
+      others like PostgreSQL, SQLite, and Oracle.
+    </p>
+    <ul>
+      <li>Create dynamic web applications that store user data.</li>
+      <li>Manage content in CMS (like WordPress).</li>
+      <li>Handle eCommerce products, orders, and users.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Connecting PHP to MySQL</h2>
+    <p>PHP provides <code>mysqli</code> and <code>PDO</code> to connect to databases. Example using <b>MySQLi</b>:</p>
+    <pre>
+&lt;?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydatabase";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+echo "Connected successfully";
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>new mysqli()</code> creates a database connection.<br>
+      - <code>connect_error</code> checks if the connection failed.<br>
+      - If successful, a message "Connected successfully" is displayed.
+    </p>
+  </section>
+
+  <section>
+    <h2>Creating a Table</h2>
+    <pre>
+&lt;?php
+$sql = "CREATE TABLE Students (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Table Students created successfully";
+} else {
+    echo "Error creating table: " . $conn-&gt;error;
+}
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>CREATE TABLE</code> SQL command is used.<br>
+      - Columns include <b>id</b> (primary key), <b>name</b>, <b>email</b>, and <b>reg_date</b>.<br>
+      - PHP executes the SQL with <code>$conn-&gt;query()</code>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Inserting Data</h2>
+    <pre>
+&lt;?php
+$sql = "INSERT INTO Students (name, email) VALUES ('Alice', 'alice@example.com')";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . $conn-&gt;error;
+}
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>INSERT INTO</code> adds a new record.<br>
+      - Check success with <code>$conn-&gt;query()</code>.<br>
+      - Display error if query fails.
+    </p>
+  </section>
+
+  <section>
+    <h2>Retrieving Data</h2>
+    <pre>
+&lt;?php
+$sql = "SELECT id, name, email FROM Students";
+$result = $conn-&gt;query($sql);
+
+if ($result-&gt;num_rows &gt; 0) {
+    // Output data of each row
+    while($row = $result-&gt;fetch_assoc()) {
+        echo "ID: " . $row["id"]. " - Name: " . $row["name"]. " - Email: " . $row["email"]. "&lt;br&gt;";
+    }
+} else {
+    echo "0 results";
+}
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>SELECT</code> retrieves data from the table.<br>
+      - <code>fetch_assoc()</code> fetches each row as an associative array.<br>
+      - <code>num_rows</code> checks if there are any results.
+    </p>
+  </section>
+
+  <section>
+    <h2>Updating Data</h2>
+    <pre>
+&lt;?php
+$sql = "UPDATE Students SET email='alice_new@example.com' WHERE name='Alice'";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn-&gt;error;
+}
+?&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Deleting Data</h2>
+    <pre>
+&lt;?php
+$sql = "DELETE FROM Students WHERE name='Alice'";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn-&gt;error;
+}
+?&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Closing the Connection</h2>
+    <pre>
+&lt;?php
+$conn-&gt;close();
+?&gt;
+    </pre>
+    <p>
+      Always close the database connection to free up resources.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>PHP can connect to databases using <b>MySQLi</b> or <b>PDO</b>.</li>
+      <li>CRUD operations: <b>Create, Read, Update, Delete</b> can be performed via PHP.</li>
+      <li>Always check for connection and query errors.</li>
+      <li>Close the connection after operations to save resources.</li>
+    </ul>
+  </section>
+
+
+    <div id="quiz-wrapper">
+    <h3>Quick Quiz: PHP and Databases</h3>
+
+<div class="quiz-container">
+  <p>1. Which PHP extension is commonly used to connect to MySQL databases?</p>
+  <div class="quiz-option" data-correct="true">MySQLi</div>
+  <div class="quiz-option" data-correct="false">PDO</div>
+  <div class="quiz-option" data-correct="false">SQLite3</div>
+  <div class="quiz-option" data-correct="false">MongoDB</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which PHP method checks if the database connection failed?</p>
+  <div class="quiz-option" data-correct="true">$conn->connect_error</div>
+  <div class="quiz-option" data-correct="false">$conn->query()</div>
+  <div class="quiz-option" data-correct="false">mysqli_connect()</div>
+  <div class="quiz-option" data-correct="false">fetch_assoc()</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which SQL command is used to add a new record into a table?</p>
+  <div class="quiz-option" data-correct="true">INSERT INTO</div>
+  <div class="quiz-option" data-correct="false">CREATE TABLE</div>
+  <div class="quiz-option" data-correct="false">UPDATE</div>
+  <div class="quiz-option" data-correct="false">DELETE</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which PHP function fetches a row from a result as an associative array?</p>
+  <div class="quiz-option" data-correct="true">fetch_assoc()</div>
+  <div class="quiz-option" data-correct="false">num_rows()</div>
+  <div class="quiz-option" data-correct="false">query()</div>
+  <div class="quiz-option" data-correct="false">close()</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which SQL command updates existing records in a table?</p>
+  <div class="quiz-option" data-correct="true">UPDATE</div>
+  <div class="quiz-option" data-correct="false">INSERT INTO</div>
+  <div class="quiz-option" data-correct="false">SELECT</div>
+  <div class="quiz-option" data-correct="false">DELETE</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What is the correct SQL command to remove a record from a table?</p>
+  <div class="quiz-option" data-correct="true">DELETE FROM</div>
+  <div class="quiz-option" data-correct="false">DROP TABLE</div>
+  <div class="quiz-option" data-correct="false">TRUNCATE</div>
+  <div class="quiz-option" data-correct="false">REMOVE</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Why should you close a database connection in PHP?</p>
+  <div class="quiz-option" data-correct="true">To free up server resources</div>
+  <div class="quiz-option" data-correct="false">To reset the database</div>
+  <div class="quiz-option" data-correct="false">To delete the data</div>
+  <div class="quiz-option" data-correct="false">To refresh the PHP script</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

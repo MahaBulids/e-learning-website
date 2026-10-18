@@ -1,0 +1,209 @@
+<!-- Placeholder for html-css - css-basics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Basics</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="index.html" class="active">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+     
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>HTML & CSS Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="html-basics.html">HTML Basics</a></li>
+        <li><a href="css-basics.html" class="active">CSS Basics</a></li>
+        <li><a href="flexbox.html">Flexbox</a></li>
+        <li><a href="grid.html">CSS Grid</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to CSS</h2>
+    <p>
+      <b>CSS (Cascading Style Sheets)</b> is used to style and format HTML web pages.  
+      It controls how elements look — such as colors, fonts, sizes, and layout.
+    </p>
+    <p>
+      HTML builds the <b>structure</b> of a page, while CSS adds the <b>style</b>.
+    </p>
+  </section>
+
+  <section>
+    <h3>CSS Syntax</h3>
+    <p>
+      CSS follows a simple rule-based structure:
+    </p>
+    <pre><code>
+selector {
+  property: value;
+}
+    </code></pre>
+    <ul>
+      <li><b>Selector</b> → The HTML element you want to style (e.g., <code>p</code>, <code>h1</code>).</li>
+      <li><b>Property</b> → The feature you want to change (e.g., <code>color</code>, <code>font-size</code>).</li>
+      <li><b>Value</b> → The setting applied to the property (e.g., <code>red</code>, <code>20px</code>).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Example: Styling a Paragraph</h3>
+    <pre><code>
+p {
+  color: blue;
+  font-size: 18px;
+}
+    </code></pre>
+    <p>
+      This means: "Select all <code>&lt;p&gt;</code> (paragraphs) and make their text <b>blue</b> with <b>18px</b> font size."
+    </p>
+  </section>
+
+  <section>
+    <h3>Types of CSS</h3>
+    <ul>
+      <li><b>Inline CSS</b> → Written inside an HTML tag using the <code>style</code> attribute.</li>
+      <li><b>Internal CSS</b> → Written inside a <code>&lt;style&gt;</code> block in the HTML <code>&lt;head&gt;</code>.</li>
+      <li><b>External CSS</b> → Written in a separate <code>.css</code> file and linked with <code>&lt;link&gt;</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Example of All Three</h3>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- Internal CSS --&gt;
+    &lt;style&gt;
+      h1 { color: green; }
+    &lt;/style&gt;
+
+    &lt;!-- External CSS --&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+
+    &lt;p style="color:red;"&gt;This is inline CSS&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <p>
+      CSS uses <b>selectors, properties, and values</b> to style web pages.  
+      You can apply CSS in <b>three ways</b> — inline, internal, or external.  
+      For professional websites, <b>external CSS</b> is most commonly used.
+    </p>
+  </section>
+
+
+<div id="quiz-wrapper">
+      <div class="quiz-container">
+  <p>1. In the CSS rule <code>p { color: blue; }</code>, what is the selector?</p>
+  <div class="quiz-option" data-correct="true">p</div>
+  <div class="quiz-option" data-correct="false">color</div>
+  <div class="quiz-option" data-correct="false">blue</div>
+  <div class="quiz-option" data-correct="false">{ }</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. In the CSS rule <code>p { color: blue; }</code>, what is the property?</p>
+  <div class="quiz-option" data-correct="true">color</div>
+  <div class="quiz-option" data-correct="false">blue</div>
+  <div class="quiz-option" data-correct="false">p</div>
+  <div class="quiz-option" data-correct="false">font-size</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. In the CSS rule <code>p { color: blue; }</code>, what is the value?</p>
+  <div class="quiz-option" data-correct="true">blue</div>
+  <div class="quiz-option" data-correct="false">p</div>
+  <div class="quiz-option" data-correct="false">color</div>
+  <div class="quiz-option" data-correct="false">{ }</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which type of CSS is written inside an HTML tag using the <code>style</code> attribute?</p>
+  <div class="quiz-option" data-correct="true">Inline CSS</div>
+  <div class="quiz-option" data-correct="false">Internal CSS</div>
+  <div class="quiz-option" data-correct="false">External CSS</div>
+  <div class="quiz-option" data-correct="false">Global CSS</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Where is Internal CSS placed in an HTML document?</p>
+  <div class="quiz-option" data-correct="true">Inside a &lt;style&gt; block in the &lt;head&gt;</div>
+  <div class="quiz-option" data-correct="false">Inside a &lt;div&gt; in the &lt;body&gt;</div>
+  <div class="quiz-option" data-correct="false">In a separate .css file</div>
+  <div class="quiz-option" data-correct="false">Inside the &lt;title&gt; tag</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. How do you link an external CSS file to an HTML document?</p>
+  <div class="quiz-option" data-correct="true">&lt;link rel="stylesheet" href="style.css"&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;style src="style.css"&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;script src="style.css"&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;link href="style.js"&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which type of CSS is most commonly used for professional websites?</p>
+  <div class="quiz-option" data-correct="true">External CSS</div>
+  <div class="quiz-option" data-correct="false">Inline CSS</div>
+  <div class="quiz-option" data-correct="false">Internal CSS</div>
+  <div class="quiz-option" data-correct="false">Embedded CSS</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. What does the following rule do? <code>p { font-size: 18px; }</code></p>
+  <div class="quiz-option" data-correct="true">Makes all paragraphs 18px in size</div>
+  <div class="quiz-option" data-correct="false">Colors all paragraphs blue</div>
+  <div class="quiz-option" data-correct="false">Adds 18px margin to paragraphs</div>
+  <div class="quiz-option" data-correct="false">Selects only one paragraph</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Overview</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="index.html" class="active">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>C++ Lessons</h2>
+      <ul>
+        <li><a href="index.html" class="active">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="stl.html">STL</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Overview of C++</h2>
+    <p>
+      <b>C++</b> is a <b>general-purpose, object-oriented programming language</b> 
+      developed by Bjarne Stroustrup in the early 1980s as an extension of C. 
+      It combines the efficiency of C with the features of Object-Oriented Programming (OOP), 
+      making it one of the most powerful and widely used languages in the software industry.
+    </p>
+  </section>
+
+  <section>
+    <h3>Key Features of C++</h3>
+    <ul>
+      <li><b>Object-Oriented</b>: Supports classes, objects, inheritance, polymorphism, and encapsulation.</li>
+      <li><b>Performance-Oriented</b>: Offers high speed and control over system resources.</li>
+      <li><b>Portable</b>: Can be compiled and executed on different platforms with minimal changes.</li>
+      <li><b>Rich Standard Library</b>: Provides built-in support for data structures, algorithms, and file handling.</li>
+      <li><b>Low-level & High-level</b>: Allows both system-level programming (like C) and high-level application development.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Applications of C++</h3>
+    <ul>
+      <li><b>System Software</b>: Operating systems, device drivers, and compilers are often built using C++ because of its efficiency and control over hardware.</li>
+      <li><b>Game Development</b>: Popular game engines like Unreal Engine use C++ for performance-intensive graphics and real-time processing.</li>
+      <li><b>Embedded Systems</b>: C++ is used in firmware and embedded systems programming for devices such as cars, appliances, and IoT gadgets.</li>
+      <li><b>GUI Applications</b>: Desktop software like Adobe Photoshop, Microsoft Office, and media players use C++ for speed and responsiveness.</li>
+      <li><b>Database Systems</b>: Many database engines (e.g., MySQL, MongoDB) are implemented in C++ due to its efficiency in memory management.</li>
+      <li><b>Financial & Banking Systems</b>: High-performance trading platforms and banking software use C++ for fast computation and security.</li>
+      <li><b>Scientific Computing</b>: C++ is widely used in simulations, data analysis, and applications requiring heavy mathematical computations.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Scope of C++</h3>
+    <ul>
+      <li><b>Long-Term Relevance</b>: Despite newer languages, C++ remains essential in fields needing performance and efficiency.</li>
+      <li><b>High-Demand Skill</b>: Industries like gaming, finance, AI, and system software still demand C++ expertise.</li>
+      <li><b>Foundation Language</b>: Learning C++ builds a strong base for understanding other programming languages and computer science concepts.</li>
+      <li><b>Open-Source Contributions</b>: Many open-source projects are written in C++, giving learners opportunities to contribute globally.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <ul>
+      <li>C++ is a <b>versatile language</b> that balances low-level programming with object-oriented features.</li>
+      <li>It powers critical software such as <b>operating systems, game engines, databases, and embedded devices</b>.</li>
+      <li>Its <b>scope</b> continues to grow in fields like <b>AI, robotics, finance, and real-time systems</b>.</li>
+      <li>Learning C++ gives programmers a solid foundation and opens up multiple career opportunities.</li>
+    </ul>
+  </section>
+
+
+      <div id="quiz-wrapper">
+      <<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>Who developed C++ and in which decade?</p>
+  <div class="quiz-option" data-correct="false">Dennis Ritchie in the 1970s</div>
+  <div class="quiz-option" data-correct="true">Bjarne Stroustrup in the 1980s</div>
+  <div class="quiz-option" data-correct="false">James Gosling in the 1990s</div>
+  <div class="quiz-option" data-correct="false">Guido van Rossum in the 1980s</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is <b>NOT</b> a key feature of C++?</p>
+  <div class="quiz-option" data-correct="false">Object-Oriented Programming</div>
+  <div class="quiz-option" data-correct="false">Performance-Oriented</div>
+  <div class="quiz-option" data-correct="false">Portable</div>
+  <div class="quiz-option" data-correct="true">Automatic Memory Garbage Collection</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which property makes C++ suitable for system-level programming?</p>
+  <div class="quiz-option" data-correct="true">Low-level programming capability</div>
+  <div class="quiz-option" data-correct="false">Built-in GUI support</div>
+  <div class="quiz-option" data-correct="false">Only high-level abstraction</div>
+  <div class="quiz-option" data-correct="false">Limited hardware access</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following applications is commonly built using C++?</p>
+  <div class="quiz-option" data-correct="false">Web Page Styling</div>
+  <div class="quiz-option" data-correct="true">Game Engines</div>
+  <div class="quiz-option" data-correct="false">Spreadsheets with CSS</div>
+  <div class="quiz-option" data-correct="false">Email Templates</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which database system is implemented in C++?</p>
+  <div class="quiz-option" data-correct="false">Oracle</div>
+  <div class="quiz-option" data-correct="true">MySQL</div>
+  <div class="quiz-option" data-correct="false">PostgreSQL</div>
+  <div class="quiz-option" data-correct="false">SQLite</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which statement about the scope of C++ is correct?</p>
+  <div class="quiz-option" data-correct="false">C++ is outdated and rarely used</div>
+  <div class="quiz-option" data-correct="true">C++ is still essential in industries like gaming and finance</div>
+  <div class="quiz-option" data-correct="false">C++ cannot be used for AI or robotics</div>
+  <div class="quiz-option" data-correct="false">C++ only works on Windows systems</div>
+</div>
+
+<div class="quiz-container">
+  <p>Why is learning C++ considered valuable for programmers?</p>
+  <div class="quiz-option" data-correct="false">It has fewer applications than Python</div>
+  <div class="quiz-option" data-correct="true">It builds a strong foundation for understanding other languages</div>
+  <div class="quiz-option" data-correct="false">It is only useful for academic projects</div>
+  <div class="quiz-option" data-correct="false">It eliminates the need for learning other languages</div>
+</div>
+
+    </div>
+    </main>
+    </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

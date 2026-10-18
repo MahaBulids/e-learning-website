@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointers in C</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="memory.html">Memory</a></li>
+        <li><a href="pointers.html" class="active">Pointers</a></li>
+        <li><a href="arrays.html">Arrays</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+       <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Types of Pointers in C</h2>
+    <p>
+      Pointers in C are variables that store the memory address of other variables.  
+      There are several types of pointers, each serving a different purpose.
+    </p>
+  </section>
+
+  <section>
+    <h3>1. Null Pointer</h3>
+    <p>
+      A <b>null pointer</b> is a pointer that points to nothing. It is used to initialize pointers when they are not assigned any memory address yet.
+    </p>
+    <pre>
+int *ptr = NULL;
+if(ptr == NULL) {
+    printf("Pointer is null\n");
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>2. Void Pointer</h3>
+    <p>
+      A <b>void pointer</b> is a generic pointer that can point to any data type.  
+      However, it cannot be dereferenced directly without typecasting.
+    </p>
+    <pre>
+void *ptr;
+int x = 10;
+ptr = &x;
+printf("%d", *(int*)ptr);  // Typecast needed to access value
+    </pre>
+  </section>
+
+  <section>
+    <h3>3. Wild Pointer</h3>
+    <p>
+      A <b>wild pointer</b> is an uninitialized pointer that points to some random memory location.  
+      Using wild pointers can lead to undefined behavior and program crashes.
+    </p>
+    <pre>
+int *ptr;  // Wild pointer (not initialized)
+*ptr = 10; // Dangerous! Avoid using
+    </pre>
+  </section>
+
+  <section>
+    <h3>4. Dangling Pointer</h3>
+    <p>
+      A <b>dangling pointer</b> points to memory that has already been freed or deleted.  
+      Accessing a dangling pointer may cause unexpected behavior.
+    </p>
+    <pre>
+int *ptr = (int*) malloc(sizeof(int));
+*ptr = 20;
+free(ptr);     // Memory freed
+// ptr is now a dangling pointer
+    </pre>
+  </section>
+
+  <section>
+    <h3>5. Pointer to Pointer</h3>
+    <p>
+      A <b>pointer to pointer</b> is a pointer that stores the address of another pointer.
+    </p>
+    <pre>
+int x = 10;
+int *ptr = &x;
+int **pptr = &ptr;  // Pointer to pointer
+
+printf("%d", **pptr); // Access value of x (10)
+    </pre>
+  </section>
+
+  <section>
+    <h3>6. Function Pointer</h3>
+    <p>
+      A <b>function pointer</b> stores the address of a function and can be used to call the function indirectly.
+    </p>
+    <pre>
+int add(int a, int b) {
+    return a + b;
+}
+
+int (*fptr)(int, int) = add;  // Function pointer
+printf("%d", fptr(5, 10));    // Calls add(5,10)
+    </pre>
+  </section>
+
+  <section>
+    <h3>7. Constant Pointer and Pointer to Constant</h3>
+    <ul>
+      <li><b>Constant Pointer:</b> Pointer itself cannot change, but the value it points to can change.
+        <pre>int x = 5;
+int y = 10;
+int *const ptr = &x;  // const pointer
+*ptr = 20;            // Allowed
+ptr = &y;             // Not allowed</pre>
+      </li>
+      <li><b>Pointer to Constant:</b> Value pointed by pointer cannot change, but pointer can point elsewhere.
+        <pre>int x = 5;
+int y = 10;
+const int *ptr = &x;  // pointer to const
+*ptr = 20;            // Not allowed
+ptr = &y;             // Allowed</pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Points to Remember</h3>
+    <ul>
+      <li>Null pointers should be used to initialize pointers that are not assigned yet.</li>
+      <li>Void pointers are generic and require typecasting to access values.</li>
+      <li>Wild and dangling pointers are dangerous and must be avoided.</li>
+      <li>Pointer to pointer and function pointers allow advanced memory and function handling.</li>
+      <li>Constant pointers and pointers to constants provide additional control over memory access.</li>
+    </ul>
+  </section>
+<div id="quiz-wrapper">
+     <div class="quiz-container">
+  <p>1. Which pointer points to nothing and is used to initialize pointers?</p>
+  <div class="quiz-option" data-correct="true">Null Pointer</div>
+  <div class="quiz-option" data-correct="false">Wild Pointer</div>
+  <div class="quiz-option" data-correct="false">Dangling Pointer</div>
+  <div class="quiz-option" data-correct="false">Void Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which pointer can point to any data type but requires typecasting to access the value?</p>
+  <div class="quiz-option" data-correct="true">Void Pointer</div>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+  <div class="quiz-option" data-correct="false">Wild Pointer</div>
+  <div class="quiz-option" data-correct="false">Dangling Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What is a pointer that points to some random memory location called?</p>
+  <div class="quiz-option" data-correct="true">Wild Pointer</div>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+  <div class="quiz-option" data-correct="false">Dangling Pointer</div>
+  <div class="quiz-option" data-correct="false">Void Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which pointer points to memory that has already been freed?</p>
+  <div class="quiz-option" data-correct="true">Dangling Pointer</div>
+  <div class="quiz-option" data-correct="false">Wild Pointer</div>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+  <div class="quiz-option" data-correct="false">Void Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. A pointer that stores the address of another pointer is called?</p>
+  <div class="quiz-option" data-correct="true">Pointer to Pointer</div>
+  <div class="quiz-option" data-correct="false">Function Pointer</div>
+  <div class="quiz-option" data-correct="false">Constant Pointer</div>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which pointer stores the address of a function and can call it indirectly?</p>
+  <div class="quiz-option" data-correct="true">Function Pointer</div>
+  <div class="quiz-option" data-correct="false">Pointer to Pointer</div>
+  <div class="quiz-option" data-correct="false">Void Pointer</div>
+  <div class="quiz-option" data-correct="false">Dangling Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which type of pointer cannot change the value it points to, but can point elsewhere?</p>
+  <div class="quiz-option" data-correct="true">Pointer to Constant</div>
+  <div class="quiz-option" data-correct="false">Constant Pointer</div>
+  <div class="quiz-option" data-correct="false">Function Pointer</div>
+  <div class="quiz-option" data-correct="false">Void Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which pointer cannot point elsewhere, but the value it points to can be changed?</p>
+  <div class="quiz-option" data-correct="true">Constant Pointer</div>
+  <div class="quiz-option" data-correct="false">Pointer to Constant</div>
+  <div class="quiz-option" data-correct="false">Function Pointer</div>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+</div>
+</div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

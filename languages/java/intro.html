@@ -1,0 +1,229 @@
+<!-- Placeholder for java - intro.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Introduction - Study Core</title>
+   <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+<nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="index.html"class="active">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>JAVA</h2>
+      <ul>
+      <li><a href="index.html">Overview</a></li> 
+      <li><a href="intro.html" class="active">Introduction</a> </li>
+      <li><a href="oop.html">OOP</a></li> 
+      <li><a href="exceptions.html">Exceptions</a></li> 
+      <li><a href="collections.html">Collections</a></li>
+     </ul>
+   </aside>
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+      <h2>What is Java?</h2>
+      <p>
+        Java is a <strong>high-level, class-based, object-oriented</strong> programming language 
+        that is designed to have as few implementation dependencies as possible. 
+        It is widely used for building web apps, mobile apps, desktop applications, and enterprise systems.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Features of Java</h2>
+      <ul>
+        <li><strong>Platform Independent</strong> – “Write Once, Run Anywhere” using the JVM.</li>
+        <li><strong>Object-Oriented</strong> – Everything is modeled as objects.</li>
+        <li><strong>Robust & Secure</strong> – Strong memory management and security features.</li>
+        <li><strong>Multithreaded</strong> – Supports concurrent execution of tasks.</li>
+        <li><strong>Huge Community</strong> – Lots of libraries, frameworks, and support.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Applications of Java</h2>
+      <ul>
+        <li>Web Development (Spring, JSP, Servlets)</li>
+        <li>Mobile Development (Android)</li>
+        <li>Enterprise Applications</li>
+        <li>Desktop GUI (JavaFX, Swing)</li>
+        <li>Cloud Computing & Big Data</li>
+      </ul>
+    </section>
+    <section>
+  <h2>Printing Output</h2>
+  <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!"); // prints with new line
+        System.out.print("Welcome ");       // prints without new line
+        System.out.print("to Java.");
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Comments in Java</h2>
+  <pre>
+// Single-line comment
+
+/*
+ Multi-line comment
+ Spans multiple lines
+ */
+
+/**
+ * Documentation comment
+ * Used for documentation generation
+ */
+  </pre>
+</section>
+
+<section>
+  <h2>Variables</h2>
+  <pre>
+public class Main {
+    public static void main(String[] args) {
+        int age = 20;              // integer
+        double price = 99.99;      // decimal
+        char grade = 'A';          // character
+        String name = "Alice";     // text
+        boolean isStudent = true;  // true/false
+
+        System.out.println(name + " is " + age + " years old.");
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Data Types</h2>
+  <ul>
+    <li><strong>Primitive types</strong>: int, double, char, boolean, byte, short, long, float</li>
+    <li><strong>Non-primitive types</strong>: String, Arrays, Objects, etc.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Taking Input</h2>
+  <pre>
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.println("Hello " + name + ", you are " + age + " years old.");
+    }
+}
+  </pre>
+</section>
+<div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>1. What makes Java platform independent?</p>
+ 
+  <div class="quiz-option" data-correct="false">It only runs on Windows</div>
+  <div class="quiz-option" data-correct="false">It does not use classes</div>
+   <div class="quiz-option" data-correct="true">It runs on the JVM (Java Virtual Machine)</div>
+  <div class="quiz-option" data-correct="false">It automatically translates into machine code</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>2. Which of the following is NOT a primitive data type in Java?</p>
+
+  <div class="quiz-option" data-correct="false">int</div>
+    <div class="quiz-option" data-correct="true">String</div>
+  <div class="quiz-option" data-correct="false">double</div>
+  <div class="quiz-option" data-correct="false">boolean</div>
+</div>
+
+<div class="quiz-container">
+ 
+  <p>3. Which keyword is used to create an object for user input in Java?</p>
+ 
+  <div class="quiz-option" data-correct="false">Input</div>
+  <div class="quiz-option" data-correct="false">Reader</div>
+   <div class="quiz-option" data-correct="true">Scanner</div>
+  <div class="quiz-option" data-correct="false">Buffer</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>4. What is the difference between <code>print()</code> and <code>println()</code> in Java?</p>
+  <div class="quiz-option" data-correct="true"><code>println()</code> adds a new line, <code>print()</code> does not</div>
+  <div class="quiz-option" data-correct="false">Both are exactly the same</div>
+  <div class="quiz-option" data-correct="false"><code>print()</code> is faster</div>
+  <div class="quiz-option" data-correct="false"><code>println()</code> is only used for numbers</div>
+</div>
+
+<div class="quiz-container">
+ 
+  <p>5. Which of these is a feature of Java?</p>
+  <div class="quiz-option" data-correct="true">Multithreading</div>
+  <div class="quiz-option" data-correct="false">Manual memory management</div>
+  <div class="quiz-option" data-correct="false">Platform dependency</div>
+  <div class="quiz-option" data-correct="false">Low-level coding</div>
+</div>
+
+<div class="quiz-container">
+
+  <p>6. Which type of comment is used for generating documentation in Java?</p>
+
+  <div class="quiz-option" data-correct="false">// Single-line comment</div>
+  <div class="quiz-option" data-correct="false">/* Multi-line comment */</div>
+  <div class="quiz-option" data-correct="false"># Hash comment</div>
+    <div class="quiz-option" data-correct="true">/** Documentation comment */</div>
+</div>
+
+<div class="quiz-container">
+  
+  <p>7. Which application is NOT commonly built using Java?</p>
+  
+  <div class="quiz-option" data-correct="false">Web Applications</div>
+  <div class="quiz-option" data-correct="false">Android Apps</div>
+  <div class="quiz-option" data-correct="true">Operating Systems</div>
+  <div class="quiz-option" data-correct="false">Enterprise Applications</div>
+</div>
+</div>
+  </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

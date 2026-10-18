@@ -1,0 +1,198 @@
+<!-- Placeholder for c++ - classes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Classes</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="index.html" class="active">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>C++ Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="classes.html" class="active">Classes</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="stl.html">STL</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Classes in C++</h2>
+    <p>
+      A <b>class</b> in C++ is a <b>blueprint for creating objects</b>.  
+      It bundles <b>data (attributes)</b> and <b>functions (methods)</b> that operate on the data into a single unit.  
+      This is the foundation of <b>Object-Oriented Programming (OOP)</b>.
+    </p>
+  </section>
+
+  <section>
+    <h3>Basic Syntax of a Class</h3>
+    <pre>
+class ClassName {
+  access_specifier:
+    // data members (variables)
+    // member functions (methods)
+};
+    </pre>
+    <p>
+      Explanation:
+      <ul>
+        <li><b>class</b> – Keyword used to define a class.</li>
+        <li><b>access_specifier</b> – Defines visibility of members (<code>public</code>, <code>private</code>, <code>protected</code>).</li>
+        <li><b>data members</b> – Variables inside a class.</li>
+        <li><b>member functions</b> – Functions inside a class that define behavior.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Example: Defining and Using a Class</h3>
+    <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+  public:              // Access specifier
+    string name;       // Data member
+    int age;           // Data member
+
+    void introduce() { // Member function
+        cout &lt;&lt; "Hi, my name is " &lt;&lt; name 
+             &lt;&lt; " and I am " &lt;&lt; age &lt;&lt; " years old.";
+    }
+};
+
+int main() {
+    Student s1;           // Create an object of Student
+    s1.name = "Alice";    // Assign values
+    s1.age = 20;
+    s1.introduce();       // Call member function
+    return 0;
+}
+    </pre>
+    <p>
+      Output:  
+      <code>Hi, my name is Alice and I am 20 years old.</code>
+    </p>
+  </section>
+
+  <section>
+    <h3>Access Specifiers in C++ Classes</h3>
+    <ul>
+      <li><b>public</b> – Members are accessible from outside the class.</li>
+      <li><b>private</b> – Members can be accessed only within the class (default if not specified).</li>
+      <li><b>protected</b> – Members are accessible in the class and by derived (child) classes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Points</h3>
+    <ul>
+      <li>A class defines a <b>blueprint</b>, and objects are <b>instances</b> of the class.</li>
+      <li>Helps in <b>data encapsulation</b> and <b>reusability</b>.</li>
+      <li>Access specifiers control data <b>security and privacy</b>.</li>
+      <li>Functions inside a class operate on the data of that class.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What is a class in C++?</p>
+  <div class="quiz-option" data-correct="false">An object with values only</div>
+  <div class="quiz-option" data-correct="true">A blueprint for creating objects</div>
+  <div class="quiz-option" data-correct="false">A predefined C++ library</div>
+  <div class="quiz-option" data-correct="false">A function that stores data</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which keyword is used to define a class in C++?</p>
+  <div class="quiz-option" data-correct="true">class</div>
+  <div class="quiz-option" data-correct="false">struct</div>
+  <div class="quiz-option" data-correct="false">object</div>
+  <div class="quiz-option" data-correct="false">define</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is the default access specifier in a C++ class?</p>
+  <div class="quiz-option" data-correct="false">public</div>
+  <div class="quiz-option" data-correct="true">private</div>
+  <div class="quiz-option" data-correct="false">protected</div>
+  <div class="quiz-option" data-correct="false">global</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which access specifier allows class members to be accessed only inside the class?</p>
+  <div class="quiz-option" data-correct="false">public</div>
+  <div class="quiz-option" data-correct="true">private</div>
+  <div class="quiz-option" data-correct="false">protected</div>
+  <div class="quiz-option" data-correct="false">default</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the Student class example, what does the <code>introduce()</code> function do?</p>
+  <div class="quiz-option" data-correct="false">Takes input from the user</div>
+  <div class="quiz-option" data-correct="true">Prints the student's name and age</div>
+  <div class="quiz-option" data-correct="false">Assigns values to data members</div>
+  <div class="quiz-option" data-correct="false">Deletes the object</div>
+</div>
+
+<div class="quiz-container">
+  <p>What are data members in a C++ class?</p>
+  <div class="quiz-option" data-correct="true">Variables defined inside a class</div>
+  <div class="quiz-option" data-correct="false">Functions inside a class</div>
+  <div class="quiz-option" data-correct="false">Objects created from the class</div>
+  <div class="quiz-option" data-correct="false">Headers included in the program</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is <b>true</b> about objects in C++?</p>
+  <div class="quiz-option" data-correct="true">Objects are instances of a class</div>
+  <div class="quiz-option" data-correct="false">Objects are the same as classes</div>
+  <div class="quiz-option" data-correct="false">Objects cannot call member functions</div>
+  <div class="quiz-option" data-correct="false">Objects do not hold data</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

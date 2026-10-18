@@ -1,0 +1,283 @@
+<!-- Placeholder for html-css - flexbox.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+        <li><a href="index.html" class="active">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+    
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>HTML & CSS Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="html-basics.html">HTML Basics</a></li>
+        <li><a href="css-basics.html">CSS Basics</a></li>
+        <li><a href="flexbox.html" class="active">Flexbox</a></li>
+        <li><a href="grid.html">CSS Grid</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to CSS Flexbox</h2>
+    <p>
+      <b>Flexbox (Flexible Box Layout)</b> is a CSS layout model that makes it easier to design 
+      responsive layouts, align items, and distribute space within a container.
+    </p>
+    <p>
+      With Flexbox, elements inside a container can be arranged 
+      <b>horizontally or vertically</b>, and they adjust automatically 
+      to different screen sizes.
+    </p>
+  </section>
+
+  <section>
+    <h3>How Flexbox Works</h3>
+    <p>
+      Flexbox works by turning a container into a <b>flex container</b> using the property:
+    </p>
+    <pre><code>
+.container {
+  display: flex;
+}
+    </code></pre>
+    <p>
+      Once applied, all child elements of <code>.container</code> become <b>flex items</b> 
+      that follow flexbox rules.
+    </p>
+  </section>
+
+  <section>
+    <h3>Main Axis and Cross Axis</h3>
+    <ul>
+      <li><b>Main Axis</b>: The direction in which flex items are placed (default: row → left to right).</li>
+      <li><b>Cross Axis</b>: Perpendicular to the main axis (default: column → top to bottom).</li>
+    </ul>
+    <p>
+      You can change the direction of the main axis using <code>flex-direction</code>.
+    </p>
+    <pre><code>
+.container {
+  display: flex;
+  flex-direction: row;    /* default: items in a row */
+  flex-direction: column; /* items in a column */
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Important Flexbox Properties</h3>
+    <h4>For the Container</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>flex-direction</code></td>
+        <td>Defines the direction of items.</td>
+        <td><code>row | row-reverse | column | column-reverse</code></td>
+      </tr>
+      <tr>
+        <td><code>justify-content</code></td>
+        <td>Aligns items along the main axis.</td>
+        <td><code>flex-start | flex-end | center | space-between | space-around | space-evenly</code></td>
+      </tr>
+      <tr>
+        <td><code>align-items</code></td>
+        <td>Aligns items along the cross axis.</td>
+        <td><code>stretch | flex-start | flex-end | center | baseline</code></td>
+      </tr>
+      <tr>
+        <td><code>flex-wrap</code></td>
+        <td>Controls whether items wrap onto a new line.</td>
+        <td><code>nowrap | wrap | wrap-reverse</code></td>
+      </tr>
+      <tr>
+        <td><code>align-content</code></td>
+        <td>Aligns multiple rows of items (when wrapping).</td>
+        <td><code>stretch | flex-start | flex-end | center | space-between | space-around</code></td>
+      </tr>
+    </table>
+
+    <h4>For the Items</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>flex</code></td>
+        <td>Shorthand for <code>flex-grow, flex-shrink, flex-basis</code>.</td>
+        <td><code>flex: 1;</code></td>
+      </tr>
+      <tr>
+        <td><code>align-self</code></td>
+        <td>Overrides <code>align-items</code> for a specific item.</td>
+        <td><code>align-self: center;</code></td>
+      </tr>
+      <tr>
+        <td><code>order</code></td>
+        <td>Changes the order of items (default is 0).</td>
+        <td><code>order: 2;</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>Example: Centering with Flexbox</h3>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: lightgray;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: steelblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="box"&gt;Centered&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <p>
+      Here, the box is perfectly centered horizontally and vertically using <code>justify-content</code> 
+      and <code>align-items</code>.
+    </p>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <ul>
+      <li>Flexbox is a <b>1D layout model</b> (handles rows or columns, not both).</li>
+      <li>Use <code>display: flex;</code> on the container.</li>
+      <li>Control direction, alignment, and wrapping with container properties.</li>
+      <li>Control size, order, and alignment with item properties.</li>
+    </ul>
+  </section>
+
+
+      <div id="quiz-wrapper">
+<div class="quiz-container">
+  <p>1. Which CSS property makes a container a flex container?</p>
+  <div class="quiz-option" data-correct="true">display: flex;</div>
+  <div class="quiz-option" data-correct="false">position: flex;</div>
+  <div class="quiz-option" data-correct="false">flexbox: on;</div>
+  <div class="quiz-option" data-correct="false">layout: flex;</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. By default, in which direction does Flexbox arrange items?</p>
+  <div class="quiz-option" data-correct="true">Row (left to right)</div>
+  <div class="quiz-option" data-correct="false">Column (top to bottom)</div>
+  <div class="quiz-option" data-correct="false">Diagonal</div>
+  <div class="quiz-option" data-correct="false">Right to left</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What does the property <code>flex-direction: column;</code> do?</p>
+  <div class="quiz-option" data-correct="true">Places items vertically (top to bottom)</div>
+  <div class="quiz-option" data-correct="false">Places items horizontally</div>
+  <div class="quiz-option" data-correct="false">Centers items in a column</div>
+  <div class="quiz-option" data-correct="false">Reverses item order</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which property aligns items along the main axis?</p>
+  <div class="quiz-option" data-correct="true">justify-content</div>
+  <div class="quiz-option" data-correct="false">align-items</div>
+  <div class="quiz-option" data-correct="false">flex-direction</div>
+  <div class="quiz-option" data-correct="false">flex-wrap</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which property aligns items along the cross axis?</p>
+  <div class="quiz-option" data-correct="true">align-items</div>
+  <div class="quiz-option" data-correct="false">justify-content</div>
+  <div class="quiz-option" data-correct="false">order</div>
+  <div class="quiz-option" data-correct="false">align-content</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which property controls whether flex items move to a new line?</p>
+  <div class="quiz-option" data-correct="true">flex-wrap</div>
+  <div class="quiz-option" data-correct="false">order</div>
+  <div class="quiz-option" data-correct="false">flex</div>
+  <div class="quiz-option" data-correct="false">align-self</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. What is the shorthand property for flex-grow, flex-shrink, and flex-basis?</p>
+  <div class="quiz-option" data-correct="true">flex</div>
+  <div class="quiz-option" data-correct="false">flex-box</div>
+  <div class="quiz-option" data-correct="false">flex-size</div>
+  <div class="quiz-option" data-correct="false">flex-order</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which two properties are used together to perfectly center an item both horizontally and vertically inside a flex container?</p>
+  <div class="quiz-option" data-correct="true">justify-content &amp; align-items</div>
+  <div class="quiz-option" data-correct="false">flex-direction &amp; order</div>
+  <div class="quiz-option" data-correct="false">flex-wrap &amp; align-content</div>
+  <div class="quiz-option" data-correct="false">align-self &amp; flex</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

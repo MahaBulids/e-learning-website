@@ -1,0 +1,261 @@
+<!-- Placeholder for sql - indexes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL - Indexes</title>
+ <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html"class="active">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li> <a href="index.html">SQL Index</a></li>
+        <li> <a href="intro.html">Introduction</a></li>
+        <li> <a href="queries.html">Queries</a></li>
+        <li><a href="joins.html">Joins</a></li>
+        <li> <a href="indexes.html" class="active">SQL Indexes</a></li>
+      </ul>
+    </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>What are SQL Indexes?</h2>
+    <p>
+      An <b>Index</b> in SQL is a database object that improves the speed of 
+      data retrieval operations on a table. It works like an index in a book, 
+      allowing the database engine to quickly locate the desired rows without 
+      scanning the entire table.
+    </p>
+    <p>
+      ⚠️ However, indexes consume extra memory and can slow down <b>INSERT</b>, 
+      <b>UPDATE</b>, and <b>DELETE</b> operations because they need to be updated 
+      whenever the data changes.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why Use Indexes?</h2>
+    <ul>
+      <li>Speeds up <b>SELECT queries</b>.</li>
+      <li>Improves <b>searching and filtering</b>.</li>
+      <li>Helps with <b>sorting and grouping</b> operations.</li>
+      <li>Provides quick access to specific rows.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Types of Indexes</h2>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Index Type</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Primary Index</b></td>
+          <td>Automatically created when a <code>PRIMARY KEY</code> is defined. Ensures uniqueness and fast access.</td>
+          <td><code>CREATE TABLE Students (ID INT PRIMARY KEY, Name VARCHAR(50));</code></td>
+        </tr>
+        <tr>
+          <td><b>Unique Index</b></td>
+          <td>Ensures all values in a column are unique, but unlike primary key, a table can have multiple unique indexes.</td>
+          <td><code>CREATE UNIQUE INDEX idx_email ON Users(Email);</code></td>
+        </tr>
+        <tr>
+          <td><b>Composite Index</b></td>
+          <td>Index on two or more columns, useful for combined searches.</td>
+          <td><code>CREATE INDEX idx_name_age ON Students(Name, Age);</code></td>
+        </tr>
+        <tr>
+          <td><b>Clustered Index</b></td>
+          <td>Stores the actual table rows in the order of the index. A table can have only one clustered index.</td>
+          <td><code>CREATE CLUSTERED INDEX idx_student_id ON Students(ID);</code></td>
+        </tr>
+        <tr>
+          <td><b>Non-Clustered Index</b></td>
+          <td>Creates a separate structure from the table data. Multiple non-clustered indexes are allowed per table.</td>
+          <td><code>CREATE NONCLUSTERED INDEX idx_name ON Students(Name);</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Example: Without vs With Index</h2>
+    <h3>Students Table</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Alice</td><td>20</td></tr>
+        <tr><td>2</td><td>Bob</td><td>22</td></tr>
+        <tr><td>3</td><td>Charlie</td><td>21</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Query without Index:</h4>
+    <pre>
+SELECT * FROM Students WHERE Name = 'Alice';
+-- The database scans all rows (Full Table Scan).
+    </pre>
+
+    <h4>Query with Index:</h4>
+    <pre>
+CREATE INDEX idx_name ON Students(Name);
+SELECT * FROM Students WHERE Name = 'Alice';
+-- The database uses the index to quickly find "Alice".
+    </pre>
+  </section>
+
+  <section>
+    <h2>Advantages of Indexes</h2>
+    <ul>
+      <li>Improves query performance significantly.</li>
+      <li>Helps in faster <b>WHERE</b> clause lookups.</li>
+      <li>Speeds up sorting with <b>ORDER BY</b>.</li>
+      <li>Improves <b>JOIN</b> performance.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Disadvantages of Indexes</h2>
+    <ul>
+      <li>Consumes additional disk space.</li>
+      <li>Slows down <b>INSERT, UPDATE, DELETE</b> because index updates are required.</li>
+      <li>Too many indexes can reduce performance instead of improving it.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Indexes are used to speed up data retrieval in SQL.</li>
+      <li>Different types include <b>Primary, Unique, Composite, Clustered, and Non-Clustered</b>.</li>
+      <li>They improve <b>SELECT queries</b> but may slow down <b>data modifications</b>.</li>
+      <li>Best practice: Use indexes wisely for columns often used in <b>search conditions</b> or <b>joins</b>.</li>
+    </ul>
+  </section>
+
+    <div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What is the main purpose of an Index in SQL?</p>
+  <div class="quiz-option" data-correct="true">To speed up data retrieval</div>
+  <div class="quiz-option" data-correct="false">To reduce disk space usage</div>
+  <div class="quiz-option" data-correct="false">To encrypt sensitive data</div>
+  <div class="quiz-option" data-correct="false">To prevent deadlocks</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is a disadvantage of indexes?</p>
+  <div class="quiz-option" data-correct="true">They slow down INSERT, UPDATE, DELETE operations</div>
+  <div class="quiz-option" data-correct="false">They make SELECT queries slower</div>
+  <div class="quiz-option" data-correct="false">They automatically delete duplicate rows</div>
+  <div class="quiz-option" data-correct="false">They replace primary keys</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which index is automatically created when a PRIMARY KEY is defined?</p>
+  <div class="quiz-option" data-correct="true">Primary Index</div>
+  <div class="quiz-option" data-correct="false">Unique Index</div>
+  <div class="quiz-option" data-correct="false">Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Composite Index</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which index ensures uniqueness but can be created multiple times on different columns?</p>
+  <div class="quiz-option" data-correct="true">Unique Index</div>
+  <div class="quiz-option" data-correct="false">Primary Index</div>
+  <div class="quiz-option" data-correct="false">Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Non-Clustered Index</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is a Composite Index?</p>
+  <div class="quiz-option" data-correct="true">An index created on two or more columns</div>
+  <div class="quiz-option" data-correct="false">An index created on a primary key</div>
+  <div class="quiz-option" data-correct="false">A temporary index during queries</div>
+  <div class="quiz-option" data-correct="false">A backup index stored in memory</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which type of index stores actual table rows in sorted order?</p>
+  <div class="quiz-option" data-correct="true">Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Non-Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Composite Index</div>
+  <div class="quiz-option" data-correct="false">Unique Index</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which index creates a separate structure from the table and allows multiple indexes per table?</p>
+  <div class="quiz-option" data-correct="true">Non-Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Clustered Index</div>
+  <div class="quiz-option" data-correct="false">Primary Index</div>
+  <div class="quiz-option" data-correct="false">Composite Index</div>
+</div>
+
+<div class="quiz-container">
+  <p>What happens when a SELECT query is executed without an index?</p>
+  <div class="quiz-option" data-correct="true">A full table scan is performed</div>
+  <div class="quiz-option" data-correct="false">An error occurs</div>
+  <div class="quiz-option" data-correct="false">The database skips unmatched rows</div>
+  <div class="quiz-option" data-correct="false">The query executes instantly</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which operation benefits the most from indexes?</p>
+  <div class="quiz-option" data-correct="true">SELECT queries</div>
+  <div class="quiz-option" data-correct="false">INSERT queries</div>
+  <div class="quiz-option" data-correct="false">DELETE queries</div>
+  <div class="quiz-option" data-correct="false">DROP queries</div>
+</div>
+
+<div class="quiz-container">
+  <p>Best practice: When should you create an index?</p>
+  <div class="quiz-option" data-correct="true">On columns frequently used in WHERE, JOIN, or ORDER BY</div>
+  <div class="quiz-option" data-correct="false">On every column in the table</div>
+  <div class="quiz-option" data-correct="false">Only on numeric columns</div>
+  <div class="quiz-option" data-correct="false">Only after queries become slow</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!-- Placeholder for c-sharp - intro.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C# Introduction</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="index.html" class="active">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C# Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li><a href="oop.html">OOP</a></li>
+        <li><a href="dotnet.html">.NET</a></li>
+        <li><a href="unity.html">Unity</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">  <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to C#</h2>
+    <p>
+      <b>C# (C-Sharp)</b> is a modern, object-oriented programming language 
+      developed by Microsoft as part of the <b>.NET framework</b>.  
+      It is widely used for building web apps, desktop software, mobile apps, and games.
+    </p>
+  </section>
+
+  <section>
+    <h3>Basic C# Program</h3>
+    <pre>
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, World!");
+    }
+}
+    </pre>
+    <p>
+      <b>Explanation:</b>
+      <ul>
+        <li><code>using System;</code> → Imports the System namespace.</li>
+        <li><code>class Program</code> → Defines a class named Program.</li>
+        <li><code>Main()</code> → Entry point of the program.</li>
+        <li><code>Console.WriteLine()</code> → Prints output to the screen.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Variables and Data Types</h3>
+    <pre>
+using System;
+
+class VariablesExample {
+    static void Main() {
+        int age = 21;
+        string name = "Alice";
+        double pi = 3.14;
+        bool isStudent = true;
+
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Age: " + age);
+        Console.WriteLine("Pi: " + pi);
+        Console.WriteLine("Student: " + isStudent);
+    }
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>Conditional Statement (if-else)</h3>
+    <pre>
+using System;
+
+class IfElseExample {
+    static void Main() {
+        int number = 10;
+
+        if (number % 2 == 0) {
+            Console.WriteLine(number + " is Even");
+        } else {
+            Console.WriteLine(number + " is Odd");
+        }
+    }
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>Loops in C#</h3>
+    <pre>
+using System;
+
+class LoopExample {
+    static void Main() {
+        // For loop
+        for (int i = 1; i <= 5; i++) {
+            Console.WriteLine("Count: " + i);
+        }
+
+        // While loop
+        int j = 1;
+        while (j <= 5) {
+            Console.WriteLine("While Count: " + j);
+            j++;
+        }
+    }
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>Methods in C#</h3>
+    <pre>
+using System;
+
+class MethodExample {
+    static void Main() {
+        int result = Add(5, 3);
+        Console.WriteLine("Sum = " + result);
+    }
+
+    static int Add(int a, int b) {
+        return a + b;
+    }
+}
+    </pre>
+  </section>
+
+       <div id="quiz-wrapper">
+      <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>Who developed the C# programming language?</p>
+  <div class="quiz-option" data-correct="true">Microsoft</div>
+  <div class="quiz-option" data-correct="false">Google</div>
+  <div class="quiz-option" data-correct="false">Apple</div>
+  <div class="quiz-option" data-correct="false">IBM</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the basic C# program, what is the entry point of execution?</p>
+  <div class="quiz-option" data-correct="false">Program()</div>
+  <div class="quiz-option" data-correct="true">Main()</div>
+  <div class="quiz-option" data-correct="false">Run()</div>
+  <div class="quiz-option" data-correct="false">Start()</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does <code>Console.WriteLine()</code> do in C#?</p>
+  <div class="quiz-option" data-correct="true">Prints output to the screen</div>
+  <div class="quiz-option" data-correct="false">Reads input from user</div>
+  <div class="quiz-option" data-correct="false">Declares a variable</div>
+  <div class="quiz-option" data-correct="false">Ends the program</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is a valid C# data type?</p>
+  <div class="quiz-option" data-correct="false">char[] only</div>
+  <div class="quiz-option" data-correct="true">int, string, double, bool</div>
+  <div class="quiz-option" data-correct="false">text, number, decimal</div>
+  <div class="quiz-option" data-correct="false">integer, float64, character</div>
+</div>
+
+<div class="quiz-container">
+  <p>What will be the output of this code?<br><code>int number = 10;<br>if (number % 2 == 0) Console.WriteLine("Even"); else Console.WriteLine("Odd");</code></p>
+  <div class="quiz-option" data-correct="true">Even</div>
+  <div class="quiz-option" data-correct="false">Odd</div>
+  <div class="quiz-option" data-correct="false">10</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which loop will execute as long as its condition is true?</p>
+  <div class="quiz-option" data-correct="false">for loop only</div>
+  <div class="quiz-option" data-correct="true">while loop</div>
+  <div class="quiz-option" data-correct="false">switch</div>
+  <div class="quiz-option" data-correct="false">if-else</div>
+</div>
+
+<div class="quiz-container">
+  <p>What will the following method return?<br><code>static int Add(int a, int b) { return a + b; }</code></p>
+  <div class="quiz-option" data-correct="true">The sum of <code>a</code> and <code>b</code></div>
+  <div class="quiz-option" data-correct="false">The product of <code>a</code> and <code>b</code></div>
+  <div class="quiz-option" data-correct="false">Always 0</div>
+  <div class="quiz-option" data-correct="false">Nothing (void)</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

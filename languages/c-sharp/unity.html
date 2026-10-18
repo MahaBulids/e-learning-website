@@ -1,0 +1,182 @@
+<!-- Placeholder for c-sharp - unity.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C# in Unity</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="index.html" class="active">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C# Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="oop.html">OOP</a></li>
+        <li><a href="dotnet.html">.NET</a></li>
+        <li><a href="unity.html" class="active">Unity</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>What is Unity?</h2>
+    <p>
+      <b>Unity</b> is a powerful <b>game development engine</b> and platform 
+      used to build <b>2D, 3D, AR (Augmented Reality), and VR (Virtual Reality)</b> applications.  
+      It is widely popular for creating video games across PC, mobile, consoles, and the web.
+    </p>
+    <ul>
+      <li>Supports multiple platforms (Windows, Android, iOS, PlayStation, Xbox, WebGL).</li>
+      <li>Provides tools for graphics, physics, animation, and sound.</li>
+      <li>Uses <b>C#</b> as its primary scripting language for logic and interactivity.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How is C# Used in Unity?</h2>
+    <p>
+      In Unity, C# scripts are used to <b>control game objects, handle player input, 
+      manage physics, UI, and game logic</b>.  
+      Scripts are attached to <b>GameObjects</b> in the Unity Editor to define their behavior.
+    </p>
+  </section>
+
+  <section>
+    <h3>Basic Unity C# Script Example</h3>
+    <pre>
+// Example: Moving a player object in Unity
+
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public float speed = 5f;  // Movement speed
+
+    void Update()
+    {
+        // Get input from keyboard (WASD / Arrow Keys)
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        // Move the player
+        transform.Translate(new Vector3(moveX, moveY, 0) * speed * Time.deltaTime);
+    }
+}
+    </pre>
+    <p>
+      <b>Explanation:</b>
+      <ul>
+        <li><code>MonoBehaviour</code> → Base class every Unity script inherits from.</li>
+        <li><code>Update()</code> → Called every frame (used for continuous updates like movement).</li>
+        <li><code>Input.GetAxis()</code> → Reads keyboard/gamepad input.</li>
+        <li><code>transform.Translate()</code> → Moves the GameObject in the scene.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Other Uses of C# in Unity</h3>
+    <ul>
+      <li><b>Game Logic</b> – Scoring system, health, levels.</li>
+      <li><b>Physics Control</b> – Collisions, gravity, rigid bodies.</li>
+      <li><b>UI Development</b> – Buttons, menus, scoreboards.</li>
+      <li><b>AI Programming</b> – Enemy behavior, NPC movement.</li>
+      <li><b>Networking</b> – Multiplayer games, server-client communication.</li>
+    </ul>
+  </section>
+
+
+      <div id="quiz-wrapper">
+      <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What is Unity primarily used for?</p>
+  <div class="quiz-option" data-correct="true">Building 2D, 3D, AR, and VR applications</div>
+  <div class="quiz-option" data-correct="false">Creating websites</div>
+  <div class="quiz-option" data-correct="false">Database management</div>
+  <div class="quiz-option" data-correct="false">Only mobile app development</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which scripting language is mainly used in Unity?</p>
+  <div class="quiz-option" data-correct="true">C#</div>
+  <div class="quiz-option" data-correct="false">Java</div>
+  <div class="quiz-option" data-correct="false">Python</div>
+  <div class="quiz-option" data-correct="false">C++</div>
+</div>
+
+<div class="quiz-container">
+  <p>How are C# scripts attached in Unity?</p>
+  <div class="quiz-option" data-correct="true">They are attached to GameObjects in the Unity Editor</div>
+  <div class="quiz-option" data-correct="false">They replace the Unity engine code</div>
+  <div class="quiz-option" data-correct="false">They run as external applications</div>
+  <div class="quiz-option" data-correct="false">They only work in console mode</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does the <code>Update()</code> method in Unity do?</p>
+  <div class="quiz-option" data-correct="true">Executes code every frame</div>
+  <div class="quiz-option" data-correct="false">Runs only once at the start</div>
+  <div class="quiz-option" data-correct="false">Handles only physics</div>
+  <div class="quiz-option" data-correct="false">Shuts down the game</div>
+</div>
+
+<div class="quiz-container">
+  <p>In Unity, what does <code>Input.GetAxis("Horizontal")</code> return?</p>
+  <div class="quiz-option" data-correct="true">Keyboard or gamepad input for horizontal movement</div>
+  <div class="quiz-option" data-correct="false">The player’s health</div>
+  <div class="quiz-option" data-correct="false">Frame rate</div>
+  <div class="quiz-option" data-correct="false">A sound effect</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which class do Unity C# scripts typically inherit from?</p>
+  <div class="quiz-option" data-correct="true">MonoBehaviour</div>
+  <div class="quiz-option" data-correct="false">GameObject</div>
+  <div class="quiz-option" data-correct="false">System.Object</div>
+  <div class="quiz-option" data-correct="false">UnityScript</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is NOT a common use of C# in Unity?</p>
+  <div class="quiz-option" data-correct="false">Game logic (scoring, health)</div>
+  <div class="quiz-option" data-correct="false">Physics and collisions</div>
+  <div class="quiz-option" data-correct="false">UI development</div>
+  <div class="quiz-option" data-correct="true">Operating system development</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

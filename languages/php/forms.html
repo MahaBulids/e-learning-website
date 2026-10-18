@@ -1,0 +1,212 @@
+<!-- Placeholder for php - forms.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Forms - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="forms.html" class="active">Forms</a></li>
+        <li><a href="databases.html">Databases</a></li>
+        <li> <a href="security.html">Security</a></li>
+      </ul>
+    </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>PHP Forms</h2>
+    <p>
+      Forms are used in web pages to collect user input. PHP can process this input 
+      and perform actions like storing data, sending emails, or validating user entries.
+    </p>
+  </section>
+
+  <section>
+    <h2>Creating a Simple HTML Form</h2>
+    <p>This form collects a user's name and email:</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title>PHP Form Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action="process.php" method="post"&gt;
+  Name: &lt;input type="text" name="name"&gt;&lt;br&gt;
+  Email: &lt;input type="email" name="email"&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>action="process.php"</code> specifies the PHP file that will process the form.<br>
+      - <code>method="post"</code> sends data securely in the request body.<br>
+      - <code>name</code> attribute identifies the form input for PHP to use.
+    </p>
+  </section>
+
+  <section>
+    <h2>Processing Form Data in PHP</h2>
+    <p>In <code>process.php</code>, we can access form data using <code>$_POST</code>:</p>
+    <pre>
+&lt;?php
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+
+  echo "Hello, " . $name . "!<br&gt;";
+  echo "Your email is: " . $email;
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>$_POST['name']</code> retrieves the value entered in the "name" field.<br>
+      - <code>$_POST['email']</code> retrieves the email.<br>
+      - <code>echo</code> displays the input back to the user.
+    </p>
+  </section>
+
+  <section>
+    <h2>GET vs POST Methods</h2>
+    <ul>
+      <li><b>GET:</b> Appends data to the URL. Useful for bookmarks or queries. Less secure.</li>
+      <li><b>POST:</b> Sends data in the request body. More secure for sensitive information.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Validating Form Data</h2>
+    <pre>
+&lt;?php
+  if(isset($_POST['name']) && isset($_POST['email'])) {
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+
+      if(empty($name) || empty($email)) {
+          echo "Please fill in all fields!";
+      } else {
+          echo "Name: " . $name . "&lt;br&gt;";
+          echo "Email: " . $email;
+      }
+  }
+?&gt;
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>isset()</code> checks if the form values exist.<br>
+      - <code>empty()</code> ensures the user entered data.<br>
+      - Provides basic validation before processing the data.
+    </p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Forms collect user input via <b>HTML</b>.</li>
+      <li>PHP uses <code>$_POST</code> or <code>$_GET</code> to access form data.</li>
+      <li><code>action</code> specifies the processing PHP file.</li>
+      <li>Always validate form data to ensure security and completeness.</li>
+      <li>Use <b>POST</b> for sensitive data and <b>GET</b> for simple queries.</li>
+    </ul>
+  </section>
+    <div id="quiz-wrapper">
+    <h3>Quick Quiz: PHP Forms</h3>
+
+<div class="quiz-container">
+  <p>1. Which PHP superglobal is used to access data sent via POST method?</p>
+  <div class="quiz-option" data-correct="true">$_POST</div>
+  <div class="quiz-option" data-correct="false">$_GET</div>
+  <div class="quiz-option" data-correct="false">$_REQUEST</div>
+  <div class="quiz-option" data-correct="false">$_FORM</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. In a form, which attribute specifies the PHP file that will process the data?</p>
+  <div class="quiz-option" data-correct="true">action</div>
+  <div class="quiz-option" data-correct="false">method</div>
+  <div class="quiz-option" data-correct="false">name</div>
+  <div class="quiz-option" data-correct="false">type</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which HTML attribute identifies the input for PHP to use?</p>
+  <div class="quiz-option" data-correct="true">name</div>
+  <div class="quiz-option" data-correct="false">id</div>
+  <div class="quiz-option" data-correct="false">value</div>
+  <div class="quiz-option" data-correct="false">class</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which form method is more secure for sending sensitive information?</p>
+  <div class="quiz-option" data-correct="true">POST</div>
+  <div class="quiz-option" data-correct="false">GET</div>
+  <div class="quiz-option" data-correct="false">URL</div>
+  <div class="quiz-option" data-correct="false">ACTION</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. What does the empty() function do in form validation?</p>
+  <div class="quiz-option" data-correct="true">Checks if a form input has no value</div>
+  <div class="quiz-option" data-correct="false">Retrieves the form input value</div>
+  <div class="quiz-option" data-correct="false">Sends data to another page</div>
+  <div class="quiz-option" data-correct="false">Creates a new input field</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which PHP function checks if a form input exists?</p>
+  <div class="quiz-option" data-correct="true">isset()</div>
+  <div class="quiz-option" data-correct="false">empty()</div>
+  <div class="quiz-option" data-correct="false">echo()</div>
+  <div class="quiz-option" data-correct="false">get()</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. What symbol is used at the start of PHP variables?</p>
+  <div class="quiz-option" data-correct="true">$</div>
+  <div class="quiz-option" data-correct="false">%</div>
+  <div class="quiz-option" data-correct="false">#</div>
+  <div class="quiz-option" data-correct="false">&</div>
+</div>
+</div>
+  </mai>
+  </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

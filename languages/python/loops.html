@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python - Loops</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Lesson Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+
+    <!-- Hamburger for lesson navbar links -->
+    <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="index.html" class="active">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+
+    <!-- Dark mode toggle -->
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="syntax.html">Syntax</a></li>
+        <li><a href="loops.html" class="active">Loops</a></li>
+        <li><a href="functions.html">Functions</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+      <!-- Lesson Content -->
+      <section>
+  <h2>Loops in Python</h2>
+  <p>
+    In programming, a <b>loop</b> is a control structure that allows you to repeat a block of code multiple times. 
+    Instead of writing the same code repeatedly, loops make the program shorter, cleaner, and easier to maintain.
+  </p>
+  <p>
+    Python provides two main types of loops: <b>for loop</b> and <b>while loop</b>. 
+    Additionally, you can control loop execution using <b>break</b>, <b>continue</b>, and <b>pass</b> statements.
+  </p>
+
+  <h3>1. For Loop</h3>
+  <p>
+    The <code>for</code> loop in Python is used to iterate over a sequence (like a list, tuple, string, or range). 
+    It executes a block of code once for each item in the sequence.
+  </p>
+
+  <h4>Syntax:</h4>
+  <pre><code>for variable in sequence:
+    # code to execute
+  </code></pre>
+
+  <h4>Example 1: Using range()</h4>
+  <pre><code>for i in range(5):
+    print("Iteration:", i)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>Iteration: 0
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+  </code></pre>
+
+  <h4>Example 2: Iterating through a list</h4>
+  <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print("I like", fruit)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>I like apple
+I like banana
+I like cherry
+  </code></pre>
+
+  <h4>Example 3: Using for loop with a string</h4>
+  <pre><code>for letter in "PYTHON":
+    print(letter)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>P
+Y
+T
+H
+O
+N
+  </code></pre>
+
+  <hr>
+
+  <h3>2. While Loop</h3>
+  <p>
+    The <code>while</code> loop is used when you do not know how many times to repeat a block of code.
+    It keeps executing as long as the condition is <code>True</code>.
+  </p>
+
+  <h4>Syntax:</h4>
+  <pre><code>while condition:
+    # code to execute
+  </code></pre>
+
+  <h4>Example 1: Counting numbers</h4>
+  <pre><code>i = 1
+while i <= 5:
+    print("Count:", i)
+    i += 1
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+  </code></pre>
+
+  <h4>Example 2: Infinite loop (be careful!)</h4>
+  <pre><code>while True:
+    print("This will run forever!")  # press Ctrl+C to stop
+  </code></pre>
+
+  <p><b>Note:</b> Always ensure the condition becomes <code>False</code> at some point, 
+  otherwise the loop will never stop running.</p>
+
+  <hr>
+
+  <h3>3. Loop Control Statements</h3>
+  <p>
+    Sometimes, you may want to skip certain iterations or stop the loop completely. 
+    Python provides three statements for this purpose:
+  </p>
+
+  <h4>1️⃣ break statement</h4>
+  <p>It stops the loop entirely, even if the condition is still True.</p>
+  <pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>0
+1
+2
+3
+4
+  </code></pre>
+
+  <h4>2️⃣ continue statement</h4>
+  <p>It skips the current iteration and moves to the next one.</p>
+  <pre><code>for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>0
+1
+3
+4
+  </code></pre>
+
+  <h4>3️⃣ pass statement</h4>
+  <p>
+    It does nothing and acts as a placeholder. 
+    It is useful when you want to define a loop but not write the logic yet.
+  </p>
+  <pre><code>for i in range(3):
+    pass  # this loop does nothing for now
+  </code></pre>
+
+  <hr>
+
+  <h3>4. Nested Loops</h3>
+  <p>
+    A <b>nested loop</b> means a loop inside another loop. 
+    The inner loop runs completely for each iteration of the outer loop.
+  </p>
+
+  <h4>Syntax:</h4>
+  <pre><code>for i in range(outer_limit):
+    for j in range(inner_limit):
+        # code to execute
+  </code></pre>
+
+  <h4>Example:</h4>
+  <pre><code>for i in range(3):
+    for j in range(2):
+        print("i =", i, ", j =", j)
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>i = 0 , j = 0
+i = 0 , j = 1
+i = 1 , j = 0
+i = 1 , j = 1
+i = 2 , j = 0
+i = 2 , j = 1
+  </code></pre>
+
+  <hr>
+
+  <h3>5. Else with Loops</h3>
+  <p>
+    Loops in Python can have an <code>else</code> block. 
+    The <code>else</code> part is executed only when the loop finishes normally (i.e., without a <code>break</code>).
+  </p>
+
+  <h4>Example:</h4>
+  <pre><code>for i in range(3):
+    print("Loop:", i)
+else:
+    print("Loop completed successfully!")
+  </code></pre>
+  <p><b>Output:</b></p>
+  <pre><code>Loop: 0
+Loop: 1
+Loop: 2
+Loop completed successfully!
+  </code></pre>
+
+  <hr>
+
+  <h3>6. Summary Table</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Loop Type</th>
+      <th>When to Use</th>
+      <th>Syntax Example</th>
+    </tr>
+    <tr>
+      <td><b>for loop</b></td>
+      <td>When the number of repetitions is known or fixed.</td>
+      <td><code>for i in range(5):</code></td>
+    </tr>
+    <tr>
+      <td><b>while loop</b></td>
+      <td>When the number of repetitions is unknown; depends on a condition.</td>
+      <td><code>while i &lt;= 5:</code></td>
+    </tr>
+    <tr>
+      <td><b>nested loop</b></td>
+      <td>When looping inside another loop is required.</td>
+      <td><code>for i in range(3): for j in range(2):</code></td>
+    </tr>
+  </table>
+
+  <p><b>Key Tip:</b> Always test your loop logic to ensure it stops correctly and produces the expected output.</p>
+</section>
+
+      <!-- Quiz -->
+      <div id="quiz-wrapper">
+        <!-- Loops in Python Quiz -->
+
+<div class="quiz-container">
+  <h2>Quick Quiz: Loops in Python</h2>
+  <p>Q1. What is the main purpose of a loop in Python?</p>
+  <div class="quiz-option" data-correct="true">To repeat a block of code multiple times</div>
+  <div class="quiz-option" data-correct="false">To define a new function</div>
+  <div class="quiz-option" data-correct="false">To store multiple values in a list</div>
+  <div class="quiz-option" data-correct="false">To stop program execution</div>
+</div>
+
+<div class="quiz-container">
+  <p>Q2. Which loop is used when you know how many times you want to repeat a task?</p>
+  <div class="quiz-option" data-correct="true">for loop</div>
+  <div class="quiz-option" data-correct="false">while loop</div>
+  <div class="quiz-option" data-correct="false">nested loop</div>
+  <div class="quiz-option" data-correct="false">infinite loop</div>
+</div>
+
+<div class="quiz-container">
+  <p>Q3. What is the correct syntax to print numbers from 0 to 4 using a for loop?</p>
+  <div class="quiz-option" data-correct="true"><code>for i in range(5): print(i)</code></div>
+  <div class="quiz-option" data-correct="false"><code>for i in range(1,5): print(i)</code></div>
+  <div class="quiz-option" data-correct="false"><code>while i &lt; 5: print(i)</code></div>
+  <div class="quiz-option" data-correct="false"><code>loop i in 5: print(i)</code></div>
+</div>
+
+<div class="quiz-container">
+  <p>Q4. When should you use a <code>while</code> loop instead of a <code>for</code> loop?</p>
+  <div class="quiz-option" data-correct="true">When you don't know how many times to repeat</div>
+  <div class="quiz-option" data-correct="false">When you want to iterate over a list</div>
+  <div class="quiz-option" data-correct="false">When you want to use the range() function</div>
+  <div class="quiz-option" data-correct="false">When you want to print a fixed number of times</div>
+</div>
+
+<div class="quiz-container">
+  <p>Q5. What does the <code>break</code> statement do inside a loop?</p>
+  <div class="quiz-option" data-correct="true">It exits the loop completely</div>
+  <div class="quiz-option" data-correct="false">It skips the current iteration</div>
+  <div class="quiz-option" data-correct="false">It restarts the loop</div>
+  <div class="quiz-option" data-correct="false">It pauses the loop temporarily</div>
+</div>
+
+<div class="quiz-container">
+  <p>Q6. What is a nested loop?</p>
+  <div class="quiz-option" data-correct="true">A loop inside another loop</div>
+  <div class="quiz-option" data-correct="false">A loop that runs only once</div>
+  <div class="quiz-option" data-correct="false">A loop that breaks automatically</div>
+  <div class="quiz-option" data-correct="false">A loop that skips every second iteration</div>
+</div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

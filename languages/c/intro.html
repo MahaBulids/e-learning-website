@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to C</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+ <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li><a href="memory.html">Memory</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="arrays.html">Arrays</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Basics of C Programming</h2>
+    <p>
+      <b>C</b> is a <b>procedural programming language</b> developed by Dennis Ritchie in 1972. 
+      It is widely used for system programming, application software, and embedded systems.
+    </p>
+    <ul>
+      <li>It is <b>fast, portable, and efficient</b>.</li>
+      <li>Supports <b>structured programming</b> using functions and blocks of code.</li>
+      <li>Forms the foundation for many modern languages like C++, Java, and C#.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Components of C</h3>
+    <ul>
+      <li><b>Variables:</b> Store data values (e.g., int, float, char).</li>
+      <li><b>Data Types:</b> Define the type of data a variable can hold.</li>
+      <li><b>Operators:</b> Perform arithmetic, logical, or relational operations.</li>
+      <li><b>Control Statements:</b> if, else, switch, for, while, do-while.</li>
+      <li><b>Functions:</b> Blocks of code that perform specific tasks.</li>
+      <li><b>Input/Output:</b> Using <b>scanf()</b> and <b>printf()</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Structure of a Simple C Program</h3>
+    <p>
+      A basic C program generally includes the following parts:
+    </p>
+    <ul>
+      <li><b>#include &lt;stdio.h&gt;:</b> Includes the standard input/output library.</li>
+      <li><b>int main():</b> Entry point of the program.</li>
+      <li><b>Statements:</b> Code executed inside main(), e.g., printing output.</li>
+      <li><b>return 0;</b> Indicates successful program execution.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Simple C Program Example</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Print a message to the screen
+    printf("Hello, World!\n");
+    return 0;
+}
+    </pre>
+    <p><b>Explanation:</b></p>
+    <ul>
+      <li><b>printf("Hello, World!\\n");</b> prints "Hello, World!" to the console.</li>
+      <li><b>//</b> indicates a comment that is ignored by the compiler.</li>
+      <li><b>return 0;</b> tells the operating system that the program finished successfully.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Running the Program</h3>
+    <p>Steps to run the program:</p>
+    <ol>
+      <li>Write the code in a text editor and save it with <b>.c</b> extension.</li>
+      <li>Compile the program using a C compiler (e.g., <b>gcc program.c -o program</b>).</li>
+      <li>Run the compiled program (<b>./program</b> on Linux/Mac or <b>program.exe</b> on Windows).</li>
+      <li>The output will display: <b>Hello, World!</b></li>
+    </ol>
+  </section>
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <p>1. Who developed the C programming language and when?</p>
+  <div class="quiz-option" data-correct="true">Dennis Ritchie in 1972</div>
+  <div class="quiz-option" data-correct="false">Bjarne Stroustrup in 1983</div>
+  <div class="quiz-option" data-correct="false">James Gosling in 1995</div>
+  <div class="quiz-option" data-correct="false">Ken Thompson in 1970</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which of the following is a feature of C programming?</p>
+  <div class="quiz-option" data-correct="true">Structured programming using functions and blocks of code</div>
+  <div class="quiz-option" data-correct="false">Object-oriented programming with classes</div>
+  <div class="quiz-option" data-correct="false">Automatic garbage collection</div>
+  <div class="quiz-option" data-correct="false">Dynamic typing</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which function is used to print output to the console in C?</p>
+  <div class="quiz-option" data-correct="true">printf()</div>
+  <div class="quiz-option" data-correct="false">scanf()</div>
+  <div class="quiz-option" data-correct="false">print()</div>
+  <div class="quiz-option" data-correct="false">cout</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What is the purpose of <code>return 0;</code> in the main function?</p>
+  <div class="quiz-option" data-correct="true">Indicates successful program execution</div>
+  <div class="quiz-option" data-correct="false">Terminates the program with an error</div>
+  <div class="quiz-option" data-correct="false">Prints output to the console</div>
+  <div class="quiz-option" data-correct="false">Declares a variable</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which header file is needed for standard input/output functions in C?</p>
+  <div class="quiz-option" data-correct="true">&lt;stdio.h&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;stdlib.h&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;string.h&gt;</div>
+  <div class="quiz-option" data-correct="false">&lt;math.h&gt;</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which of the following is the correct way to declare an integer variable in C?</p>
+  <div class="quiz-option" data-correct="true">int age;</div>
+  <div class="quiz-option" data-correct="false">integer age;</div>
+  <div class="quiz-option" data-correct="false">var age;</div>
+  <div class="quiz-option" data-correct="false">let age;</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which symbol is used to add a comment in C?</p>
+  <div class="quiz-option" data-correct="true">//</div>
+  <div class="quiz-option" data-correct="false">#</div>
+  <div class="quiz-option" data-correct="false">/* */</div>
+  <div class="quiz-option" data-correct="false">--</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which of these steps is needed to run a C program?</p>
+  <div class="quiz-option" data-correct="true">Compile the code using a C compiler and then execute it</div>
+  <div class="quiz-option" data-correct="false">Run the .c file directly without compilation</div>
+  <div class="quiz-option" data-correct="false">Use a web browser to execute the file</div>
+  <div class="quiz-option" data-correct="false">Convert the code to Java first</div>
+</div>
+</div>
+
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

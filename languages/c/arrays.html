@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays in C</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+<nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+       <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="memory.html">Memory</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="arrays.html" class="active">Arrays</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Arrays in C</h2>
+    <p>
+      An <b>array</b> in C is a collection of <b>elements of the same data type</b> stored in contiguous memory locations.  
+      Arrays allow storing multiple values using a single variable name.
+    </p>
+  </section>
+
+  <section>
+    <h3>Why Use Arrays?</h3>
+    <ul>
+      <li>To store multiple values under a single name.</li>
+      <li>To access elements efficiently using an <b>index</b>.</li>
+      <li>To perform operations like sorting, searching, and iteration easily.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Types of Arrays in C</h3>
+    <p>There are mainly three types of arrays:</p>
+    <ol>
+      <li><b>One-Dimensional Array</b></li>
+      <li><b>Two-Dimensional Array</b></li>
+      <li><b>Multi-Dimensional Array</b> (more than 2 dimensions)</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>1. One-Dimensional Array</h3>
+    <p>Stores elements in a single row. Accessed using a single index.</p>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    for(int i = 0; i &lt; 5; i++) {
+        printf("%d ", numbers[i]);
+    }
+    return 0;
+}
+    </pre>
+    <p>Output: <b>10 20 30 40 50</b></p>
+  </section>
+
+  <section>
+    <h3>2. Two-Dimensional Array</h3>
+    <p>Stores elements in rows and columns (matrix form). Accessed using two indices.</p>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    for(int i = 0; i &lt; 2; i++) {
+        for(int j = 0; j &lt; 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+    </pre>
+    <p>Output:
+    <br>1 2 3
+    <br>4 5 6
+    </p>
+  </section>
+
+  <section>
+    <h3>3. Multi-Dimensional Array</h3>
+    <p>An array with more than two dimensions. Useful for complex data like 3D graphics or simulation data.</p>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[2][2][2] = {
+        {{1, 2}, {3, 4}},
+        {{5, 6}, {7, 8}}
+    };
+
+    for(int i=0;i&lt;2;i++){
+        for(int j=0;j&lt;2;j++){
+            for(int k=0;k&lt;2;k++){
+                printf("%d ", arr[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+    </pre>
+    <p>Output:
+    <br>1 2
+    <br>3 4
+    <br>
+    <br>5 6
+    <br>7 8
+    </p>
+  </section>
+
+  <section>
+    <h3>Key Points to Remember</h3>
+    <ul>
+      <li>Array indices in C start from <b>0</b>.</li>
+      <li>All elements of an array must be of the same data type.</li>
+      <li>Memory for arrays is <b>contiguous</b>, making access faster.</li>
+      <li>One-dimensional arrays are used for lists, two-dimensional arrays for matrices, and multi-dimensional arrays for complex data.</li>
+    </ul>
+  </section>
+  <div id="quiz-wrapper">
+  <div class="quiz-container">
+  <p>1. What is an array in C?</p>
+  <div class="quiz-option" data-correct="true">A collection of elements of the same data type stored in contiguous memory locations</div>
+  <div class="quiz-option" data-correct="false">A collection of elements of different data types</div>
+  <div class="quiz-option" data-correct="false">A pointer to a function</div>
+  <div class="quiz-option" data-correct="false">A dynamic memory block</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Why are arrays used in C?</p>
+  <div class="quiz-option" data-correct="true">To store multiple values under a single name and access them efficiently using an index</div>
+  <div class="quiz-option" data-correct="false">To store only a single value</div>
+  <div class="quiz-option" data-correct="false">To create pointers to functions</div>
+  <div class="quiz-option" data-correct="false">To allocate heap memory dynamically</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which of the following is a one-dimensional array declaration?</p>
+  <div class="quiz-option" data-correct="true">int numbers[5];</div>
+  <div class="quiz-option" data-correct="false">int matrix[2][3];</div>
+  <div class="quiz-option" data-correct="false">int arr[2][2][2];</div>
+  <div class="quiz-option" data-correct="false">int *ptr;</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. How do you access elements in a two-dimensional array?</p>
+  <div class="quiz-option" data-correct="true">Using two indices: array[row][column]</div>
+  <div class="quiz-option" data-correct="false">Using a single index: array[index]</div>
+  <div class="quiz-option" data-correct="false">Using pointer dereferencing only</div>
+  <div class="quiz-option" data-correct="false">Using a function call</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which type of array is useful for complex data like 3D graphics or simulations?</p>
+  <div class="quiz-option" data-correct="true">Multi-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">One-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">Two-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">Pointer Array</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What is the starting index of an array in C?</p>
+  <div class="quiz-option" data-correct="true">0</div>
+  <div class="quiz-option" data-correct="false">1</div>
+  <div class="quiz-option" data-correct="false">Depends on the array size</div>
+  <div class="quiz-option" data-correct="false">-1</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which type of array is generally used for storing matrices?</p>
+  <div class="quiz-option" data-correct="true">Two-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">One-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">Multi-Dimensional Array</div>
+  <div class="quiz-option" data-correct="false">Pointer Array</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. What is true about memory allocation for arrays in C?</p>
+  <div class="quiz-option" data-correct="true">Memory is contiguous, making access faster</div>
+  <div class="quiz-option" data-correct="false">Memory is allocated randomly across the heap</div>
+  <div class="quiz-option" data-correct="false">Memory is always allocated in the code segment</div>
+  <div class="quiz-option" data-correct="false">Memory allocation depends on the operating system only</div>
+</div>
+  </div>
+
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!-- Placeholder for java - collections.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Collections - Study Core</title>
+   <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="index.html"class="active">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>JAVA</h2>
+      <ul>
+      <li><a href="index.html">Overview</a></li> 
+      <li><a href="intro.html">Introduction</a> </li>
+      <li><a href="oop.html">OOP</a></li> 
+      <li><a href="exceptions.html">Exceptions</a></li> 
+      <li><a href="collections.html"  class="active">Collections</a></li>
+     </ul>
+   </aside>
+
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+  <h2>What are Collections in Java?</h2>
+  <p>
+    A <b>Collection</b> in Java is a framework that provides architecture to store and manipulate groups of objects. 
+    Instead of using arrays (which have fixed size), Collections allow dynamic and flexible data storage.
+  </p>
+  <p>
+    The <b>Java Collections Framework (JCF)</b> provides ready-made classes and interfaces 
+    to work with lists, sets, queues, and maps. It is present in the <code>java.util</code> package.
+  </p>
+</section>
+
+<section>
+  <h2>Why Use Collections?</h2>
+  <ul>
+    <li>Dynamic size (unlike arrays which are fixed).</li>
+    <li>Rich built-in methods for searching, sorting, insertion, deletion.</li>
+    <li>Helps write cleaner, reusable, and efficient code.</li>
+    <li>Supports different data structures (List, Set, Queue, Map).</li>
+    <li>Thread-safe options available (like Vector, Concurrent classes).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Collection Hierarchy in Java</h2>
+  <p>The Collection Framework is broadly divided into:</p>
+  <ul>
+    <li><b>Collection Interface</b> → Root of List, Set, Queue.</li>
+    <li><b>Map Interface</b> → Works separately (stores key-value pairs).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Main Interfaces and Their Implementations</h2>
+
+  <h3>1. List (Ordered, Allows Duplicates)</h3>
+  <p>
+    A List stores elements in a sequence and allows duplicate values. Index-based access.
+  </p>
+  <ul>
+    <li><code>ArrayList</code> – Resizable array, fast for searching.</li>
+    <li><code>LinkedList</code> – Doubly linked list, faster insertion/deletion.</li>
+    <li><code>Vector</code> – Thread-safe, legacy class.</li>
+  </ul>
+  <pre>
+// Example: ArrayList
+import java.util.*;
+class Example {
+    public static void main(String[] args) {
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Mango");
+        System.out.println(fruits);
+    }
+}
+  </pre>
+
+  <h3>2. Set (Unique Elements, No Duplicates)</h3>
+  <p>
+    A Set stores unique elements and does not allow duplicates.
+  </p>
+  <ul>
+    <li><code>HashSet</code> – Stores elements in random order.</li>
+    <li><code>LinkedHashSet</code> – Maintains insertion order.</li>
+    <li><code>TreeSet</code> – Stores elements in sorted order.</li>
+  </ul>
+  <pre>
+// Example: HashSet
+import java.util.*;
+class Example {
+    public static void main(String[] args) {
+        Set<Integer> numbers = new HashSet<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(10); // duplicate ignored
+        System.out.println(numbers);
+    }
+}
+  </pre>
+
+  <h3>3. Queue (FIFO - First In, First Out)</h3>
+  <p>
+    A Queue is used to store elements in order for processing. Follows FIFO principle.
+  </p>
+  <ul>
+    <li><code>PriorityQueue</code> – Elements arranged by natural order or comparator.</li>
+    <li><code>ArrayDeque</code> – Double-ended queue.</li>
+  </ul>
+  <pre>
+// Example: Queue
+import java.util.*;
+class Example {
+    public static void main(String[] args) {
+        Queue<String> q = new LinkedList<>();
+        q.add("A");
+        q.add("B");
+        q.add("C");
+        System.out.println(q.poll()); // removes A
+        System.out.println(q);
+    }
+}
+  </pre>
+
+  <h3>4. Map (Key-Value Pairs)</h3>
+  <p>
+    A Map stores data in <b>key-value</b> pairs. Keys are unique, values can be duplicate.
+  </p>
+  <ul>
+    <li><code>HashMap</code> – Fast, stores data in random order.</li>
+    <li><code>LinkedHashMap</code> – Maintains insertion order.</li>
+    <li><code>TreeMap</code> – Stores keys in sorted order.</li>
+    <li><code>Hashtable</code> – Thread-safe, legacy class.</li>
+  </ul>
+  <pre>
+// Example: HashMap
+import java.util.*;
+class Example {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        System.out.println(map);
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Utility Class: Collections</h2>
+  <p>
+    The <code>Collections</code> class provides useful methods for working with collections, 
+    like sorting, searching, reversing, and shuffling.
+  </p>
+  <pre>
+import java.util.*;
+class Example {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(5, 2, 8, 1);
+        Collections.sort(nums);
+        System.out.println("Sorted: " + nums);
+        Collections.reverse(nums);
+        System.out.println("Reversed: " + nums);
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Advantages of Collections Framework</h2>
+  <ul>
+    <li>Reduces programming effort (ready-to-use classes).</li>
+    <li>Improves code quality (well-tested classes).</li>
+    <li>Reusability and maintainability of code.</li>
+    <li>Provides thread-safe options.</li>
+    <li>Supports algorithms (sorting, searching, etc.).</li>
+  </ul>
+</section>
+<div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz: Collections in Java</h2>
+
+  <p>1. What is the main advantage of Collections over arrays?</p>
+  <div class="quiz-option" data-correct="true">Dynamic size & built-in methods</div>
+  <div class="quiz-option" data-correct="false">Faster execution</div>
+  <div class="quiz-option" data-correct="false">Less memory usage</div>
+  <div class="quiz-option" data-correct="false">Fixed size storage</div></div>
+<div class="quiz-container">
+  <p>2. Which package contains the Collections Framework?</p>
+  <div class="quiz-option" data-correct="true">java.util</div>
+  <div class="quiz-option" data-correct="false">java.lang</div>
+  <div class="quiz-option" data-correct="false">java.io</div>
+  <div class="quiz-option" data-correct="false">java.sql</div></div>
+<div class="quiz-container">
+  <p>3. Which interface is the root of the Collection hierarchy?</p>
+  <div class="quiz-option" data-correct="true">Collection</div>
+  <div class="quiz-option" data-correct="false">List</div>
+  <div class="quiz-option" data-correct="false">Set</div>
+  <div class="quiz-option" data-correct="false">Map</div></div>
+<div class="quiz-container">
+  <p>4. Which Collection allows duplicate elements?</p>
+  <div class="quiz-option" data-correct="true">List</div>
+  <div class="quiz-option" data-correct="false">Set</div>
+  <div class="quiz-option" data-correct="false">Map</div>
+  <div class="quiz-option" data-correct="false">Queue</div></div>
+<div class="quiz-container">
+  <p>5. Which implementation of Set maintains insertion order?</p>
+  <div class="quiz-option" data-correct="true">LinkedHashSet</div>
+  <div class="quiz-option" data-correct="false">HashSet</div>
+  <div class="quiz-option" data-correct="false">TreeSet</div>
+  <div class="quiz-option" data-correct="false">Vector</div></div>
+<div class="quiz-container">
+  <p>6. Which Collection follows FIFO (First In, First Out)?</p>
+  <div class="quiz-option" data-correct="true">Queue</div>
+  <div class="quiz-option" data-correct="false">List</div>
+  <div class="quiz-option" data-correct="false">Set</div>
+  <div class="quiz-option" data-correct="false">Map</div></div>
+<div class="quiz-container">
+  <p>7. In Map, what is true about keys?</p>
+  <div class="quiz-option" data-correct="true">Keys must be unique</div>
+  <div class="quiz-option" data-correct="false">Keys can be duplicate</div>
+  <div class="quiz-option" data-correct="false">Keys must be integers</div>
+  <div class="quiz-option" data-correct="false">Keys are optional</div></div>
+<div class="quiz-container">
+  <p>8. Which implementation of Map stores keys in sorted order?</p>
+  <div class="quiz-option" data-correct="true">TreeMap</div>
+  <div class="quiz-option" data-correct="false">HashMap</div>
+  <div class="quiz-option" data-correct="false">LinkedHashMap</div>
+  <div class="quiz-option" data-correct="false">Hashtable</div>
+  </div>
+<div class="quiz-container">
+  <p>9. Which legacy class is thread-safe but slower?</p>
+  <div class="quiz-option" data-correct="true">Vector</div>
+  <div class="quiz-option" data-correct="false">ArrayList</div>
+  <div class="quiz-option" data-correct="false">LinkedList</div>
+  <div class="quiz-option" data-correct="false">HashSet</div></div>
+<div class="quiz-container">
+  <p>10. Which utility class provides methods like sort(), reverse(), and shuffle()?</p>
+  <div class="quiz-option" data-correct="true">Collections</div>
+  <div class="quiz-option" data-correct="false">Arrays</div>
+  <div class="quiz-option" data-correct="false">Objects</div>
+  <div class="quiz-option" data-correct="false">System</div>
+</div>
+</div>
+
+  </main>
+</div>
+ <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Memory Management</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="index.html" class="active">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="memory.html" class="active">Memory</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="arrays.html">Arrays</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+  <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Memory in C</h2>
+    <p>
+      In C programming, understanding memory is crucial because C allows <b>direct manipulation of memory</b> using variables and pointers.
+      Memory refers to the computer's storage used to store data, variables, and program instructions.
+    </p>
+  </section>
+
+  <section>
+    <h3>Types of Memory in C</h3>
+    <p>C programs use different memory areas for different purposes:</p>
+    <ul>
+      <li><b>Stack Memory:</b> 
+        <ul>
+          <li>Used for <b>local variables and function calls</b>.</li>
+          <li>Automatically allocated and deallocated when functions are called and return.</li>
+          <li>Follows <b>Last In First Out (LIFO)</b> principle.</li>
+        </ul>
+      </li>
+      <li><b>Heap Memory:</b>
+        <ul>
+          <li>Used for <b>dynamically allocated memory</b> via <b>malloc(), calloc(), realloc()</b>.</li>
+          <li>Must be manually freed using <b>free()</b> to avoid memory leaks.</li>
+        </ul>
+      </li>
+      <li><b>Data Segment:</b>
+        <ul>
+          <li>Stores <b>global and static variables</b>.</li>
+          <li>Divided into <b>initialized data segment</b> (variables with initial values) and <b>uninitialized data segment (BSS)</b> (variables without initial values).</li>
+        </ul>
+      </li>
+      <li><b>Code Segment (Text Segment):</b>
+        <ul>
+          <li>Stores the compiled program instructions (executable code).</li>
+          <li>Usually <b>read-only</b> to prevent modification.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Memory Allocation in C</h3>
+    <ul>
+      <li><b>Static Memory Allocation:</b> Done at compile-time, e.g., local, global, and static variables.</li>
+      <li><b>Dynamic Memory Allocation:</b> Done at runtime using:
+        <ul>
+          <li><b>malloc():</b> Allocate memory</li>
+          <li><b>calloc():</b> Allocate and initialize memory to zero</li>
+          <li><b>realloc():</b> Resize allocated memory</li>
+          <li><b>free():</b> Release allocated memory</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Pointers and Memory</h3>
+    <p>Pointers are variables that store the <b>address of another variable</b> in memory:</p>
+    <pre>
+int x = 10;    // Variable stored in memory
+int *ptr = &x; // Pointer storing address of x
+    </pre>
+    <ul>
+      <li><b>*ptr</b> can be used to access or modify the value stored at that address.</li>
+      <li>Pointers are essential for dynamic memory allocation and efficient memory management.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Memory Diagram Example</h3>
+    <p>Example showing stack, heap, and global variables:</p>
+    <pre>
+Global: int g = 5;      // Stored in Data Segment
+Stack:  int x = 10;     // Local variable
+Heap:   int *arr = malloc(5 * sizeof(int)); // Dynamic memory
+Code:   main() {...}    // Program instructions
+    </pre>
+  </section>
+
+  <section>
+    <h3>Key Points to Remember</h3>
+    <ul>
+      <li>C provides <b>low-level access to memory</b> using pointers.</li>
+      <li>Stack memory is automatically managed, while heap memory must be manually freed.</li>
+      <li>Global and static variables are stored in the data segment.</li>
+      <li>Efficient memory management prevents <b>memory leaks and segmentation faults</b>.</li>
+    </ul>
+  </section>
+
+  <div id="quiz-wrapper">
+  <div class="quiz-container">
+  <p>1. Which type of memory is used for local variables and function calls in C?</p>
+  <div class="quiz-option" data-correct="true">Stack Memory</div>
+  <div class="quiz-option" data-correct="false">Heap Memory</div>
+  <div class="quiz-option" data-correct="false">Data Segment</div>
+  <div class="quiz-option" data-correct="false">Code Segment</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which memory area stores global and static variables in C?</p>
+  <div class="quiz-option" data-correct="true">Data Segment</div>
+  <div class="quiz-option" data-correct="false">Stack Memory</div>
+  <div class="quiz-option" data-correct="false">Heap Memory</div>
+  <div class="quiz-option" data-correct="false">Code Segment</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which memory allocation function in C initializes allocated memory to zero?</p>
+  <div class="quiz-option" data-correct="true">calloc()</div>
+  <div class="quiz-option" data-correct="false">malloc()</div>
+  <div class="quiz-option" data-correct="false">realloc()</div>
+  <div class="quiz-option" data-correct="false">free()</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. What must be done after dynamically allocating memory in C to prevent memory leaks?</p>
+  <div class="quiz-option" data-correct="true">Use free() to release memory</div>
+  <div class="quiz-option" data-correct="false">Use malloc() again</div>
+  <div class="quiz-option" data-correct="false">Use realloc() automatically</div>
+  <div class="quiz-option" data-correct="false">Nothing, it’s automatic</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which type of memory is manually managed and used for dynamic allocation?</p>
+  <div class="quiz-option" data-correct="true">Heap Memory</div>
+  <div class="quiz-option" data-correct="false">Stack Memory</div>
+  <div class="quiz-option" data-correct="false">Data Segment</div>
+  <div class="quiz-option" data-correct="false">Code Segment</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which symbol is used with a pointer to access or modify the value it points to?</p>
+  <div class="quiz-option" data-correct="true">*</div>
+  <div class="quiz-option" data-correct="false">&amp;</div>
+  <div class="quiz-option" data-correct="false">-></div>
+  <div class="quiz-option" data-correct="false">#</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. What does &amp; operator do in C when used with a variable?</p>
+  <div class="quiz-option" data-correct="true">Returns the memory address of the variable</div>
+  <div class="quiz-option" data-correct="false">Dereferences the pointer</div>
+  <div class="quiz-option" data-correct="false">Allocates memory dynamically</div>
+  <div class="quiz-option" data-correct="false">Frees the memory</div>
+</div>
+<div id="quiz-wrapper"></div>
+<div class="quiz-container">
+  <p>8. Which memory segment stores the compiled program instructions?</p>
+  <div class="quiz-option" data-correct="true">Code Segment (Text Segment)</div>
+  <div class="quiz-option" data-correct="false">Heap Memory</div>
+  <div class="quiz-option" data-correct="false">Stack Memory</div>
+  <div class="quiz-option" data-correct="false">Data Segment</div>
+</div>
+</div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

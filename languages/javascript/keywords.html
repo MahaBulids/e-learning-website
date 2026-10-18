@@ -1,0 +1,261 @@
+<!-- Placeholder for javascript - keywords.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Keywords - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="index.html"class="active">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>JavaScript Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="history.html">History</a>  </li>
+        <li> <a href="basics.html">Basics</a> </li>
+        <li><a href="keywords.html" class="active">Keywords</a></li>
+        <li><a href="advanced.html">Advanced</a></li>
+      </ul>
+    </aside>
+  
+  <main class="lesson-content">
+     <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>JavaScript Keywords with Examples</h2>
+    <p>
+      Keywords are reserved words in JavaScript that have a special meaning. 
+      They cannot be used as variable names, function names, or identifiers.
+    </p>
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Purpose / Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>var</td>
+          <td>Declares a function-scoped variable</td>
+          <td>var name = "Alice";</td>
+        </tr>
+        <tr>
+          <td>let</td>
+          <td>Declares a block-scoped variable</td>
+          <td>let age = 25;</td>
+        </tr>
+        <tr>
+          <td>const</td>
+          <td>Declares a constant (cannot be reassigned)</td>
+          <td>const PI = 3.14;</td>
+        </tr>
+        <tr>
+          <td>if</td>
+          <td>Conditionally executes a block of code</td>
+          <td>if(age > 18){ console.log("Adult"); }</td>
+        </tr>
+        <tr>
+          <td>else</td>
+          <td>Specifies an alternative block for if</td>
+          <td>else { console.log("Minor"); }</td>
+        </tr>
+        <tr>
+          <td>for</td>
+          <td>Starts a for loop</td>
+          <td>for(let i=0;i<5;i++){ console.log(i); }</td>
+        </tr>
+        <tr>
+          <td>while</td>
+          <td>Starts a while loop</td>
+          <td>while(i<5){ i++; }</td>
+        </tr>
+        <tr>
+          <td>function</td>
+          <td>Declares a function</td>
+          <td>function greet(){ console.log("Hello"); }</td>
+        </tr>
+        <tr>
+          <td>return</td>
+          <td>Returns a value from a function</td>
+          <td>return x + y;</td>
+        </tr>
+        <tr>
+          <td>switch</td>
+          <td>Executes different code based on cases</td>
+          <td>
+            switch(day){ case 1: console.log("Mon"); break; default: console.log("Other"); }
+          </td>
+        </tr>
+        <tr>
+          <td>break</td>
+          <td>Exits a loop or switch statement</td>
+          <td>for(i=0;i<5;i++){ if(i==3) break; }</td>
+        </tr>
+        <tr>
+          <td>continue</td>
+          <td>Skips current iteration of a loop</td>
+          <td>for(i=0;i<5;i++){ if(i==2) continue; }</td>
+        </tr>
+        <tr>
+          <td>try</td>
+          <td>Defines a block to test for exceptions</td>
+          <td>try{ let x = y; } catch(e){ console.log(e); }</td>
+        </tr>
+        <tr>
+          <td>catch</td>
+          <td>Handles errors thrown in try block</td>
+          <td>catch(e){ console.log("Error:", e); }</td>
+        </tr>
+        <tr>
+          <td>class</td>
+          <td>Defines a class</td>
+          <td>class Person { constructor(name){ this.name = name; } }</td>
+        </tr>
+        <tr>
+          <td>new</td>
+          <td>Creates an instance of a class</td>
+          <td>let p = new Person("Alice");</td>
+        </tr>
+        <tr>
+          <td>this</td>
+          <td>Refers to the current object</td>
+          <td>this.name = "Alice";</td>
+        </tr>
+        <tr>
+          <td>typeof</td>
+          <td>Returns the type of a variable</td>
+          <td>typeof 10; // "number"</td>
+        </tr>
+        <tr>
+          <td>throw</td>
+          <td>Throws an exception</td>
+          <td>throw "Error occurred";</td>
+        </tr>
+        <tr>
+          <td>import</td>
+          <td>Imports modules or objects</td>
+          <td>import { readFile } from 'fs';</td>
+        </tr>
+        <tr>
+          <td>export</td>
+          <td>Exports modules or objects</td>
+          <td>export function greet() {}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+<div id="quiz-wrapper">
+   <div class="quiz-container">
+  <p>1. Which keyword declares a block-scoped variable in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">let</div>
+  <div class="quiz-option" data-correct="false">var</div>
+  <div class="quiz-option" data-correct="false">const (for reassignment)</div>
+  <div class="quiz-option" data-correct="false">function</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which keyword is used to define a constant that cannot be reassigned?</p>
+  <div class="quiz-option" data-correct="true">const</div>
+  <div class="quiz-option" data-correct="false">let</div>
+  <div class="quiz-option" data-correct="false">var</div>
+  <div class="quiz-option" data-correct="false">class</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which keyword is used to declare a function?</p>
+  <div class="quiz-option" data-correct="true">function</div>
+  <div class="quiz-option" data-correct="false">return</div>
+  <div class="quiz-option" data-correct="false">class</div>
+  <div class="quiz-option" data-correct="false">var</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which keyword is used to exit a loop or switch statement?</p>
+  <div class="quiz-option" data-correct="true">break</div>
+  <div class="quiz-option" data-correct="false">continue</div>
+  <div class="quiz-option" data-correct="false">return</div>
+  <div class="quiz-option" data-correct="false">throw</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which keyword handles errors thrown in a try block?</p>
+  <div class="quiz-option" data-correct="true">catch</div>
+  <div class="quiz-option" data-correct="false">throw</div>
+  <div class="quiz-option" data-correct="false">try</div>
+  <div class="quiz-option" data-correct="false">finally</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which keyword creates an instance of a class?</p>
+  <div class="quiz-option" data-correct="true">new</div>
+  <div class="quiz-option" data-correct="false">class</div>
+  <div class="quiz-option" data-correct="false">this</div>
+  <div class="quiz-option" data-correct="false">function</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which keyword returns the type of a variable?</p>
+  <div class="quiz-option" data-correct="true">typeof</div>
+  <div class="quiz-option" data-correct="false">instanceof</div>
+  <div class="quiz-option" data-correct="false">class</div>
+  <div class="quiz-option" data-correct="false">return</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which keyword is used to throw an exception in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">throw</div>
+  <div class="quiz-option" data-correct="false">catch</div>
+  <div class="quiz-option" data-correct="false">try</div>
+  <div class="quiz-option" data-correct="false">return</div>
+</div>
+
+<div class="quiz-container">
+  <p>9. Which keyword is used to import modules or objects?</p>
+  <div class="quiz-option" data-correct="true">import</div>
+  <div class="quiz-option" data-correct="false">export</div>
+  <div class="quiz-option" data-correct="false">require</div>
+  <div class="quiz-option" data-correct="false">module</div>
+</div>
+
+<div class="quiz-container">
+  <p>10. Which keyword exports modules or functions from a file?</p>
+  <div class="quiz-option" data-correct="true">export</div>
+  <div class="quiz-option" data-correct="false">import</div>
+  <div class="quiz-option" data-correct="false">module</div>
+  <div class="quiz-option" data-correct="false">require</div>
+</div>
+</div>
+  </main>
+  </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

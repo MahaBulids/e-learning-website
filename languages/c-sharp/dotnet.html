@@ -1,0 +1,181 @@
+<!-- C# - dotnet.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C# and .NET</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="index.html" class="active">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C# Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="oop.html">OOP</a></li>
+        <li><a href="dotnet.html" class="active">.NET</a></li>
+        <li><a href="unity.html">Unity</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+      <h1>C# and .NET</h1>
+      <p>
+        C# runs on the .NET framework, which provides libraries and runtime support.
+        C# and .NET are closely related but represent distinct components within the Microsoft development ecosystem.
+      </p>
+
+      <h2>Relationship between C# and .NET</h2>
+      <p>
+        C# is a programming language that runs on the .NET platform. C# code is compiled into
+        <b>Common Intermediate Language (CIL)</b>, which is executed by the .NET runtime.
+        This means that C# leverages features of .NET such as its rich class libraries, cross-platform compatibility
+        (for .NET 5+), and performance optimizations.
+      </p>
+
+      <h2>.NET Versions</h2>
+      <ul>
+        <li><b>.NET Framework</b> – Windows-only</li>
+        <li><b>.NET Core</b> – Cross-platform, open source</li>
+        <li><b>.NET 5/6+</b> – Unified, cross-platform framework</li>
+      </ul>
+
+      <h2>Example Code</h2>
+      <pre><code>using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Running on .NET!");
+    }
+}</code></pre>
+
+      <h2>Line-by-Line Explanation</h2>
+
+      <h3>1) <code>using System;</code></h3>
+      <p>
+        Imports the <b>System</b> namespace so you can use classes like <code>Console</code>.
+        Without it, you would need to write <code>System.Console.WriteLine(...)</code>.
+      </p>
+
+      <h3>2) <code>class Program { ... }</code></h3>
+      <p>
+        Defines a class named <b>Program</b>. In C#, all code must reside inside a class or struct.
+        The name can be anything, but <code>Program</code> is a convention for the main entry class.
+      </p>
+
+      <h3>3) <code>static void Main()</code></h3>
+      <ul>
+        <li><b>static</b> → Method belongs to the class, not to an object.</li>
+        <li><b>void</b> → Returns nothing.</li>
+        <li><b>Main</b> → Special method name, the program entry point.</li>
+      </ul>
+
+      <h3>4) <code>Console.WriteLine("Running on .NET!");</code></h3>
+      <p>
+        Prints the text <code>Running on .NET!</code> to the console, followed by a newline.
+        <code>Console</code> is a class in the <b>System</b> namespace.
+      </p>
+
+      <h2>Program Flow</h2>
+      <ol>
+        <li>The .NET runtime starts and looks for <code>Main()</code>.</li>
+        <li>Executes the code inside <code>Main</code>.</li>
+        <li><code>Console.WriteLine</code> prints the message.</li>
+        <li>The program exits.</li>
+      </ol>
+
+      <h2>Output</h2>
+      <pre><code>Running on .NET!</code></pre>
+      <div id="quiz-wrapper">
+       <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What is the relationship between C# and .NET?</p>
+  <div class="quiz-option" data-correct="true">C# is a language that runs on the .NET platform</div>
+  <div class="quiz-option" data-correct="false">C# is the same as .NET</div>
+  <div class="quiz-option" data-correct="false">.NET is a programming language</div>
+  <div class="quiz-option" data-correct="false">C# and .NET are unrelated</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does C# code compile into before execution?</p>
+  <div class="quiz-option" data-correct="true">Common Intermediate Language (CIL)</div>
+  <div class="quiz-option" data-correct="false">Machine code directly</div>
+  <div class="quiz-option" data-correct="false">Java bytecode</div>
+  <div class="quiz-option" data-correct="false">Assembly instructions only</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which version of .NET is cross-platform and open source?</p>
+  <div class="quiz-option" data-correct="false">.NET Framework</div>
+  <div class="quiz-option" data-correct="true">.NET Core</div>
+  <div class="quiz-option" data-correct="false">.NET 2.0</div>
+  <div class="quiz-option" data-correct="false">ASP.NET</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which version unified .NET Framework and .NET Core?</p>
+  <div class="quiz-option" data-correct="true">.NET 5/6+</div>
+  <div class="quiz-option" data-correct="false">.NET 3.1</div>
+  <div class="quiz-option" data-correct="false">.NET Framework 4.8</div>
+  <div class="quiz-option" data-correct="false">ASP.NET MVC</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the example, what does <code>using System;</code> do?</p>
+  <div class="quiz-option" data-correct="true">Imports the System namespace</div>
+  <div class="quiz-option" data-correct="false">Defines a class called System</div>
+  <div class="quiz-option" data-correct="false">Creates a library file</div>
+  <div class="quiz-option" data-correct="false">Starts the program execution</div>
+</div>
+
+<div class="quiz-container">
+  <p>Why is <code>Main()</code> special in C# programs?</p>
+  <div class="quiz-option" data-correct="true">It is the program’s entry point</div>
+  <div class="quiz-option" data-correct="false">It always returns a string</div>
+  <div class="quiz-option" data-correct="false">It is defined in every namespace</div>
+  <div class="quiz-option" data-correct="false">It imports external libraries</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is the output of the provided program?</p>
+  <div class="quiz-option" data-correct="true">Running on .NET!</div>
+  <div class="quiz-option" data-correct="false">Hello World</div>
+  <div class="quiz-option" data-correct="false">Program Completed</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

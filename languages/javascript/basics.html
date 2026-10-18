@@ -1,0 +1,229 @@
+<!-- Placeholder for javascript - basics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basics - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="index.html"class="active">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+        <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+    
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>JavaScript Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="history.html">History</a>  </li>
+        <li> <a href="basics.html" class="active">Basics</a> </li>
+        <li><a href="keywords.html">Keywords</a></li>
+        <li><a href="advanced.html">Advanced</a></li>
+      </ul>
+    </aside>
+  
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Basics of JavaScript</h2>
+    <p>
+      JavaScript (JS) is a <b>high-level, interpreted programming language</b> used mainly for 
+      <b>web development</b> to make websites interactive and dynamic.
+    </p>
+    <ul>
+      <li>Runs in <b>web browsers</b> and on servers via <b>Node.js</b>.</li>
+      <li>Can manipulate <b>HTML, CSS, and browser events</b>.</li>
+      <li>Supports <b>object-oriented, functional, and procedural programming</b> styles.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>1. Variables</h3>
+    <p>
+      Variables are used to store data values. JavaScript provides three ways to declare variables:
+    </p>
+    <ul>
+      <li><b>var</b>: Function-scoped variable (older usage).</li>
+      <li><b>let</b>: Block-scoped variable (modern usage).</li>
+      <li><b>const</b>: Block-scoped constant that cannot be reassigned.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>2. Data Types</h3>
+    <p>JavaScript has several basic data types:</p>
+    <ul>
+      <li><b>String:</b> Text, e.g., "Hello World"</li>
+      <li><b>Number:</b> Numeric values, e.g., 10, 3.14</li>
+      <li><b>Boolean:</b> true or false</li>
+      <li><b>Undefined:</b> Variable declared but not assigned</li>
+      <li><b>Null:</b> Represents no value</li>
+      <li><b>Object:</b> Collections of key-value pairs</li>
+      <li><b>Array:</b> Ordered list of values</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>3. Operators</h3>
+    <p>JavaScript uses operators to perform operations on variables and values:</p>
+    <ul>
+      <li><b>Arithmetic:</b> +, -, *, /, %</li>
+      <li><b>Assignment:</b> =, +=, -=</li>
+      <li><b>Comparison:</b> ==, ===, !=, !==, >, <, >=, <=</li>
+      <li><b>Logical:</b> &&, ||, !</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>4. Functions</h3>
+    <p>
+      Functions are reusable blocks of code that perform a specific task.
+    </p>
+    <ul>
+      <li>Declared using <b>function</b> keyword or as <b>arrow functions</b>.</li>
+      <li>Can accept <b>parameters</b> and return <b>values</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>5. Conditional Statements</h3>
+    <p>
+      Conditional statements allow executing code based on conditions:
+    </p>
+    <ul>
+      <li><b>if, else if, else</b> statements</li>
+      <li><b>switch</b> statement for multiple choices</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>6. Loops</h3>
+    <p>
+      Loops are used to execute a block of code multiple times.
+    </p>
+    <ul>
+      <li><b>for</b> loop</li>
+      <li><b>while</b> loop</li>
+      <li><b>do...while</b> loop</li>
+      <li><b>for...of</b> loop (arrays/iterables)</li>
+      <li><b>for...in</b> loop (objects)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>7. Events</h3>
+    <p>
+      JavaScript can respond to user interactions called <b>events</b>, such as:
+    </p>
+    <ul>
+      <li><b>onclick</b> – when an element is clicked</li>
+      <li><b>onmouseover</b> – when mouse hovers over an element</li>
+      <li><b>onload</b> – when a page loads</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>8. Console</h3>
+    <p>
+      The <b>console</b> is used for debugging and displaying messages:
+    </p>
+    <ul>
+      <li><b>console.log()</b> – prints messages to the console</li>
+      <li><b>console.error()</b> – prints error messages</li>
+      <li><b>console.warn()</b> – prints warnings</li>
+    </ul>
+  </section>
+<div id="quiz-wrapper">
+
+   <div class="quiz-container">
+  <p>1. Which of the following is a modern way to declare a block-scoped variable in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">let</div>
+  <div class="quiz-option" data-correct="false">var</div>
+  <div class="quiz-option" data-correct="false">const (for reassignment)</div>
+  <div class="quiz-option" data-correct="false">function</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which of these is NOT a basic data type in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">Character</div>
+  <div class="quiz-option" data-correct="false">String</div>
+  <div class="quiz-option" data-correct="false">Boolean</div>
+  <div class="quiz-option" data-correct="false">Number</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which operator is used for strict equality comparison in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">===</div>
+  <div class="quiz-option" data-correct="false">==</div>
+  <div class="quiz-option" data-correct="false">!=</div>
+  <div class="quiz-option" data-correct="false">=</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. How do you declare a function in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">function myFunction() {}</div>
+  <div class="quiz-option" data-correct="false">func myFunction() {}</div>
+  <div class="quiz-option" data-correct="false">function: myFunction() {}</div>
+  <div class="quiz-option" data-correct="false">def myFunction() {}</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which loop is best used for iterating over arrays or iterables?</p>
+  <div class="quiz-option" data-correct="true">for...of loop</div>
+  <div class="quiz-option" data-correct="false">for...in loop</div>
+  <div class="quiz-option" data-correct="false">while loop</div>
+  <div class="quiz-option" data-correct="false">do...while loop</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which event is triggered when a page finishes loading?</p>
+  <div class="quiz-option" data-correct="true">onload</div>
+  <div class="quiz-option" data-correct="false">onclick</div>
+  <div class="quiz-option" data-correct="false">onmouseover</div>
+  <div class="quiz-option" data-correct="false">onhover</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which console method prints error messages in JavaScript?</p>
+  <div class="quiz-option" data-correct="true">console.error()</div>
+  <div class="quiz-option" data-correct="false">console.log()</div>
+  <div class="quiz-option" data-correct="false">console.warn()</div>
+  <div class="quiz-option" data-correct="false">console.print()</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which statement is used for multiple-choice conditional execution?</p>
+  <div class="quiz-option" data-correct="true">switch</div>
+  <div class="quiz-option" data-correct="false">if</div>
+  <div class="quiz-option" data-correct="false">for</div>
+  <div class="quiz-option" data-correct="false">while</div>
+</div>
+</div>
+  </main>
+  </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

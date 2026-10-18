@@ -1,0 +1,205 @@
+<!-- Placeholder for c++ - pointers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Pointers</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="index.html" class="active">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>C++ Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="pointers.html" class="active">Pointers</a></li>
+        <li><a href="stl.html">STL</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Pointers in C++</h2>
+    <p>
+      A <b>pointer</b> is a variable that stores the <b>memory address</b> of another variable.  
+      Instead of holding a value directly, a pointer holds the location where the value is stored.
+    </p>
+  </section>
+
+  <section>
+    <h3>Why Use Pointers?</h3>
+    <ul>
+      <li>To directly access and manipulate memory.</li>
+      <li>To work with dynamic memory allocation.</li>
+      <li>To improve performance by avoiding unnecessary copying.</li>
+      <li>To enable data structures like linked lists, trees, and graphs.</li>
+      <li>To allow functions to modify actual variables (pass by reference).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Basic Syntax</h3>
+    <pre>
+dataType *pointerName;
+    </pre>
+    <p>
+      Explanation:
+      <ul>
+        <li><code>*</code> – Used to declare a pointer.</li>
+        <li><code>&amp;</code> – "Address of" operator, gives the memory location of a variable.</li>
+        <li><code>*</code> (dereference operator) – Accesses the value stored at that memory address.</li>
+      </ul>
+    </p>
+  </section>
+
+  <section>
+    <h3>Example: Using Pointers</h3>
+    <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num = 10;
+    int *ptr;        // Declare pointer
+    ptr = &num;      // Store address of num
+
+    cout &lt;&lt; "Value of num: " &lt;&lt; num &lt;&lt; endl;
+    cout &lt;&lt; "Address of num: " &lt;&lt; &num &lt;&lt; endl;
+    cout &lt;&lt; "Pointer holds: " &lt;&lt; ptr &lt;&lt; endl;
+    cout &lt;&lt; "Value at pointer: " &lt;&lt; *ptr &lt;&lt; endl;
+
+    return 0;
+}
+    </pre>
+    <p>
+      Output (example):  
+      <code>
+      Value of num: 10 <br>
+      Address of num: 0x7ffee3c8a <br>
+      Pointer holds: 0x7ffee3c8a <br>
+      Value at pointer: 10
+      </code>
+    </p>
+  </section>
+
+  <section>
+    <h3>Pointer Types</h3>
+    <ul>
+      <li><b>Null Pointer</b> – Points to nothing (<code>int *ptr = NULL;</code>).</li>
+      <li><b>Void Pointer</b> – Can point to any data type (<code>void *ptr;</code>).</li>
+      <li><b>Dangling Pointer</b> – Points to a memory location that has been freed.</li>
+      <li><b>Wild Pointer</b> – An uninitialized pointer with an unknown address.</li>
+      <li><b>Function Pointer</b> – Points to a function, used for callbacks.</li>
+      <li><b>Pointer to Pointer</b> – A pointer storing the address of another pointer.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Points</h3>
+    <ul>
+      <li>Pointers are powerful but must be used carefully to avoid memory issues.</li>
+      <li>Dereferencing a pointer gives access to the actual value stored in memory.</li>
+      <li>Uninitialized or wrongly used pointers may cause <b>segmentation faults</b>.</li>
+      <li>Pointers are essential in <b>dynamic memory, arrays, and data structures</b>.</li>
+    </ul>
+  </section>
+
+     <div id="quiz-wrapper">
+     <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What does a pointer in C++ store?</p>
+  <div class="quiz-option" data-correct="false">The actual value of a variable</div>
+  <div class="quiz-option" data-correct="true">The memory address of a variable</div>
+  <div class="quiz-option" data-correct="false">The size of the variable</div>
+  <div class="quiz-option" data-correct="false">The data type of the variable</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which operator is used to get the memory address of a variable?</p>
+  <div class="quiz-option" data-correct="false">*</div>
+  <div class="quiz-option" data-correct="true">&amp;</div>
+  <div class="quiz-option" data-correct="false">%</div>
+  <div class="quiz-option" data-correct="false">#</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does the <code>*</code> (dereference) operator do in pointers?</p>
+  <div class="quiz-option" data-correct="false">Assigns a new memory address</div>
+  <div class="quiz-option" data-correct="false">Deletes a pointer</div>
+  <div class="quiz-option" data-correct="true">Accesses the value stored at the pointer's address</div>
+  <div class="quiz-option" data-correct="false">Declares a variable</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is a valid declaration of a pointer to an integer?</p>
+  <div class="quiz-option" data-correct="true">int *ptr;</div>
+  <div class="quiz-option" data-correct="false">pointer int ptr;</div>
+  <div class="quiz-option" data-correct="false">int ptr*;</div>
+  <div class="quiz-option" data-correct="false">*int ptr;</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is a Null Pointer?</p>
+  <div class="quiz-option" data-correct="true">A pointer that points to nothing</div>
+  <div class="quiz-option" data-correct="false">A pointer with a random address</div>
+  <div class="quiz-option" data-correct="false">A pointer that points to another pointer</div>
+  <div class="quiz-option" data-correct="false">A pointer to a function</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which type of pointer can point to any data type?</p>
+  <div class="quiz-option" data-correct="false">Null Pointer</div>
+  <div class="quiz-option" data-correct="true">Void Pointer</div>
+  <div class="quiz-option" data-correct="false">Wild Pointer</div>
+  <div class="quiz-option" data-correct="false">Function Pointer</div>
+</div>
+
+<div class="quiz-container">
+  <p>What happens if you dereference an uninitialized pointer (wild pointer)?</p>
+  <div class="quiz-option" data-correct="false">It always returns 0</div>
+  <div class="quiz-option" data-correct="false">It creates a new variable</div>
+  <div class="quiz-option" data-correct="true">It may cause a segmentation fault or crash</div>
+  <div class="quiz-option" data-correct="false">It automatically points to NULL</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

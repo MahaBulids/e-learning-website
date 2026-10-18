@@ -1,0 +1,160 @@
+<!-- Placeholder for go - intro.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Go</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="index.html" class="active">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Go Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html" class="active">Introduction</a></li>
+        <li><a href="goroutines.html">Goroutines</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="webservers.html">Web Servers</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>First Go Program</h2>
+    <p>Let’s create a simple Go program that prints "Hello, World!" and understand it line by line:</p>
+    <pre>
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+    </pre>
+  </section>
+
+  <section>
+    <h2>Line-by-Line Explanation</h2>
+    <ul>
+      <li><code>package main</code>: Defines the package name. Every Go program must have a <b>main</b> package if it is executable.</li>
+      <li><code>import "fmt"</code>: Imports the <b>fmt</b> (format) package, which contains functions for formatted I/O, like printing to the console.</li>
+      <li><code>func main()</code>: Declares the <b>main</b> function, the entry point of the program. Execution starts here.</li>
+      <li><code>fmt.Println("Hello, World!")</code>: Calls the <code>Println</code> function from the fmt package to print the text to the console.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How to Run This Program</h2>
+    <ul>
+      <li><b>Using the Go Compiler:</b>
+        <pre>
+go run filename.go   # Run the program directly
+go build filename.go # Compile into an executable
+        </pre>
+      </li>
+      <li><b>Online Editors:</b>
+        <ul>
+          <li><a href="https://play.golang.org/" target="_blank">Go Playground</a> – Official Go online editor</li>
+          <li><a href="https://replit.com/languages/go" target="_blank">Replit Go</a></li>
+          <li><a href="https://www.jdoodle.com/execute-go-online/" target="_blank">JDoodle Go</a></li>
+        </ul>
+      </li>
+      <li><b>Code Editors/IDEs:</b> VS Code, GoLand, Sublime Text (with Go extensions) can be used for development and testing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>The <code>main</code> function is the starting point of every Go program.</li>
+      <li>Use <code>fmt.Println</code> to output text to the console.</li>
+      <li>Go programs can be executed using the compiler, online editors, or local IDEs.</li>
+      <li>This basic structure is the foundation for all Go programs.</li>
+    </ul>
+  </section>
+
+
+
+<div id="quiz-wrapper">
+      <h3>Quick Quiz: First Go Program</h3>
+
+<div class="quiz-container">
+  <p>1. What is the purpose of <code>package main</code> in a Go program?</p>
+  <div class="quiz-option" data-correct="true">Defines the package name; required for executable programs</div>
+  <div class="quiz-option" data-correct="false">Imports standard libraries</div>
+  <div class="quiz-option" data-correct="false">Declares a variable</div>
+  <div class="quiz-option" data-correct="false">Starts the main function</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which package is used for formatted I/O, like printing to the console?</p>
+  <div class="quiz-option" data-correct="true">fmt</div>
+  <div class="quiz-option" data-correct="false">io</div>
+  <div class="quiz-option" data-correct="false">math</div>
+  <div class="quiz-option" data-correct="false">strings</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What is the entry point of a Go program?</p>
+  <div class="quiz-option" data-correct="true">func main()</div>
+  <div class="quiz-option" data-correct="false">package main</div>
+  <div class="quiz-option" data-correct="false">import "fmt"</div>
+  <div class="quiz-option" data-correct="false">fmt.Println()</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which function prints text to the console in Go?</p>
+  <div class="quiz-option" data-correct="true">fmt.Println()</div>
+  <div class="quiz-option" data-correct="false">print()</div>
+  <div class="quiz-option" data-correct="false">echo()</div>
+  <div class="quiz-option" data-correct="false">console.log()</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. How can you run a Go program directly without creating an executable?</p>
+  <div class="quiz-option" data-correct="true">go run filename.go</div>
+  <div class="quiz-option" data-correct="false">go build filename.go</div>
+  <div class="quiz-option" data-correct="false">go execute filename.go</div>
+  <div class="quiz-option" data-correct="false">go start filename.go</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!-- Placeholder for java - oop.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java OOP - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+ <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="index.html"class="active">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+     
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>JAVA</h2>
+      <ul>
+      <li><a href="index.html">Overview</a></li> 
+      <li><a href="intro.html">Introduction</a> </li>
+      <li><a href="oop.html" class="active">OOP</a></li> 
+      <li><a href="exceptions.html">Exceptions</a></li> 
+      <li><a href="collections.html">Collections</a></li>
+     </ul>
+   </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+    <section>
+  <h2>What is OOPs in Java?</h2>
+  <p>
+    OOPs (Object-Oriented Programming System) in Java is a way of programming 
+    where we structure code around <b>objects</b> rather than just functions. 
+    Objects represent real-world entities with <b>state</b> (variables) 
+    and <b>behavior</b> (methods). OOP makes code <b>reusable, modular, and easier to maintain</b>.
+  </p>
+</section>
+   
+
+    <section>
+      <h2>Core OOP Principles</h2>
+      <ul>
+        <li><b>Encapsulation</b> – Wrapping data and methods into a single unit (class).</li>
+        <li><b>Inheritance</b> – Allows classes to inherit fields and methods from other classes.</li>
+        <li><b>Polymorphism</b> – The ability of an object to take many forms (method overriding/overloading).</li>
+        <li><b>Abstraction</b> – Hiding implementation details and showing only functionality.</li>
+      </ul>
+    </section>
+
+    
+
+<section>
+  <h2>Four Main Principles of OOP in Java</h2>
+
+  <h3>1. Encapsulation (Data Hiding)</h3>
+  <p>
+    Wrapping data (variables) and methods (functions) into a single unit (class). 
+    Access is controlled using <code>private</code>, <code>public</code>, and <code>protected</code>. 
+    This ensures data hiding and security.
+  </p>
+  <pre>
+class Student {
+    private String name; // hidden data
+
+    // getter
+    public String getName() {
+        return name;
+    }
+
+    // setter
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+  </pre>
+
+  <h3>2. Inheritance (Reusability)</h3>
+  <p>
+    Mechanism where a new class (child) acquires properties and behavior of an existing class (parent). 
+    It promotes <b>code reusability</b>. Uses <code>extends</code> keyword.
+  </p>
+  <pre>
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+  </pre>
+
+  <h3>3. Polymorphism (Many Forms)</h3>
+  <p>
+    Ability of an object to take many forms. 
+    Two types: 
+    <br> • Compile-time (Method Overloading) → Same method name, different parameters. 
+    <br> • Run-time (Method Overriding) → Subclass redefines a method of its parent.
+  </p>
+  <pre>
+// Overloading
+class MathUtil {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}
+
+// Overriding
+class Animal {
+    void sound() { System.out.println("Animal makes sound"); }
+}
+class Cat extends Animal {
+    void sound() { System.out.println("Cat meows"); }
+}
+  </pre>
+
+  <h3>4. Abstraction (Hiding Implementation)</h3>
+  <p>
+    Hiding internal details and showing only essential features. 
+    Achieved using <b>abstract classes</b> and <b>interfaces</b>.
+  </p>
+  <pre>
+// Abstract class
+abstract class Shape {
+    abstract void draw();
+}
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+// Interface
+interface Animal {
+    void sound();
+}
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Extra OOP Concepts</h2>
+  <ul>
+    <li><b>Class</b> – Blueprint for objects</li>
+    <li><b>Object</b> – Instance of a class</li>
+    <li><b>Constructor</b> – Special method to initialize objects</li>
+    <li><b>Association, Aggregation, Composition</b> – Ways classes relate to each other</li>
+  </ul>
+</section>
+<div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>1. What does OOP stand for in Java?</p>
+  <div class="quiz-option" data-correct="true">Object-Oriented Programming</div>
+  <div class="quiz-option" data-correct="false">Open Operating Platform</div>
+  <div class="quiz-option" data-correct="false">Object-Oriented Process</div>
+  <div class="quiz-option" data-correct="false">Operating Object Program</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>2. Which OOP principle is also known as "data hiding"?</p>
+  <div class="quiz-option" data-correct="true">Encapsulation</div>
+  <div class="quiz-option" data-correct="false">Inheritance</div>
+  <div class="quiz-option" data-correct="false">Polymorphism</div>
+  <div class="quiz-option" data-correct="false">Abstraction</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>3. Which keyword is used in Java to implement inheritance?</p>
+  <div class="quiz-option" data-correct="true">extends</div>
+  <div class="quiz-option" data-correct="false">implements</div>
+  <div class="quiz-option" data-correct="false">inherit</div>
+  <div class="quiz-option" data-correct="false">super</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>4. Which of the following is an example of compile-time polymorphism?</p>
+  <div class="quiz-option" data-correct="true">Method Overloading</div>
+  <div class="quiz-option" data-correct="false">Method Overriding</div>
+  <div class="quiz-option" data-correct="false">Abstract Class</div>
+  <div class="quiz-option" data-correct="false">Interface Implementation</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>5. Which OOP principle hides implementation details and shows only functionality?</p>
+  <div class="quiz-option" data-correct="true">Abstraction</div>
+  <div class="quiz-option" data-correct="false">Encapsulation</div>
+  <div class="quiz-option" data-correct="false">Polymorphism</div>
+  <div class="quiz-option" data-correct="false">Composition</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>6. Which of the following is used to achieve abstraction in Java?</p>
+  <div class="quiz-option" data-correct="true">Abstract classes and Interfaces</div>
+  <div class="quiz-option" data-correct="false">Constructors</div>
+  <div class="quiz-option" data-correct="false">Static methods</div>
+  <div class="quiz-option" data-correct="false">Getters and Setters</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>7. Which statement about classes and objects is correct?</p>
+  <div class="quiz-option" data-correct="true">A class is a blueprint, and an object is an instance of it</div>
+  <div class="quiz-option" data-correct="false">An object defines methods, and a class uses them</div>
+  <div class="quiz-option" data-correct="false">Classes are created at runtime by objects</div>
+  <div class="quiz-option" data-correct="false">Objects and classes are the same</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>8. What will be the output of this code?</p>
+  <pre>
+class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+class Dog extends Animal {
+    void sound() { System.out.println("Dog barks"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}
+  </pre>
+  <div class="quiz-option" data-correct="false">Animal sound</div>
+  <div class="quiz-option" data-correct="true">Dog barks</div>
+  <div class="quiz-option" data-correct="false">Compilation error</div>
+  <div class="quiz-option" data-correct="false">Runtime error</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>9. Which constructor rule is correct in Java?</p>
+  <div class="quiz-option" data-correct="true">Constructor name must match the class name</div>
+  <div class="quiz-option" data-correct="false">Constructors can have a return type</div>
+  <div class="quiz-option" data-correct="false">Constructors cannot be overloaded</div>
+  <div class="quiz-option" data-correct="false">Constructors are called manually</div>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>10. Which concept is illustrated by "has-a" relationship (e.g., a Car has an Engine)?</p>
+  <div class="quiz-option" data-correct="true">Composition</div>
+  <div class="quiz-option" data-correct="false">Inheritance</div>
+  <div class="quiz-option" data-correct="false">Polymorphism</div>
+  <div class="quiz-option" data-correct="false">Encapsulation</div>
+</div>
+</div>
+  </main>
+  </div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Study Core</p>
+  </footer>
+</body>
+</html>

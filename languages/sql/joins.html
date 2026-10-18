@@ -1,0 +1,306 @@
+<!-- Placeholder for sql - joins.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL - Joins</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html"class="active">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li> <a href="index.html">SQL Index</a></li>
+        <li> <a href="intro.html">Introduction</a></li>
+        <li> <a href="queries.html">Queries</a></li>
+        <li><a href="joins.html" class="active">Joins</a></li>
+        <li> <a href="indexes.html">SQL Indexes</a></li>
+      </ul>
+    </aside>
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>What are SQL Joins?</h2>
+    <p>
+      A <b>JOIN</b> in SQL is used to combine data from two or more tables based on a 
+      related column.  
+      Joins help in retrieving meaningful information by connecting tables together.
+    </p>
+  </section>
+
+  <section>
+    <h2>Types of SQL Joins</h2>
+    <ul>
+      <li><b>INNER JOIN:</b> Returns rows that have matching values in both tables.</li>
+      <li><b>LEFT JOIN (LEFT OUTER JOIN):</b> Returns all rows from the left table, and matching rows from the right table. Non-matching rows show <code>NULL</code>.</li>
+      <li><b>RIGHT JOIN (RIGHT OUTER JOIN):</b> Returns all rows from the right table, and matching rows from the left table.</li>
+      <li><b>FULL JOIN (FULL OUTER JOIN):</b> Returns all rows when there is a match in either left or right table.</li>
+      <li><b>CROSS JOIN:</b> Returns the Cartesian product of both tables (every row from the first table combined with every row from the second).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sample Tables</h2>
+    <p>Let’s assume we have two tables:</p>
+
+    <h3>Students Table</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Alice</td><td>20</td></tr>
+        <tr><td>2</td><td>Bob</td><td>22</td></tr>
+        <tr><td>3</td><td>Charlie</td><td>21</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Courses Table</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CourseName</th>
+          <th>StudentID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Math</td><td>1</td></tr>
+        <tr><td>2</td><td>Physics</td><td>2</td></tr>
+        <tr><td>3</td><td>Chemistry</td><td>4</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>1. INNER JOIN</h2>
+    <pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+INNER JOIN Courses
+ON Students.ID = Courses.StudentID;
+    </pre>
+    <p>✔ Returns only rows where <b>StudentID</b> matches <b>ID</b> in both tables.</p>
+
+    <h3>Output:</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>CourseName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alice</td><td>Math</td></tr>
+        <tr><td>Bob</td><td>Physics</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>2. LEFT JOIN</h2>
+    <pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+LEFT JOIN Courses
+ON Students.ID = Courses.StudentID;
+    </pre>
+    <p>✔ Returns all students, even if they don’t have a course.</p>
+
+    <h3>Output:</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>CourseName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alice</td><td>Math</td></tr>
+        <tr><td>Bob</td><td>Physics</td></tr>
+        <tr><td>Charlie</td><td>NULL</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. RIGHT JOIN</h2>
+    <pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+RIGHT JOIN Courses
+ON Students.ID = Courses.StudentID;
+    </pre>
+    <p>✔ Returns all courses, even if no matching student exists.</p>
+
+    <h3>Output:</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>CourseName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alice</td><td>Math</td></tr>
+        <tr><td>Bob</td><td>Physics</td></tr>
+        <tr><td>NULL</td><td>Chemistry</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. FULL JOIN</h2>
+    <p>
+      Not supported in all databases (e.g., MySQL doesn’t support directly).  
+      But conceptually:
+    </p>
+    <pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+FULL OUTER JOIN Courses
+ON Students.ID = Courses.StudentID;
+    </pre>
+    <p>✔ Combines results of LEFT and RIGHT JOIN. Includes all rows with <code>NULL</code> where no match exists.</p>
+  </section>
+
+  <section>
+    <h2>5. CROSS JOIN</h2>
+    <pre>
+SELECT Students.Name, Courses.CourseName
+FROM Students
+CROSS JOIN Courses;
+    </pre>
+    <p>✔ Produces every combination of students and courses. If there are 3 students and 3 courses → <b>3 × 3 = 9 rows</b>.</p>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li><b>INNER JOIN</b> → Matching records only.</li>
+      <li><b>LEFT JOIN</b> → All left records + matching right.</li>
+      <li><b>RIGHT JOIN</b> → All right records + matching left.</li>
+      <li><b>FULL JOIN</b> → All records from both tables.</li>
+      <li><b>CROSS JOIN</b> → Cartesian product.</li>
+    </ul>
+  </section>
+
+
+    <div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What does a SQL JOIN do?</p>
+  <div class="quiz-option" data-correct="true">Combines data from two or more tables using related columns</div>
+  <div class="quiz-option" data-correct="false">Deletes rows from multiple tables</div>
+  <div class="quiz-option" data-correct="false">Sorts rows in a single table</div>
+  <div class="quiz-option" data-correct="false">Creates a new database</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which JOIN returns only rows that have matching values in both tables?</p>
+  <div class="quiz-option" data-correct="true">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">LEFT JOIN</div>
+  <div class="quiz-option" data-correct="false">RIGHT JOIN</div>
+  <div class="quiz-option" data-correct="false">FULL JOIN</div>
+</div>
+
+<div class="quiz-container">
+  <p>If you want all rows from the left table, even when there is no match in the right table, which JOIN do you use?</p>
+  <div class="quiz-option" data-correct="true">LEFT JOIN</div>
+  <div class="quiz-option" data-correct="false">RIGHT JOIN</div>
+  <div class="quiz-option" data-correct="false">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">CROSS JOIN</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which JOIN returns all rows from the right table, with NULL for non-matching rows in the left table?</p>
+  <div class="quiz-option" data-correct="true">RIGHT JOIN</div>
+  <div class="quiz-option" data-correct="false">LEFT JOIN</div>
+  <div class="quiz-option" data-correct="false">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">FULL JOIN</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which JOIN combines all results from both LEFT and RIGHT joins?</p>
+  <div class="quiz-option" data-correct="true">FULL JOIN</div>
+  <div class="quiz-option" data-correct="false">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">CROSS JOIN</div>
+  <div class="quiz-option" data-correct="false">OUTER JOIN</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does a CROSS JOIN return?</p>
+  <div class="quiz-option" data-correct="true">The Cartesian product of both tables (all possible combinations)</div>
+  <div class="quiz-option" data-correct="false">Only matching rows between two tables</div>
+  <div class="quiz-option" data-correct="false">All rows from the left table only</div>
+  <div class="quiz-option" data-correct="false">All rows from the right table only</div>
+</div>
+
+<div class="quiz-container">
+  <p>If there are 4 students and 5 courses, how many rows will a CROSS JOIN return?</p>
+  <div class="quiz-option" data-correct="true">20</div>
+  <div class="quiz-option" data-correct="false">9</div>
+  <div class="quiz-option" data-correct="false">4</div>
+  <div class="quiz-option" data-correct="false">5</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which JOIN is not directly supported in MySQL?</p>
+  <div class="quiz-option" data-correct="true">FULL JOIN</div>
+  <div class="quiz-option" data-correct="false">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">LEFT JOIN</div>
+  <div class="quiz-option" data-correct="false">RIGHT JOIN</div>
+</div>
+
+<div class="quiz-container">
+  <p>In a LEFT JOIN, what happens when there is no match in the right table?</p>
+  <div class="quiz-option" data-correct="true">The columns from the right table show NULL</div>
+  <div class="quiz-option" data-correct="false">The row is removed</div>
+  <div class="quiz-option" data-correct="false">An error occurs</div>
+  <div class="quiz-option" data-correct="false">The left table row is duplicated</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which JOIN would you use to ensure you get every row from both tables, even when there is no match?</p>
+  <div class="quiz-option" data-correct="true">FULL JOIN</div>
+  <div class="quiz-option" data-correct="false">INNER JOIN</div>
+  <div class="quiz-option" data-correct="false">LEFT JOIN</div>
+  <div class="quiz-option" data-correct="false">RIGHT JOIN</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

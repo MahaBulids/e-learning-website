@@ -1,0 +1,250 @@
+<!-- Placeholder for go - goroutines.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go - Goroutines</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html"class="active">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Go Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="goroutines.html" class="active">Goroutines</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="webservers.html">Web Servers</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to Goroutines</h2>
+    <p>
+      <b>Goroutines</b> are lightweight threads managed by the Go runtime. They allow 
+      you to perform concurrent operations in Go without the complexity of traditional threads.
+    </p>
+    <ul>
+      <li>Goroutines are cheaper than traditional threads, in terms of memory and scheduling.</li>
+      <li>They are started with the <code>go</code> keyword.</li>
+      <li>Used for tasks like handling multiple requests, parallel computations, or asynchronous operations.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic Goroutine Example</h2>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func sayHello() {
+    fmt.Println("Hello from Goroutine!")
+}
+
+func main() {
+    go sayHello() // Start a goroutine
+    time.Sleep(1 * time.Second) // Wait for goroutine to finish
+    fmt.Println("Main function finished")
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>go sayHello()</code>: Starts <b>sayHello</b> function as a goroutine.<br>
+      - <code>time.Sleep(1 * time.Second)</code>: Pauses main function to allow goroutine to execute.<br>
+      - Without <code>Sleep</code> or proper synchronization, the program may end before the goroutine runs.<br>
+      - Goroutines run concurrently with the main function.
+    </p>
+  </section>
+
+  <section>
+    <h2>Multiple Goroutines Example</h2>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func printNumbers() {
+    for i := 1; i <= 5; i++ {
+        fmt.Println(i)
+        time.Sleep(100 * time.Millisecond)
+    }
+}
+
+func main() {
+    go printNumbers()
+    go printNumbers()
+    
+    time.Sleep(1 * time.Second)
+    fmt.Println("Main function finished")
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - Two goroutines are started simultaneously with <code>go printNumbers()</code>.<br>
+      - Both execute concurrently, printing numbers interleaved.<br>
+      - <code>time.Sleep</code> ensures the main function waits for them to finish.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Points About Goroutines</h2>
+    <ul>
+      <li>Goroutines are managed by Go runtime scheduler.</li>
+      <li>They share memory by default; use synchronization techniques (like channels) to avoid race conditions.</li>
+      <li>Very lightweight; you can run thousands of goroutines simultaneously.</li>
+      <li>Use <b>channels</b> to communicate safely between goroutines.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Where to Test Goroutines</h2>
+    <ul>
+      <li><a href="https://play.golang.org/" target="_blank">Go Playground</a> – Official online Go editor.</li>
+      <li>Local development with Go installed using <code>go run filename.go</code>.</li>
+      <li>IDE like <b>VS Code</b> or <b>GoLand</b> with Go extensions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Goroutines enable lightweight concurrency in Go programs.</li>
+      <li>Started using the <code>go</code> keyword.</li>
+      <li>Use synchronization techniques like <b>channels</b> to safely share data.</li>
+      <li>Goroutines make Go highly efficient for parallel tasks and scalable applications.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+      
+
+<div class="quiz-container">
+  <h3>Quick Quiz</h3>
+  <p>1. What is a goroutine in Go?</p>
+  <div class="quiz-option" data-correct="true">A lightweight thread managed by the Go runtime</div>
+  <div class="quiz-option" data-correct="false">A regular function call</div>
+  <div class="quiz-option" data-correct="false">A type of Go package</div>
+  <div class="quiz-option" data-correct="false">A Go variable type</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which keyword is used to start a goroutine?</p>
+  <div class="quiz-option" data-correct="true">go</div>
+  <div class="quiz-option" data-correct="false">thread</div>
+  <div class="quiz-option" data-correct="false">func</div>
+  <div class="quiz-option" data-correct="false">start</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Why is <code>time.Sleep()</code> often used in simple goroutine examples?</p>
+  <div class="quiz-option" data-correct="true">To allow goroutines to finish before main exits</div>
+  <div class="quiz-option" data-correct="false">To slow down the goroutine permanently</div>
+  <div class="quiz-option" data-correct="false">To create a new goroutine</div>
+  <div class="quiz-option" data-correct="false">To stop the program entirely</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. How can multiple goroutines safely share data?</p>
+  <div class="quiz-option" data-correct="true">Using channels or synchronization techniques</div>
+  <div class="quiz-option" data-correct="false">By calling fmt.Println()</div>
+  <div class="quiz-option" data-correct="false">By using global variables without precautions</div>
+  <div class="quiz-option" data-correct="false">By sleeping the main function</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. What is a key advantage of goroutines compared to traditional threads?</p>
+  <div class="quiz-option" data-correct="true">They are lightweight and can run thousands simultaneously</div>
+  <div class="quiz-option" data-correct="false">They automatically compile faster</div>
+  <div class="quiz-option" data-correct="false">They don’t need functions to run</div>
+  <div class="quiz-option" data-correct="false">They replace the main function</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. What happens if the main function exits before a goroutine finishes?</p>
+  <div class="quiz-option" data-correct="true">The program terminates and the goroutine may not run</div>
+  <div class="quiz-option" data-correct="false">The goroutine continues running in the background</div>
+  <div class="quiz-option" data-correct="false">Go runtime pauses until all goroutines finish</div>
+  <div class="quiz-option" data-correct="false">An error is thrown automatically</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Can goroutines share memory?</p>
+  <div class="quiz-option" data-correct="true">Yes, but synchronization is needed to avoid race conditions</div>
+  <div class="quiz-option" data-correct="false">No, each goroutine has its own separate memory</div>
+  <div class="quiz-option" data-correct="false">Yes, and no precautions are needed</div>
+  <div class="quiz-option" data-correct="false">Only if they are in the same package</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which of the following is true about goroutines?</p>
+  <div class="quiz-option" data-correct="true">They are cheaper to create than OS threads</div>
+  <div class="quiz-option" data-correct="false">They cannot run concurrently</div>
+  <div class="quiz-option" data-correct="false">They must be declared globally</div>
+  <div class="quiz-option" data-correct="false">They are slower than normal functions</div>
+</div>
+
+<div class="quiz-container">
+  <p>9. How are goroutines scheduled for execution?</p>
+  <div class="quiz-option" data-correct="true">By the Go runtime scheduler</div>
+  <div class="quiz-option" data-correct="false">By the operating system only</div>
+  <div class="quiz-option" data-correct="false">Manually by the programmer</div>
+  <div class="quiz-option" data-correct="false">Using a third-party library</div>
+</div>
+
+<div class="quiz-container">
+  <p>10. Which Go feature is recommended for communicating between goroutines safely?</p>
+  <div class="quiz-option" data-correct="true">Channels</div>
+  <div class="quiz-option" data-correct="false">Global variables without locks</div>
+  <div class="quiz-option" data-correct="false">time.Sleep()</div>
+  <div class="quiz-option" data-correct="false">Pointers only</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

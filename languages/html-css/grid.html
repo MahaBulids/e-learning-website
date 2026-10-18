@@ -1,0 +1,268 @@
+<!-- Placeholder for html-css - grid.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="index.html" class="active">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+     
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>HTML & CSS Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="html-basics.html">HTML Basics</a></li>
+        <li><a href="css-basics.html">CSS Basics</a></li>
+        <li><a href="flexbox.html">Flexbox</a></li>
+        <li><a href="grid.html" class="active">CSS Grid</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    
+      <main class="lesson-content">
+          <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to CSS Grid</h2>
+    <p>
+      <b>CSS Grid Layout</b> is a powerful 2D layout system that allows you to create 
+      web layouts using rows and columns. Unlike Flexbox (which is 1D), 
+      Grid can control both <b>horizontal</b> and <b>vertical</b> alignment at the same time.
+    </p>
+  </section>
+
+  <section>
+    <h3>How CSS Grid Works</h3>
+    <p>
+      To use Grid, you need a container and its child elements:
+    </p>
+    <pre><code>
+.container {
+  display: grid;               /* enables grid */
+  grid-template-columns: 100px 100px 100px; /* 3 columns */
+  grid-template-rows: 100px 100px;          /* 2 rows */
+  gap: 10px;                   /* space between items */
+}
+    </code></pre>
+    <p>
+      Each direct child of <code>.container</code> becomes a <b>grid item</b> placed inside the defined grid.
+    </p>
+  </section>
+
+  <section>
+    <h3>Grid Terminology</h3>
+    <ul>
+      <li><b>Grid Container</b>: The parent element with <code>display: grid</code>.</li>
+      <li><b>Grid Item</b>: The children inside the grid container.</li>
+      <li><b>Grid Lines</b>: The dividing lines between rows and columns.</li>
+      <li><b>Grid Tracks</b>: A row or a column (space between grid lines).</li>
+      <li><b>Grid Cell</b>: A single box inside the grid (intersection of a row & column).</li>
+      <li><b>Grid Area</b>: A group of cells combined into one larger region.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Important Grid Properties</h3>
+    <h4>For the Container</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>grid-template-columns</code></td>
+        <td>Defines the number and size of columns.</td>
+        <td><code>grid-template-columns: 1fr 2fr 1fr;</code></td>
+      </tr>
+      <tr>
+        <td><code>grid-template-rows</code></td>
+        <td>Defines the number and size of rows.</td>
+        <td><code>grid-template-rows: 100px auto 50px;</code></td>
+      </tr>
+      <tr>
+        <td><code>gap</code> (or <code>row-gap</code>, <code>column-gap</code>)</td>
+        <td>Controls spacing between rows and columns.</td>
+        <td><code>gap: 20px;</code></td>
+      </tr>
+      <tr>
+        <td><code>justify-items</code></td>
+        <td>Aligns items horizontally within their cells.</td>
+        <td><code>justify-items: center;</code></td>
+      </tr>
+      <tr>
+        <td><code>align-items</code></td>
+        <td>Aligns items vertically within their cells.</td>
+        <td><code>align-items: stretch;</code></td>
+      </tr>
+      <tr>
+        <td><code>grid-template-areas</code></td>
+        <td>Lets you name areas for a visual layout.</td>
+        <td>
+<pre><code>
+grid-template-areas:
+"header header"
+"sidebar main"
+"footer footer";
+</code></pre>
+        </td>
+      </tr>
+    </table>
+
+    <h4>For the Items</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code>grid-column</code></td>
+        <td>Controls which column(s) the item spans.</td>
+        <td><code>grid-column: 1 / 3;</code></td>
+      </tr>
+      <tr>
+        <td><code>grid-row</code></td>
+        <td>Controls which row(s) the item spans.</td>
+        <td><code>grid-row: 2 / 4;</code></td>
+      </tr>
+      <tr>
+        <td><code>grid-area</code></td>
+        <td>Places the item into a named grid area.</td>
+        <td><code>grid-area: header;</code></td>
+      </tr>
+      <tr>
+        <td><code>justify-self</code></td>
+        <td>Aligns a single item horizontally inside its cell.</td>
+        <td><code>justify-self: end;</code></td>
+      </tr>
+      <tr>
+        <td><code>align-self</code></td>
+        <td>Aligns a single item vertically inside its cell.</td>
+        <td><code>align-self: center;</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h3>Example: Simple Grid Layout</h3>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .box {
+      background-color: steelblue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="box"&gt;Box 1&lt;/div&gt;
+    &lt;div class="box"&gt;Box 2&lt;/div&gt;
+    &lt;div class="box"&gt;Box 3&lt;/div&gt;
+    &lt;div class="box"&gt;Box 4&lt;/div&gt;
+    &lt;div class="box"&gt;Box 5&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <p>
+      This creates a grid with 3 columns and 2 rows. 
+      The boxes automatically fill the available grid cells.
+    </p>
+  </section>
+
+  <section>
+    <h3>Summary</h3>
+    <ul>
+      <li>Grid is a <b>2D layout system</b> (works with rows and columns).</li>
+      <li>Use <code>display: grid;</code> on the container.</li>
+      <li>Define columns and rows using <code>grid-template-columns</code> and <code>grid-template-rows</code>.</li>
+      <li>Control spacing with <code>gap</code>.</li>
+      <li>Align items with <code>justify-*</code> and <code>align-*</code> properties.</li>
+      <li>Items can span multiple rows/columns or be placed in named areas.</li>
+    </ul>
+  </section>
+
+      <div id="quiz-wrapper">
+      <<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What makes CSS Grid different from Flexbox?</p>
+  <div class="quiz-option" data-correct="false">Grid is only for vertical layouts, Flexbox is for horizontal.</div>
+  <div class="quiz-option" data-correct="false">Grid is a 1D layout system, Flexbox is 2D.</div>
+  <div class="quiz-option" data-correct="true">Grid is a 2D layout system, Flexbox is 1D.</div>
+  <div class="quiz-option" data-correct="false">Both Grid and Flexbox are 2D layout systems.</div>
+</div>
+
+<div class="quiz-container">
+  <p>In CSS Grid, what does <code>grid-template-columns: 1fr 2fr 1fr;</code> do?</p>
+  <div class="quiz-option" data-correct="false">Creates 3 columns, each equal size.</div>
+  <div class="quiz-option" data-correct="true">Creates 3 columns: first takes 1 part, second takes 2 parts, third takes 1 part.</div>
+  <div class="quiz-option" data-correct="false">Creates 2 columns only.</div>
+  <div class="quiz-option" data-correct="false">Automatically fits columns to content.</div>
+</div>
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>In CSS Grid, what is a "Grid Cell"?</p>
+  <div class="quiz-option" data-correct="false">The parent element with <code>display: grid</code>.</div>
+  <div class="quiz-option" data-correct="false">A group of rows or columns.</div>
+  <div class="quiz-option" data-correct="true">The single box at the intersection of a row and a column.</div>
+  <div class="quiz-option" data-correct="false">The space between two grid items.</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which property lets you visually arrange items using names like "header", "sidebar", and "footer"?</p>
+  <div class="quiz-option" data-correct="false"><code>grid-row</code></div>
+  <div class="quiz-option" data-correct="false"><code>grid-column</code></div>
+  <div class="quiz-option" data-correct="true"><code>grid-template-areas</code></div>
+  <div class="quiz-option" data-correct="false"><code>justify-items</code></div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

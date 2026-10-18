@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL - Index</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html" >C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html"class="active">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+<div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>Python Lessons</h2>
+      <ul>
+        <li> <a href="index.html" class="active">SQL Index</a></li>
+        <li> <a href="intro.html">Introduction</a></li>
+        <li> <a href="queries.html">Queries</a></li>
+        <li><a href="joins.html">Joins</a></li>
+        <li> <a href="indexes.html">SQL Indexes</a></li>
+      </ul>
+    </aside>
+   <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to SQL</h2>
+    <p>
+      <b>SQL (Structured Query Language)</b> is the standard language for working with 
+      <b>relational databases</b>. It allows developers and database administrators to 
+      create, manage, and manipulate data stored in tables.
+    </p>
+    <p>
+      SQL is not tied to one system; it is supported by many database management systems 
+      such as <b>MySQL, PostgreSQL, Oracle, SQL Server, and SQLite</b>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why is SQL Important?</h2>
+    <ul>
+      <li><b>Data Management:</b> Used to store, retrieve, and organize data efficiently.</li>
+      <li><b>Universality:</b> SQL is a global standard for relational databases.</li>
+      <li><b>Integration:</b> Works with programming languages (Python, Java, C#, PHP).</li>
+      <li><b>Business Applications:</b> Helps in reporting, analytics, and decision-making.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Main Components of SQL</h2>
+    <ul>
+      <li><b>DDL (Data Definition Language):</b> Defines the structure of databases and tables (e.g., CREATE, ALTER, DROP).</li>
+      <li><b>DML (Data Manipulation Language):</b> Deals with inserting, updating, and deleting records (e.g., INSERT, UPDATE, DELETE).</li>
+      <li><b>DQL (Data Query Language):</b> Used to retrieve data from databases (e.g., SELECT).</li>
+      <li><b>DCL (Data Control Language):</b> Manages user permissions and security (e.g., GRANT, REVOKE).</li>
+      <li><b>TCL (Transaction Control Language):</b> Ensures data integrity in transactions (e.g., COMMIT, ROLLBACK, SAVEPOINT).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Applications of SQL</h2>
+    <ul>
+      <li><b>Web Development:</b> Storing user accounts, orders, product details.</li>
+      <li><b>Data Analysis:</b> Extracting insights from large datasets.</li>
+      <li><b>Enterprise Systems:</b> Used in banking, healthcare, and e-commerce for managing critical data.</li>
+      <li><b>Reporting:</b> Generating business intelligence and reports.</li>
+    </ul>
+  </section>
+
+    <div id="quiz-wrapper">
+    <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What does SQL stand for?</p>
+  <div class="quiz-option" data-correct="true">Structured Query Language</div>
+  <div class="quiz-option" data-correct="false">System Query Logic</div>
+  <div class="quiz-option" data-correct="false">Simple Query Language</div>
+  <div class="quiz-option" data-correct="false">Structured Quick Language</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is NOT a SQL component?</p>
+  <div class="quiz-option" data-correct="false">DDL (Data Definition Language)</div>
+  <div class="quiz-option" data-correct="false">DML (Data Manipulation Language)</div>
+  <div class="quiz-option" data-correct="false">DQL (Data Query Language)</div>
+  <div class="quiz-option" data-correct="true">XML (Extensible Markup Language)</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which SQL component is used to retrieve data?</p>
+  <div class="quiz-option" data-correct="true">DQL (Data Query Language)</div>
+  <div class="quiz-option" data-correct="false">DML (Data Manipulation Language)</div>
+  <div class="quiz-option" data-correct="false">DCL (Data Control Language)</div>
+  <div class="quiz-option" data-correct="false">TCL (Transaction Control Language)</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which SQL commands belong to TCL (Transaction Control Language)?</p>
+  <div class="quiz-option" data-correct="true">COMMIT, ROLLBACK, SAVEPOINT</div>
+  <div class="quiz-option" data-correct="false">SELECT, INSERT, UPDATE</div>
+  <div class="quiz-option" data-correct="false">CREATE, ALTER, DROP</div>
+  <div class="quiz-option" data-correct="false">GRANT, REVOKE</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is a real-world application of SQL?</p>
+  <div class="quiz-option" data-correct="true">Storing user accounts in web development</div>
+  <div class="quiz-option" data-correct="false">Designing operating systems</div>
+  <div class="quiz-option" data-correct="false">Building a game engine</div>
+  <div class="quiz-option" data-correct="false">Compiling programming languages</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!-- Placeholder for c++ - stl.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ STL</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="index.html" class="active">C++</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>C++ Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="pointers.html">Pointers</a></li>
+        <li><a href="stl.html" class="active">STL</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Standard Template Library (STL) in C++</h2>
+    <p>
+      The <b>Standard Template Library (STL)</b> is a collection of pre-written classes and functions 
+      in C++ that provide common data structures and algorithms.  
+      It helps programmers save time by reusing tested and efficient components instead of writing everything from scratch.
+    </p>
+  </section>
+
+  <section>
+    <h3>Why Use STL?</h3>
+    <ul>
+      <li><b>Reusability</b> – Ready-made implementations of data structures and algorithms.</li>
+      <li><b>Efficiency</b> – Optimized and tested code ensures good performance.</li>
+      <li><b>Generic Programming</b> – Works with different data types using <code>templates</code>.</li>
+      <li><b>Faster Development</b> – Focus more on logic rather than low-level implementation.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Components of STL</h3>
+    <ol>
+      <li>
+        <b>Containers</b> – Data structures to store collections of objects.
+        <ul>
+          <li><b>Sequence Containers</b> – Store elements in a linear order.  
+            Examples: <code>vector</code>, <code>list</code>, <code>deque</code>.
+          </li>
+          <li><b>Associative Containers</b> – Store elements in a sorted structure.  
+            Examples: <code>set</code>, <code>map</code>, <code>multiset</code>, <code>multimap</code>.
+          </li>
+          <li><b>Unordered Containers</b> – Use hashing for fast access.  
+            Examples: <code>unordered_set</code>, <code>unordered_map</code>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>Algorithms</b> – Functions that perform operations like searching, sorting, counting, etc.  
+        Examples: <code>sort()</code>, <code>find()</code>, <code>binary_search()</code>, <code>reverse()</code>.
+      </li>
+      <li>
+        <b>Iterators</b> – Act like pointers to access elements in containers.  
+        They connect algorithms with containers.
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Comparison of Major Containers</h3>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Container</th>
+          <th>Type</th>
+          <th>Ordering</th>
+          <th>Duplicates</th>
+          <th>Main Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>vector</code></td>
+          <td>Sequence</td>
+          <td>Maintains insertion order</td>
+          <td>Allowed</td>
+          <td>Dynamic arrays, fast access by index</td>
+        </tr>
+        <tr>
+          <td><code>list</code></td>
+          <td>Sequence</td>
+          <td>Maintains insertion order</td>
+          <td>Allowed</td>
+          <td>Fast insert/delete at any position</td>
+        </tr>
+        <tr>
+          <td><code>deque</code></td>
+          <td>Sequence</td>
+          <td>Maintains insertion order</td>
+          <td>Allowed</td>
+          <td>Efficient insertion at both ends</td>
+        </tr>
+        <tr>
+          <td><code>set</code></td>
+          <td>Associative</td>
+          <td>Sorted order</td>
+          <td>Not allowed</td>
+          <td>Store unique sorted elements</td>
+        </tr>
+        <tr>
+          <td><code>multiset</code></td>
+          <td>Associative</td>
+          <td>Sorted order</td>
+          <td>Allowed</td>
+          <td>Store sorted elements with duplicates</td>
+        </tr>
+        <tr>
+          <td><code>map</code></td>
+          <td>Associative</td>
+          <td>Sorted by keys</td>
+          <td>Keys not duplicated</td>
+          <td>Store key-value pairs</td>
+        </tr>
+        <tr>
+          <td><code>multimap</code></td>
+          <td>Associative</td>
+          <td>Sorted by keys</td>
+          <td>Keys duplicated</td>
+          <td>Key-value pairs with duplicate keys</td>
+        </tr>
+        <tr>
+          <td><code>unordered_set</code></td>
+          <td>Unordered</td>
+          <td>No specific order (hashing)</td>
+          <td>Not allowed</td>
+          <td>Fast lookup of unique elements</td>
+        </tr>
+        <tr>
+          <td><code>unordered_map</code></td>
+          <td>Unordered</td>
+          <td>No specific order (hashing)</td>
+          <td>Keys not duplicated</td>
+          <td>Fast key-value storage</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>Example: Using STL</h3>
+    <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; numbers = {5, 2, 8, 1, 9};
+
+    // Sorting the vector
+    sort(numbers.begin(), numbers.end());
+
+    cout &lt;&lt; "Sorted numbers: ";
+    for (int n : numbers) {
+        cout &lt;&lt; n &lt;&lt; " ";
+    }
+
+    return 0;
+}
+    </pre>
+    <p>
+      Output:  
+      <code>Sorted numbers: 1 2 5 8 9</code>
+    </p>
+  </section>
+
+  <section>
+    <h3>Key Advantages</h3>
+    <ul>
+      <li>STL provides <b>generic, reusable, and efficient</b> solutions.</li>
+      <li>Makes it easier to implement complex data structures.</li>
+      <li>Separates <b>data (containers)</b> from <b>operations (algorithms)</b>.</li>
+      <li>Iterators provide flexibility like pointers but with added safety.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Real-Life Applications of STL</h3>
+    <ul>
+      <li>Managing dynamic lists of data (e.g., <code>vector</code> in games or simulations).</li>
+      <li>Fast searching and retrieval using <code>map</code> or <code>unordered_map</code>.</li>
+      <li>Implementing sets of unique elements using <code>set</code>.</li>
+      <li>Sorting, filtering, or processing large datasets efficiently.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>What is the main purpose of the Standard Template Library (STL) in C++?</p>
+  <div class="quiz-option" data-correct="true">To provide reusable classes and functions for data structures and algorithms</div>
+  <div class="quiz-option" data-correct="false">To replace the C++ compiler</div>
+  <div class="quiz-option" data-correct="false">To automatically generate machine code</div>
+  <div class="quiz-option" data-correct="false">To convert C++ into Python</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is NOT a component of STL?</p>
+  <div class="quiz-option" data-correct="false">Containers</div>
+  <div class="quiz-option" data-correct="false">Algorithms</div>
+  <div class="quiz-option" data-correct="true">Compilers</div>
+  <div class="quiz-option" data-correct="false">Iterators</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which container maintains insertion order and allows fast access by index?</p>
+  <div class="quiz-option" data-correct="true">vector</div>
+  <div class="quiz-option" data-correct="false">set</div>
+  <div class="quiz-option" data-correct="false">map</div>
+  <div class="quiz-option" data-correct="false">multiset</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which associative container stores key-value pairs with unique keys?</p>
+  <div class="quiz-option" data-correct="false">multimap</div>
+  <div class="quiz-option" data-correct="true">map</div>
+  <div class="quiz-option" data-correct="false">unordered_multimap</div>
+  <div class="quiz-option" data-correct="false">deque</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which unordered container provides fast lookup using hashing but does not allow duplicate elements?</p>
+  <div class="quiz-option" data-correct="true">unordered_set</div>
+  <div class="quiz-option" data-correct="false">unordered_map</div>
+  <div class="quiz-option" data-correct="false">multiset</div>
+  <div class="quiz-option" data-correct="false">vector</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the STL example, what does the function <code>sort(numbers.begin(), numbers.end())</code> do?</p>
+  <div class="quiz-option" data-correct="true">Sorts the vector in ascending order</div>
+  <div class="quiz-option" data-correct="false">Removes duplicates from the vector</div>
+  <div class="quiz-option" data-correct="false">Reverses the order of the vector</div>
+  <div class="quiz-option" data-correct="false">Finds the maximum element</div>
+</div>
+
+<div class="quiz-container">
+  <p>Which of the following is a real-life use of STL?</p>
+  <div class="quiz-option" data-correct="false">Compiling C++ programs</div>
+  <div class="quiz-option" data-correct="true">Managing dynamic lists of data using vector</div>
+  <div class="quiz-option" data-correct="false">Writing device drivers</div>
+  <div class="quiz-option" data-correct="false">Building operating systems</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

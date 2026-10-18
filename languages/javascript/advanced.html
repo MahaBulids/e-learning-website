@@ -1,0 +1,283 @@
+<!-- Placeholder for javascript - advanced.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Advanced - Study Core</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="index.html"class="active">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+       <li><a href="../html-css/index.html" >HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+     
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>JavaScript Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="history.html">History</a>  </li>
+        <li> <a href="basics.html">Basics</a> </li>
+        <li><a href="keywords.html">Keywords</a></li>
+        <li><a href="advanced.html" class="active">Advanced</a></li>
+      </ul>
+    </aside>
+  
+
+  <main class="lesson-content">
+      <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Advanced Java Concepts</h2>
+    <p>
+      Advanced Java concepts build on the basics to help developers create <b>robust, scalable, and high-performance applications</b>.
+      These include topics related to <b>object-oriented programming, multithreading, collections, JDBC, networking, and design patterns</b>.
+    </p>
+  </section>
+
+  <section>
+    <h3>1. Object-Oriented Programming (OOP) Advanced Features</h3>
+    <p>
+      Beyond basic classes and objects, Java provides advanced OOP features:
+    </p>
+    <ul>
+      <li><b>Inheritance:</b> Mechanism to create new classes from existing ones (<b>extends</b> keyword).</li>
+      <li><b>Polymorphism:</b> Ability to take multiple forms:
+        <ul>
+          <li><b>Compile-time:</b> Method overloading</li>
+          <li><b>Runtime:</b> Method overriding</li>
+        </ul>
+      </li>
+      <li><b>Encapsulation:</b> Restrict direct access to class fields (<b>private fields + getters/setters</b>).</li>
+      <li><b>Abstraction:</b> Hiding implementation details using <b>abstract classes</b> and <b>interfaces</b>.</li>
+      <li><b>Interfaces vs Abstract Classes:</b>
+        <ul>
+          <li>Interface: 100% abstraction (Java 8+ allows default/static methods)</li>
+          <li>Abstract Class: Partial abstraction, can contain fields and constructors</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>2. Exception Handling</h3>
+    <p>
+      Java provides mechanisms to handle errors and maintain program flow:
+    </p>
+    <ul>
+      <li><b>Checked Exceptions:</b> Must be handled using <b>try-catch</b> or <b>throws</b>.</li>
+      <li><b>Unchecked Exceptions:</b> Runtime errors like <b>NullPointerException, ArithmeticException</b>.</li>
+      <li><b>Try-with-resources:</b> Automatically closes resources implementing <b>AutoCloseable</b>.</li>
+      <li><b>Custom Exceptions:</b> Developers can create their own exception classes by extending <b>Exception</b> or <b>RuntimeException</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>3. Java Collections Framework (JCF)</h3>
+    <p>
+      The Collections Framework provides pre-built data structures for efficient data management:
+    </p>
+    <ul>
+      <li><b>List:</b> Ordered collection (ArrayList, LinkedList)</li>
+      <li><b>Set:</b> Unordered, unique elements (HashSet, TreeSet)</li>
+      <li><b>Map:</b> Key-value pairs (HashMap, TreeMap)</li>
+      <li><b>Queue:</b> FIFO structures (PriorityQueue, LinkedList)</li>
+      <li><b>Stack:</b> LIFO structure (Stack class, Deque)</li>
+      <li>Supports <b>iteration, sorting, searching, and thread-safe operations</b></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>4. Multithreading & Concurrency</h3>
+    <p>
+      Java supports parallel execution for efficient CPU utilization:
+    </p>
+    <ul>
+      <li><b>Thread Creation:</b> By extending <b>Thread</b> class or implementing <b>Runnable</b> interface.</li>
+      <li><b>Thread Life Cycle:</b> New → Runnable → Running → Waiting/Blocked → Terminated</li>
+      <li><b>Synchronization:</b> Prevents data inconsistency in shared resources.</li>
+      <li><b>Executors & Thread Pools:</b> Manage multiple threads efficiently.</li>
+      <li><b>Concurrent Collections:</b> Thread-safe data structures (ConcurrentHashMap, CopyOnWriteArrayList).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>5. Input/Output (I/O) & File Handling</h3>
+    <p>
+      Java provides classes for reading/writing data from/to files, networks, and memory:
+    </p>
+    <ul>
+      <li><b>File I/O:</b> FileReader, FileWriter, BufferedReader, BufferedWriter</li>
+      <li><b>Byte Streams vs Character Streams:</b> InputStream/OutputStream vs Reader/Writer</li>
+      <li><b>Serialization:</b> Convert objects to byte streams to save or transmit.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>6. JDBC (Java Database Connectivity)</h3>
+    <p>
+      JDBC allows Java applications to interact with relational databases:
+    </p>
+    <ul>
+      <li>Load database drivers (<b>Class.forName</b>).</li>
+      <li>Establish connection using <b>Connection</b> object.</li>
+      <li>Execute SQL queries with <b>Statement/PreparedStatement</b>.</li>
+      <li>Process results with <b>ResultSet</b>.</li>
+      <li>Close resources to prevent memory leaks.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>7. Networking</h3>
+    <p>
+      Java supports network programming to create client-server applications:
+    </p>
+    <ul>
+      <li><b>Socket Programming:</b> Connect client and server using TCP/IP.</li>
+      <li><b>ServerSocket:</b> Listen for incoming connections.</li>
+      <li><b>URL & HttpURLConnection:</b> Access resources over HTTP/HTTPS.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>8. Design Patterns</h3>
+    <p>
+      Design patterns are reusable solutions for common software problems:
+    </p>
+    <ul>
+      <li><b>Singleton:</b> Ensure only one instance of a class exists.</li>
+      <li><b>Factory:</b> Create objects without specifying exact class.</li>
+      <li><b>Observer:</b> Define one-to-many dependency between objects.</li>
+      <li><b>Decorator, Strategy, and MVC:</b> Other widely-used patterns in Java.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>9. Java 8+ Features</h3>
+    <p>
+      Modern Java introduces functional programming features:
+    </p>
+    <ul>
+      <li><b>Lambda Expressions:</b> Short syntax for anonymous functions.</li>
+      <li><b>Streams API:</b> Process collections in a functional style.</li>
+      <li><b>Optional Class:</b> Avoid null pointer exceptions elegantly.</li>
+      <li><b>Default and Static Methods in Interfaces:</b> Add behavior without breaking existing classes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Key Points to Remember</h3>
+    <ul>
+      <li>Advanced Java concepts help build <b>robust, scalable, and maintainable applications</b>.</li>
+      <li>Focus on <b>OOP principles, exception handling, multithreading, collections, and JDBC</b>.</li>
+      <li>Modern Java leverages <b>functional programming and design patterns</b> for cleaner code.</li>
+    </ul>
+  </section>
+
+<div id="quiz-wrapper">
+   <div class="quiz-container">
+  <p>1. Which keyword is used for creating a subclass in Java?</p>
+  <div class="quiz-option" data-correct="true">extends</div>
+  <div class="quiz-option" data-correct="false">implements</div>
+  <div class="quiz-option" data-correct="false">super</div>
+  <div class="quiz-option" data-correct="false">abstract</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. What is an example of compile-time polymorphism in Java?</p>
+  <div class="quiz-option" data-correct="true">Method overloading</div>
+  <div class="quiz-option" data-correct="false">Method overriding</div>
+  <div class="quiz-option" data-correct="false">Encapsulation</div>
+  <div class="quiz-option" data-correct="false">Abstraction</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. Which type of exception must be either caught or declared in the method signature?</p>
+  <div class="quiz-option" data-correct="true">Checked Exception</div>
+  <div class="quiz-option" data-correct="false">Unchecked Exception</div>
+  <div class="quiz-option" data-correct="false">Runtime Exception</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. Which Java collection allows unique, unordered elements?</p>
+  <div class="quiz-option" data-correct="true">Set</div>
+  <div class="quiz-option" data-correct="false">List</div>
+  <div class="quiz-option" data-correct="false">Map</div>
+  <div class="quiz-option" data-correct="false">Queue</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. Which interface is used to create a thread in Java?</p>
+  <div class="quiz-option" data-correct="true">Runnable</div>
+  <div class="quiz-option" data-correct="false">Serializable</div>
+  <div class="quiz-option" data-correct="false">Callable</div>
+  <div class="quiz-option" data-correct="false">Comparator</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which Java class is used to read characters from a file?</p>
+  <div class="quiz-option" data-correct="true">FileReader</div>
+  <div class="quiz-option" data-correct="false">FileWriter</div>
+  <div class="quiz-option" data-correct="false">BufferedWriter</div>
+  <div class="quiz-option" data-correct="false">ObjectOutputStream</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Which method is used to execute SQL queries in JDBC?</p>
+  <div class="quiz-option" data-correct="true">executeQuery()</div>
+  <div class="quiz-option" data-correct="false">executeUpdate()</div>
+  <div class="quiz-option" data-correct="false">executeSQL()</div>
+  <div class="quiz-option" data-correct="false">runQuery()</div>
+</div>
+
+<div class="quiz-container">
+  <p>8. Which design pattern ensures only one instance of a class exists?</p>
+  <div class="quiz-option" data-correct="true">Singleton</div>
+  <div class="quiz-option" data-correct="false">Factory</div>
+  <div class="quiz-option" data-correct="false">Observer</div>
+  <div class="quiz-option" data-correct="false">Decorator</div>
+</div>
+
+<div class="quiz-container">
+  <p>9. Which feature introduced in Java 8 allows processing collections in a functional style?</p>
+  <div class="quiz-option" data-correct="true">Streams API</div>
+  <div class="quiz-option" data-correct="false">Lambda Expressions</div>
+  <div class="quiz-option" data-correct="false">Optional Class</div>
+  <div class="quiz-option" data-correct="false">Default Methods</div>
+</div>
+
+<div class="quiz-container">
+  <p>10. Which of the following is NOT an advanced Java concept?</p>
+  <div class="quiz-option" data-correct="true">HTML Forms</div>
+  <div class="quiz-option" data-correct="false">Multithreading</div>
+  <div class="quiz-option" data-correct="false">JDBC</div>
+  <div class="quiz-option" data-correct="false">Design Patterns</div>
+</div>
+</div>
+  </main>
+</div>
+  <footer class="lesson-footer">
+    <p>&copy; 2025 Learn Programming. All rights reserved.</p>
+  </footer>
+</body>
+</html>

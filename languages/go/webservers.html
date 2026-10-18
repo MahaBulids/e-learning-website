@@ -1,0 +1,241 @@
+<!-- Placeholder for go - webservers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go - Web Servers</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <!-- Navbar -->
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c-sharp/index.html">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="index.html" class="active">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <!-- Lesson Wrapper -->
+  <div class="lesson-wrapper">
+    <!-- Sidebar -->
+    <aside class="lesson-sidebar">
+      <h2>Go Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="goroutines.html">Goroutines</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="webservers.html" class="active">Web Servers</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Introduction to Go Web Servers</h2>
+    <p>
+      Go provides a powerful <b>net/http</b> package to build web servers easily. 
+      You can handle HTTP requests, serve content, and build APIs with minimal code.
+    </p>
+    <ul>
+      <li>Highly performant due to Go’s concurrency features.</li>
+      <li>Simple and readable code to handle routes and responses.</li>
+      <li>Ideal for REST APIs, static file serving, or backend services.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basic Go Web Server Example</h2>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World!")
+}
+
+func main() {
+    http.HandleFunc("/", helloHandler) // Route "/" handled by helloHandler
+    fmt.Println("Server is running on http://localhost:8080")
+    http.ListenAndServe(":8080", nil) // Start the server on port 8080
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>http.HandleFunc("/", helloHandler)</code>: Maps the URL path "/" to the handler function <b>helloHandler</b>.<br>
+      - <code>helloHandler</code>: Responds with "Hello, World!" using <code>fmt.Fprintf</code>.<br>
+      - <code>http.ListenAndServe(":8080", nil)</code>: Starts the web server on port 8080.<br>
+      - Access the server by visiting <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in a browser.
+    </p>
+  </section>
+
+  <section>
+    <h2>Handling Multiple Routes</h2>
+    <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Welcome to the Home Page!")
+}
+
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "This is the About Page!")
+}
+
+func main() {
+    http.HandleFunc("/", homeHandler)
+    http.HandleFunc("/about", aboutHandler)
+
+    fmt.Println("Server running on http://localhost:8080")
+    http.ListenAndServe(":8080", nil)
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - Multiple routes can be handled by mapping URL paths to different handler functions.<br>
+      - Visiting <code>/</code> calls <b>homeHandler</b>, and <code>/about</code> calls <b>aboutHandler</b>.<br>
+      - You can expand this to handle more pages or API endpoints.
+    </p>
+  </section>
+
+  <section>
+    <h2>Serving Static Files</h2>
+    <pre>
+package main
+
+import (
+    "net/http"
+)
+
+func main() {
+    fs := http.FileServer(http.Dir("static")) // "static" folder for files
+    http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+    http.ListenAndServe(":8080", nil)
+}
+    </pre>
+    <p>
+      ✔ <b>Explanation:</b><br>
+      - <code>http.FileServer</code> serves files from the "static" directory.<br>
+      - <code>http.StripPrefix</code> removes the "/static/" prefix from the URL.<br>
+      - Access files via <code>http://localhost:8080/static/filename</code>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Where to Test Go Web Servers</h2>
+    <ul>
+      <li>Local machine with Go installed (<code>go run main.go</code>).</li>
+      <li>Visit <code>http://localhost:8080</code> in your browser to see the responses.</li>
+      <li>Use tools like <b>Postman</b> or <b>cURL</b> to test API endpoints.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Go’s <b>net/http</b> package allows building web servers quickly and efficiently.</li>
+      <li>Map URL paths to handler functions using <code>http.HandleFunc</code>.</li>
+      <li>Serve static files using <code>http.FileServer</code>.</li>
+      <li>Leverage Go’s concurrency to handle multiple requests efficiently.</li>
+      <li>Test web servers locally using a browser, Postman, or cURL.</li>
+    </ul>
+  </section>
+
+
+<div id="quiz-wrapper">
+     <h3>Quiz: Go Web Servers</h3>
+
+<div class="quiz-container">
+  <p>1. Which Go package is primarily used to build web servers?</p>
+  <div class="quiz-option" data-correct="true">net/http</div>
+  <div class="quiz-option" data-correct="false">fmt</div>
+  <div class="quiz-option" data-correct="false">os</div>
+  <div class="quiz-option" data-correct="false">io</div>
+</div>
+
+<div class="quiz-container">
+  <p>2. Which function maps a URL path to a handler function?</p>
+  <div class="quiz-option" data-correct="true">http.HandleFunc</div>
+  <div class="quiz-option" data-correct="false">http.ListenAndServe</div>
+  <div class="quiz-option" data-correct="false">http.FileServer</div>
+  <div class="quiz-option" data-correct="false">fmt.Fprintf</div>
+</div>
+
+<div class="quiz-container">
+  <p>3. What is the purpose of http.ListenAndServe(":8080", nil)?</p>
+  <div class="quiz-option" data-correct="true">Starts the web server on port 8080</div>
+  <div class="quiz-option" data-correct="false">Stops the web server</div>
+  <div class="quiz-option" data-correct="false">Handles HTTP requests automatically</div>
+  <div class="quiz-option" data-correct="false">Serves static files</div>
+</div>
+
+<div class="quiz-container">
+  <p>4. How do you serve static files from a "static" folder?</p>
+  <div class="quiz-option" data-correct="true">Use http.FileServer with http.StripPrefix</div>
+  <div class="quiz-option" data-correct="false">Use fmt.Fprintf directly</div>
+  <div class="quiz-option" data-correct="false">Use http.ListenAndServe with static folder</div>
+  <div class="quiz-option" data-correct="false">Use http.HandleFunc for each file</div>
+</div>
+
+<div class="quiz-container">
+  <p>5. If you visit /about in the browser, which handler function is called?</p>
+  <div class="quiz-option" data-correct="true">aboutHandler</div>
+  <div class="quiz-option" data-correct="false">homeHandler</div>
+  <div class="quiz-option" data-correct="false">helloHandler</div>
+  <div class="quiz-option" data-correct="false">main</div>
+</div>
+
+<div class="quiz-container">
+  <p>6. Which tools can you use to test Go web servers locally?</p>
+  <div class="quiz-option" data-correct="true">Browser, Postman, or cURL</div>
+  <div class="quiz-option" data-correct="false">Only Go Playground</div>
+  <div class="quiz-option" data-correct="false">Only VS Code without running the server</div>
+  <div class="quiz-option" data-correct="false">Excel</div>
+</div>
+
+<div class="quiz-container">
+  <p>7. Why are Go web servers highly performant?</p>
+  <div class="quiz-option" data-correct="true">Because of Go’s concurrency features like goroutines</div>
+  <div class="quiz-option" data-correct="false">Because Go automatically caches all responses</div>
+  <div class="quiz-option" data-correct="false">Because Go does not allow multiple requests</div>
+  <div class="quiz-option" data-correct="false">Because net/http runs in a separate OS thread for each request</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>

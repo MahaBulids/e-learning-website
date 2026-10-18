@@ -1,0 +1,267 @@
+<!-- Placeholder for c-sharp - oop.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C# OOP Concepts</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/app.js" defer></script>
+</head>
+<body class="lesson-body">
+  <nav class="lesson-navbar">
+    <div class="logo">Study Core</div>
+      <span id="lessonNavbarHamburger" class="hamburger">☰</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../python/index.html">Python</a></li>
+      <li><a href="../javascript/index.html">JavaScript</a></li>
+      <li><a href="../java/index.html">Java</a></li>
+      <li><a href="../c/index.html">C</a></li>
+      <li><a href="../html-css/index.html">HTML & CSS</a></li>
+      <li><a href="../c++/index.html">C++</a></li>
+      <li><a href="index.html" class="active">C#</a></li>
+      <li><a href="../sql/index.html">SQL</a></li>
+      <li><a href="../php/index.html">PHP</a></li>
+      <li><a href="../go/index.html">Go</a></li>
+    </ul>
+    <label class="toggle-container">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="toggle"></span>
+    </label>
+  </nav>
+
+  <div class="lesson-wrapper">
+    <aside class="lesson-sidebar">
+      <h2>C# Lessons</h2>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="oop.html" class="active">OOP</a></li>
+        <li><a href="dotnet.html">.NET</a></li>
+        <li><a href="unity.html">Unity</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">  <button id="lessonSidebarHamburger" class="lesson-hamburger">☰ Menu</button>
+  <section>
+    <h2>Object-Oriented Programming (OOP) in C#</h2>
+    <p>
+      C# is a <b>fully object-oriented language</b>.  
+      OOP allows developers to build programs using <b>objects</b> (real-world entities) 
+      instead of writing everything in a single block of code.
+    </p>
+    <p>
+      The main principles of OOP in C# are:
+      <b>Encapsulation, Abstraction, Inheritance, and Polymorphism</b>.
+    </p>
+  </section>
+
+  <section>
+    <h3>1. Classes and Objects</h3>
+    <pre>
+using System;
+
+class Car {
+    public string brand;
+    public int speed;
+
+    public void Drive() {
+        Console.WriteLine(brand + " is driving at " + speed + " km/h");
+    }
+}
+
+class Program {
+    static void Main() {
+        Car myCar = new Car();
+        myCar.brand = "Tesla";
+        myCar.speed = 120;
+        myCar.Drive();
+    }
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>2. Encapsulation</h3>
+    <pre>
+using System;
+
+class BankAccount {
+    private double balance;  // private field
+
+    public void Deposit(double amount) {
+        balance += amount;
+    }
+
+    public double GetBalance() {
+        return balance;
+    }
+}
+
+class Program {
+    static void Main() {
+        BankAccount account = new BankAccount();
+        account.Deposit(500);
+        Console.WriteLine("Balance: " + account.GetBalance());
+    }
+}
+    </pre>
+    <p><b>Encapsulation:</b> Hides the data (balance) and exposes only controlled access through methods.</p>
+  </section>
+
+  <section>
+    <h3>3. Inheritance</h3>
+    <pre>
+using System;
+
+class Animal {
+    public void Eat() {
+        Console.WriteLine("This animal eats food.");
+    }
+}
+
+class Dog : Animal {  // Dog inherits from Animal
+    public void Bark() {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+class Program {
+    static void Main() {
+        Dog myDog = new Dog();
+        myDog.Eat();   // Inherited method
+        myDog.Bark();  // Dog-specific method
+    }
+}
+    </pre>
+  </section>
+
+  <section>
+    <h3>4. Polymorphism</h3>
+    <pre>
+using System;
+
+class Animal {
+    public virtual void Sound() {
+        Console.WriteLine("Animal makes a sound");
+    }
+}
+
+class Dog : Animal {
+    public override void Sound() {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+class Cat : Animal {
+    public override void Sound() {
+        Console.WriteLine("Cat meows");
+    }
+}
+
+class Program {
+    static void Main() {
+        Animal myAnimal = new Dog();  
+        myAnimal.Sound();  // Output: Dog barks
+
+        myAnimal = new Cat();
+        myAnimal.Sound();  // Output: Cat meows
+    }
+}
+    </pre>
+    <p><b>Polymorphism:</b> Same method name but different behaviors depending on the object.</p>
+  </section>
+
+  <section>
+    <h3>5. Abstraction (using abstract class)</h3>
+    <pre>
+using System;
+
+abstract class Shape {
+    public abstract void Draw();  // Abstract method (no body)
+}
+
+class Circle : Shape {
+    public override void Draw() {
+        Console.WriteLine("Drawing a Circle");
+    }
+}
+
+class Program {
+    static void Main() {
+        Shape s = new Circle();
+        s.Draw();
+    }
+}
+    </pre>
+  </section>
+
+      <div id="quiz-wrapper">
+      <div class="quiz-container">
+  <h2>Quick Quiz</h2>
+  <p>Which of the following is NOT one of the four main OOP principles in C#?</p>
+  <div class="quiz-option" data-correct="false">Encapsulation</div>
+  <div class="quiz-option" data-correct="false">Inheritance</div>
+  <div class="quiz-option" data-correct="false">Polymorphism</div>
+  <div class="quiz-option" data-correct="true">Compilation</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the <code>Car</code> class example, what does the <code>Drive()</code> method do?</p>
+  <div class="quiz-option" data-correct="true">Prints the car’s brand and speed</div>
+  <div class="quiz-option" data-correct="false">Starts the engine</div>
+  <div class="quiz-option" data-correct="false">Increases speed</div>
+  <div class="quiz-option" data-correct="false">Saves data to a file</div>
+</div>
+
+<div class="quiz-container">
+  <p>How is <code>Encapsulation</code> implemented in the <code>BankAccount</code> example?</p>
+  <div class="quiz-option" data-correct="true">By making <code>balance</code> private and using methods to access it</div>
+  <div class="quiz-option" data-correct="false">By inheriting from another class</div>
+  <div class="quiz-option" data-correct="false">By overriding methods</div>
+  <div class="quiz-option" data-correct="false">By declaring variables as public</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does the <code>Dog</code> class inherit in the Inheritance example?</p>
+  <div class="quiz-option" data-correct="false">A method called <code>Bark()</code></div>
+  <div class="quiz-option" data-correct="true">The <code>Eat()</code> method from <code>Animal</code></div>
+  <div class="quiz-option" data-correct="false">The <code>balance</code> field</div>
+  <div class="quiz-option" data-correct="false">The <code>Draw()</code> method</div>
+</div>
+
+<div class="quiz-container">
+  <p>What is the output of this code?<br>
+  <code>Animal myAnimal = new Dog();<br>myAnimal.Sound();</code></p>
+  <div class="quiz-option" data-correct="true">Dog barks</div>
+  <div class="quiz-option" data-correct="false">Cat meows</div>
+  <div class="quiz-option" data-correct="false">Animal makes a sound</div>
+  <div class="quiz-option" data-correct="false">Error</div>
+</div>
+
+<div class="quiz-container">
+  <p>In the Polymorphism example, what keyword is used to allow overriding a method?</p>
+  <div class="quiz-option" data-correct="false">abstract</div>
+  <div class="quiz-option" data-correct="true">virtual</div>
+  <div class="quiz-option" data-correct="false">private</div>
+  <div class="quiz-option" data-correct="false">sealed</div>
+</div>
+
+<div class="quiz-container">
+  <p>What does the <code>abstract</code> keyword mean in the Abstraction example?</p>
+  <div class="quiz-option" data-correct="true">The method has no body and must be implemented in a derived class</div>
+  <div class="quiz-option" data-correct="false">The method is private</div>
+  <div class="quiz-option" data-correct="false">The class cannot contain methods</div>
+  <div class="quiz-option" data-correct="false">The class cannot be inherited</div>
+</div>
+
+    </div>
+    </main>
+  </div>
+
+  <footer class="lesson-footer">
+    <p>© 2025 Study Core. All rights reserved.</p>
+  </footer>
+</body>
+</html>
